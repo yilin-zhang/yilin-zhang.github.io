@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Linux生存指南02 | 基础生存篇 | Linux简介</title>
+  <meta name="description" content="什么是Linux">
+
+  <!-- evil icon -->
+
+  <link rel="stylesheet" href="/assets/evil-icons.min.css">
+  <script src="/assets/evil-icons.min.js"></script>
+
+  <!-- todo: include this into main.css -->
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yilin-zhang.github.io/linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/2019/01/31/linux-guide-02-introduction.html">
+  <link rel="alternate" type="application/rss+xml" title="Yilin's Blog" href="http://yilin-zhang.github.io/feed.xml">
+</head>
+
+  <body>
+    <div class="page-content">
+      <div class="container">
+        <div class="three columns">
+          <header class="site-header">
+
+  <h2 class="logo"><a href="/">Yilin's Blog</a></h2>
+
+  <div class="nav">
+    
+    <label for="menu-toggle" class="menu-icon">
+        <!--div data-icon="ei-navicon"></div-->
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+    </label>
+    <input type="checkbox" id="menu-toggle">
+
+    <div class="site-nav">
+      <nav>
+        <ul class="page-link">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archive">Posts</a></li>
+          <li><a href="/resources">Resources (EN)</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/feed.xml">RSS</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+</header>
+
+        </div>
+
+        <div class="nine columns" style="z-index:100;">
+          <div class="wrapper">
+            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="artilce_header">
+    <h1 class="artilce_title" itemprop="name headline">Linux生存指南02 | 基础生存篇 | Linux简介</h1>
+    <p class="artilce_meta"><time datetime="2019-01-31T00:00:00-05:00" itemprop="datePublished">Jan 31, 2019</time></p>
+  </header>
+
+  <div class="article-content" itemprop="articleBody">
+    <h1 id="什么是linux">什么是Linux</h1>
+
+<p>前面讲了这么多，都没说清楚Linux到底是什么。</p>
+
+<p>Linux是一个操作系统<strong>内核</strong>。</p>
+
+<p>什么是操作系统？</p>
+
+<blockquote>
+  <p>操作系统是作为计算机硬件和计算机用户之间的中介的程序。操作系统的目的是为用户提供方便且有效地执行程序的环境。
+操作系统是管理计算机硬件的软件。硬件必须提供合适的机制来保证计算机的正常运行，以及确保系统不受用户程序干扰运行。<sup id="fnref:os"><a href="#fn:os" class="footnote">1</a></sup></p>
+</blockquote>
+
+<p>也就是说，操作系统帮助我们屏蔽了硬件操作的细节，保护系统不因程序随意执行而无法正常工作，也让用户更方便地编写和执行程序。然而，不同的操作系统的架构不同，主导的使用逻辑不同，面向的用户群体也不一样。</p>
+
+<p>那什么是操作系统内核？</p>
+
+<blockquote>
+  <p>内核，是一个操作系统的核心。它负责管理系统的进程、内存、设备驱动程序、文件和网络系统，决定着系统的性能和稳定性。<sup id="fnref:kernel"><a href="#fn:kernel" class="footnote">2</a></sup></p>
+</blockquote>
+
+<p>操作系统内核是操作系统的一部分，它直接与硬件打交道，提供一个操作系统所需的最基础的那些功能。所以仅仅有一个内核是无法构成一个完整的操作系统的。在Linux内核发布前，GNU工程就已经完成了一个类Unix系统除内核外所需的其他组件。因此在Linux内核发布后，GNU工程的组件与Linux内核结合，就构成了GNU/Linux操作系统。</p>
+
+<p>GNU/Linux这个名字初看上去有些奇怪，它好像是把两个工程的名字强行组合在了一起，而且把GNU放在了最前面。不过这也是GNU方面合理的诉求，毕竟GNU软件在GNU/Linux操作系统中的比重更大一些，并且也希望人们能明白他们所做的贡献。不过这里为了和当前普遍的叫法统一，也为了方便，在不引起歧义时就写做Linux操作系统。</p>
+
+<p>Linux是Unix操作系统的一个克隆，因此被称为「类Unix操作系统」。这段历史是一个非常有趣的故事，大家如果有兴趣可以在网上找到许多详细的解释，这里就不再赘述了。需要提到的是，GNU工程的目的是制作一个自由（自由意味着开放源代码，允许软件的自由修改和分发）的类Unix操作系统，其名称就叫GNU（GNU本身就是GNU’s Not Unix的递归缩写）。而GNU工程的发起人Richard Stallman也是自由软件运动的发起人，因此GNU自然采用了一套自由软件许可证——GPL（GNU General Public License），而Linux内核也使用了GPL发布。除此之外，其它的操作系统所需的组件也基本采用GPL发布。因此Linux操作系统基本上是一个自由的操作系统。之所以说「基本上」，是因为大多数的Linux发行版（下一节会解释什么是发行版）为了一些硬件支持和更好的用户体验，会包含少量的闭源软件。但总体而言，你所使用的Linux操作系统是自由的。</p>
+
+<h1 id="选一个发行版">选一个发行版</h1>
+
+<p>GNU/Linux就是个操作系统了！但是事实也没有那么简单。用户希望得到的是一个「开箱即用」的操作系统，预先包含了一些实用且必要的软件包（即便是简洁到连图形安装界面都没有的Arch Linux，也提供了一系列工具帮助和引导用户安装和配置操作系统），并且能免去用户到处找需要的软件包自行编译安装的麻烦（从头搭一个Linux操作系统可不是件容易事，有一个项目叫Linux From Scratch，可以让你体验这种感觉）。所以就有了Linux发行版这回事。Linux发行版囊括了GNU/Linux的基本组件和一些其他的应用软件，给用户提供方便舒适的体验。另外，不同的发行版也有不同的目标用户。比如Ubuntu面向普通的桌面用户，CentOS面向服务器用户，Arch Linux面向喜欢深度定制系统和滚动更新的进阶用户等等。</p>
+
+<p>具体选择哪一个发行版是很个人化的事情，不过在这里我仍然推荐桌面用户基数最大的Ubuntu。原因有下面这几点：</p>
+
+<p>参考资料多：因为用户基数大，所以99%自己遇到的问题别人早就遇到过，因此自己总能在网上找到相应的解答。不过如果你是一个Linux老鸟，一定知道Arch Wiki这个Arch Linux的官方维基。Ubuntu的官方文档相比之下逊色太多了。然而无论你是否是Arch用户，都一定能在Arch Wiki上找到有用的信息。</p>
+
+<p>软件包丰富：Ubuntu基于全宇宙最大的发行版Debian，而Debian是最早的Linux发行版之一。Ubuntu的官方仓库中包数量是所有发行版中最多的，Debian位居第二。（这是因为Ubuntu在Debian包的基础上又加入了很多自己的包。有关软件仓库的内容之后会介绍。）此外，多数提供二进制包的Linux原生开源软件都提供deb包，而deb包正是Debian系操作系统的软件打包格式。</p>
+
+<p>是许多软件唯一支持的Linux发行版：比如机器人操作系统ROS（Robot Operating System，虽说名字叫操作系统，实际上只是一个软件平台）只支持Ubuntu，还有Steam唯一官方支持的Linux发行版也是Ubuntu（这不是说其它发行版不能使用Steam）。</p>
+
+<p>开箱即用，对新手友好：Ubuntu已经帮助用户预先安装了一系列软件，并对其做了优化配置，所以免去了对用户而言繁琐的安装和配置软件的过程。</p>
+
+<p><strong>需要说明的是，这个系列博客面向的是Ubuntu用户。</strong> 不过虽然如此，很多知识是与发行版无关的。所以无论你今后是希望使用Ubuntu还是其它发行版，都可以在这个系列博客中有所收获。</p>
+
+<h1 id="选择版本">选择版本</h1>
+
+<p>如果你现在进入Ubuntu官方网站的<a href="https://www.ubuntu.com/download/desktop">下载页面</a>，会看到两个版本。一个是Ubuntu 18.04.1 LTS，另一个是Ubuntu 18.10。这二者有什么区别？</p>
+
+<p>首先你可能会奇怪，为什么一个低版本号的下载链接反而放在了最前面，而且做了很多说明，显然是想要用户去下载的样子。其次这个「LTS」是什么意思？</p>
+
+<p>这两个问题其实可以一起解答。</p>
+
+<p>Ubuntu采用的是point release（或称为fixed release）的策略。其版本号简单易懂，前两个数字代表年，后两个数字代表月。18.04就是2018年4月发布的版本，18.10就是2018年10月发布的版本。LTS是（Long Term Support，长期支持）的缩写。LTS版本支持5年的维护时间，在这期间操作系统只会提供必要的安全更新和bug修复，软件仓库中的软件不会加入新特性，这保证了操作系统在其支持期间的稳定性。而非LTS版本只有9个月的维护时间。LTS版本每两年发布一次，非LTS版本每6个月发布一次。也就是说，Ubuntu的下一个LTS版本是20.04，非LTS的下一个版本是19.04。</p>
+
+<p>所以说，如果自己想使用一个稳定的操作系统，那么使用LTS版本就是最好的选择。而如果你想体验新特性，或是因为存在影响你使用或难以修复的bug，那就去使用最新的非LTS版本吧。</p>
+
+<h1 id="版本更新">版本更新</h1>
+
+<p>Ubuntu支持从一个版本到下一个版本的更新，当然也包括从一个LTS版本直接跨越到下一个LTS版本的更新。一般而言这样的更新不会出现太大的问题，但如果你曾经根据某些网上的教学，使用了一些奇特的方法修复过你的系统，或对自己的系统做了较大的个性化设置（修改了系统文件），那要格外小心，因为可能会出现一些意想不到的错误。此时最好的方法就是重装系统。你没听错，就是重装（clean/fresh install）。然而重装不意味着你一定要丢失所有的数据。你可以将自己所有的个人数据放入一个指定分区，而在重装时不去格式化这个分区。不过，无论是哪一种方法，在更新前备份自己的数据都是必要的。</p>
+
+<p>除了point release之外，还有一种版本迭代方式叫做rolling release（滚动更新）。这种更新策略的特点是：小范围、频繁、追求新特性。也许你每隔几天到几周就会有一次更新，并且你的软件包往往都是最新的。这种更新模式的优势是能拥有最新的软件特性，且软件的bug也会因上游的快速修复而迅速得到解决。而这也同样带来了风险。你不能保证此时的更新不会使你的某个重要软件出bug而无法正常工作，也不能肯定这次的更新会不会直接导致你无法启动系统（概率比较小，但仍存在）。另外，如果自己隔很长时间才进行下一次更新（记住Linux从不会强迫你更新），很有可能会搞坏你的系统，因为滚动更新模式默认用户的软件版本是平滑过渡的，一旦突然跨多个版本升级，很容易造成问题。这本身就是一种变相的强迫更新。因此这种更新策略对新手而言尤为不推荐。</p>
+
+<h1 id="flavors">Flavors</h1>
+
+<p>为什么Linux发行版还有flavors一说，难道Linux能吃吗！？当然不能啦！Flavors这个词在Linux世界中大致有两种含义：第一种是指不同的Linux发行版，第二种是指预置搭载不同桌面环境的同一个发行版。Flavors的第二种含义可以还用另一个词「spins」来表示。我们在这一节说的flavors，是它的第二种含义（因为Ubuntu官方就是用flavors称呼它的那些spins的）。</p>
+
+<p>有关桌面环境的内容会在后面的一个章节单独介绍。这里只需要知道在Linux的世界中，桌面环境不止一种。当前使用最多的，也是被大多数发行版作为默认桌面环境的，是GNOME 3。还有一款人气很高的桌面环境叫做KDE。此外还有很多其他主流的桌面环境：Cinnamon、MATE、XFCE、LXDE、Budgie等等。</p>
+
+<p>不同的桌面环境具有不同的特色。GNOME 3和KDE比较占用系统资源，但更为现代。LXDE主打轻量级的桌面环境，不吃资源。MATE是GNOME 2桌面环境的延续，沿用经典的设计和布局……</p>
+
+<p>Ubuntu默认搭载的桌面环境是GNOME 3。那Ubuntu的其它flavors呢？比如默认搭载KDE的Kubuntu，搭载MATE的Ubuntu MATE，搭载XFCE的Xubuntu等等。在<a href="https://www.ubuntu.com/download/flavours">Ubuntu的相关页面</a>上列出了所有其支持的flavors。</p>
+
+<p>不同的flavors除了桌面环境的不同之外，也会对系统做出自己的调整。例如Ubuntu MATE主打的是用户友好（user-friendly）的使用体验。因此其在搭载MATE桌面环境的同时，精心设计自己的默认主题，使其具有与Ubuntu一致的视觉效果，并且提供了很多在Ubuntu中没有的对用户十分友好的功能。Ubuntu Studio是专为影音工作而设计的，因此对这方面的系统设置进行了特别优化，也预置了很多与影音制作相关的软件。（虽说当前Linux的影音制作能力还比不上Windows和macOS，但起码你能看到有许多人在努力。）</p>
+
+<p>每个flavors都可以看作一个独立的发行版，因此也都会有自己的logo，下面这张图<sup id="fnref:flavors"><a href="#fn:flavors" class="footnote">3</a></sup>展示ubuntu的一部分flavors。</p>
+
+<div align="center">
+&lt;img src="http://pma51umnw.bkt.clouddn.com/ubuntu-official-flavors.jpg" width = 70% height = 70%/&gt;
+</div>
+
+<div align="center">
+Ubuntu的部分flavors</div>
+
+<p>不过需要明白的是，同一种发行版的不同flavors使用的是同一个官方软件仓库。也就说即便你使用了Ubuntu的一个flavor，你仍然能使用所有Ubuntu可以获得的软件，并且所有可用于Ubuntu的解决方案（只要其与桌面环境无关）也都适用与这个flavor。</p>
+
+<p>我个人目前在使用的就是Ubuntu MATE，使用起来非常舒适哦！</p>
+
+<p>不过具体选择哪一个flavor也是个人喜好，如果你喜欢某一款桌面环境，就去尝尝那个对应的flavor吧！</p>
+
+<h1 id="延伸阅读">延伸阅读</h1>
+
+<ul>
+  <li><a href="https://www.gnu.org/gnu/linux-and-gnu.html">Linux和GNU系统</a></li>
+  <li><a href="https://www.debian.org/releases/stable/mips/ch01s02.html.zh-cn">什么是GNU/Linux?</a></li>
+  <li><a href="https://www.gnu.org/">GNU Operating System</a></li>
+  <li><a href="https://www.gnu.org/copyleft/gpl.html">GNU General Public License</a></li>
+  <li><a href="https://www.fsf.org/about/what-is-free-software">What Is Free Software</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions">Comparison of Linux distributions</a></li>
+  <li><a href="https://wiki.ubuntu.com/LTS">LTS - Ubuntu Wiki</a></li>
+  <li><a href="https://www.debian.org/releases/">Debian 发行版本</a></li>
+  <li><a href="https://fossbytes.com/rolling-release-vs-fixed-release-distros-which-linux-distributions-are-better/">Rolling Release Vs. Fixed Release Distros — Which Linux Distributions Are Better?</a></li>
+</ul>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:os">
+      <p>Silberschatz A. Gal P B. 操作系统概念[M]. 2004. <a href="#fnref:os" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:kernel">
+      <p>Bovet D P. Cesati M．深入理解LINUX内核：中国电力出版社，2008. <a href="#fnref:kernel" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:flavors">
+      <p>Ubuntu official flavors, <a href="https://www.omgubuntu.co.uk/2018/04/ubuntu-flavors-18-04-release-download-features">Ubuntu 18.04 Flavours Released, Available to Download - OMG! Ubuntu!</a> <a href="#fnref:flavors" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+<!--
+  <footer class="article-footer">
+  <section class="share">
+  <a class="share-link" href="" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+    Twitter
+  </a>
+  <a class="share-link" href="" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+    Facebook
+  </a>
+  <a class="share-link" href="" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530'); return false;">
+    Google+
+  </a> 
+</section>
+
+  <hr/>
+  <section class="author">
+  <div class="authorimage box" style="background: url(/assets/img/Yilin.png)"></div>
+  <div class="authorinfo box">
+    <p>Yilin Zhang</p>
+    <p class="bio">
+      Currently a Master student in Georgia Tech, majoring in Music Technology.
+    </p>
+  </div>
+</section>
+
+  </footer>-->
+
+<!-- LiveRe -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MjQ4NS8xOTAzMg==">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- LiveRe -->
+
+<!--
+  
+
+-->
+</article>
+
+          </div>
+        </div>
+      </div>
+      <footer class="site-footer">
+  <div class="container">
+    <div class="footer left column one-half">
+        <section class="small-font">
+            <a href="/">Back to Top</a><br/>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br/>
+            Theme <a href="https://github.com/wild-flame/jekyll-simple"> Simple </a> by <a href="http://wildflame.me">wildflame</a>
+      </section>
+    </div>
+
+    <div class="footer right column one-half">
+      <section class="small-font">
+        
+        <a href="https://github.com/yilin-zhang"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span></a>
+
+        
+        
+      </section>
+    </div>
+  </div>
+</footer>
+ 
+    </div>
+  </body>
+</html>

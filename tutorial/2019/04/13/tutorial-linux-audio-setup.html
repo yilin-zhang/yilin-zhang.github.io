@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Tutorial | Linux 音频系统搭建</title>
+  <meta name="description" content="Linux 下的音频系统搭建要比 Windows 和 MacOS 复杂很多，因为上层应用不会来帮用户解决底层系统软件的问题，因此用户就需要处理更多的细节。不过虽说刚开始会感到复杂，一旦理解就感觉很直观了。">
+
+  <!-- evil icon -->
+
+  <link rel="stylesheet" href="/assets/evil-icons.min.css">
+  <script src="/assets/evil-icons.min.js"></script>
+
+  <!-- todo: include this into main.css -->
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yilin-zhang.github.io/tutorial/2019/04/13/tutorial-linux-audio-setup.html">
+  <link rel="alternate" type="application/rss+xml" title="Yilin's Blog" href="http://yilin-zhang.github.io/feed.xml">
+</head>
+
+  <body>
+    <div class="page-content">
+      <div class="container">
+        <div class="three columns">
+          <header class="site-header">
+
+  <h2 class="logo"><a href="/">Yilin's Blog</a></h2>
+
+  <div class="nav">
+    
+    <label for="menu-toggle" class="menu-icon">
+        <!--div data-icon="ei-navicon"></div-->
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+    </label>
+    <input type="checkbox" id="menu-toggle">
+
+    <div class="site-nav">
+      <nav>
+        <ul class="page-link">
+          <li><a href="/">Home</a></li>
+          <li><a href="/archive">Posts</a></li>
+          <li><a href="/resources">Resources (EN)</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/feed.xml">RSS</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+</header>
+
+        </div>
+
+        <div class="nine columns" style="z-index:100;">
+          <div class="wrapper">
+            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="artilce_header">
+    <h1 class="artilce_title" itemprop="name headline">Tutorial | Linux 音频系统搭建</h1>
+    <p class="artilce_meta"><time datetime="2019-04-13T00:00:00-04:00" itemprop="datePublished">Apr 13, 2019</time></p>
+  </header>
+
+  <div class="article-content" itemprop="articleBody">
+    <p>Linux 下的音频系统搭建要比 Windows 和 MacOS 复杂很多，因为上层应用不会来帮用户解决底层系统软件的问题，因此用户就需要处理更多的细节。不过虽说刚开始会感到复杂，一旦理解就感觉很直观了。</p>
+
+<p>可惜的是，国内几乎没有关于 Linux 音频方面的介绍。我当初搭建 Linux 的音频制作环境也是在 Google 和 Youtube 上摸索了很久（当时用的发行版是 Ubuntu，不像 Arch Linux 有详尽的 Wiki）。最近找到的一个网站<a href="https://lado.me">啦哆咪</a>可能是国内仅存的关于 Linux 音频/音乐制作的网站。里面有很多实用的内容，并且作者还搭建了一个 Arch Linux 的音乐软件仓库，是相当用心了。（虽然我个人更愿意使用 AUR 。）</p>
+
+<p>这篇博客的主要目的是手把手的 Linux 音频配置教学，不涉及任何原理细节（因为自己现在也是一知半解）。希望自己有能完全搞明白的一天。</p>
+
+<p>在阅读下面的内容之前，推荐先了解一下 Linux 的音频组件是怎么连接的。可以参考啦哆咪的<a href="https://lado.me/2017/04/16/combination-of-linux-audio/">这篇文章</a>。</p>
+
+<h1 id="软件仓库">软件仓库</h1>
+
+<p>对于 Ubuntu 用户来说，使用 KXStudio 仓库是主流的选择。查看添加仓库的方法可以进入<a href="https://kx.studio/Repositories">这个链接</a>。该仓库提供了非常全面的与音频制作相关的软件，涵盖了相当多 Ubuntu 官方仓库没有的插件。</p>
+
+<p>对于 Arch Linux 用户来说，因为有 AUR ，所以自然不是问题。</p>
+
+<p>最复杂的就是下面关于 JACK 的配置了。</p>
+
+<h1 id="jack">JACK</h1>
+
+<blockquote>
+  <p>JACK 是 JACK Audio Connection Kit 的递归缩写，是一个专业的音频服务守护进程，能在使用其 API 的应用之间提供实时、低延迟的音频和 MIDI 数据连接。</p>
+</blockquote>
+
+<p>这一段来自 <a href="https://wiki.archlinux.org/index.php/JACK%5FAudio%5FConnection%5FKit">Arch Wiki</a> ，是我自己翻译的。</p>
+
+<p>如果不想看英文的 Arch Wiki ，还可以看<a href="https://lado.me/2017/04/15/introduce-jack/">啦哆咪</a>上对 JACK 的介绍，这篇文章还介绍了 JACK 的安装方法，照做即可。</p>
+
+<p>我个人喜欢用 Cadence （软件包： <code class="highlighter-rouge">cadence</code> ）这个 <code class="highlighter-rouge">jack2</code> 前端 GUI 软件。因此安装的是 <code class="highlighter-rouge">jack2</code> 。</p>
+
+<p>在安装完 JACK 后，还需要进行一定的配置。对于 Arch 用户直接参考 JACK 的 <a href="https://wiki.archlinux.org/index.php/JACK%5FAudio%5FConnection%5FKit">Arch Wiki</a> 即可，这里只是简单提一下。</p>
+
+<p>首先需要将用户加入 <code class="highlighter-rouge">audio</code> 用户组。将用户加入已有用户组的命令参考如下：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>usermod <span class="nt">-a</span> <span class="nt">-G</span> audio &lt;your user name&gt;
+</code></pre></div></div>
+
+<p>其次，如果是 Arch Linux 用户，推荐安装 <code class="highlighter-rouge">realtime-privileges</code> 包，安装完成后将用户加入 <code class="highlighter-rouge">realtime</code> 用户组。注销后重新登录生效。</p>
+
+<p>另外，为了能在使用 JACK 时同时能使用 PulseAudio ，需要使用一个 bridge 将 PulseAudio 的音频通过 JACK 。如果不这么做，在开启 JACK 服务时是无法使用桌面应用（比如浏览器）播放音频的。对于 Ubuntu 用户，需要安装 <code class="highlighter-rouge">pulseaudio-module-jack</code> ，对于 Arch 用户需要安装 <code class="highlighter-rouge">pulseaudio-jack</code> 。</p>
+
+<p>对 Arch Linux 用户而言，还需要安装 <code class="highlighter-rouge">alsa-utils</code> ，否则 JACK 无法使用由 ALSA 驱动的输入输出设备。</p>
+
+<p>接下来到了 JACK 的配置环节。这里以 Cadence 为例。打开 Cadence 后，首先在右下方的 JACK Bridges 的 ALSA Audio 标签中选择 「ALSA -&gt; PulseAudio -&gt; JACK (Plugin)」。之后点击 「Configure」在 Driver 标签下的 ALSA 标签选择，在这里可以选择输入和输出对应的硬件设备。还可以调整采样率和缓冲区大小。（采样率一般用 44100 ，缓冲区大小设置为 256 是个不错的选择。）</p>
+
+<p>设置结束后，回到 Cadence 的主菜单，点击「Start」。不出意外的话应该不会报错，如果报错了，可以去「Tools」-&gt;「Logs」查看日志，上网搜索解决方案（一定要使用英文搜索引擎）。顺便一提，对 Arch 用户来说如果需要使用 Cadence 提供的其他工具，需要安装 <code class="highlighter-rouge">a2jmidid</code> ，否则那些工具无法打开。</p>
+
+<p>如果 JACK 正常启动了，那么基本就要成功了。接下来需要做的是安装 Pavucontrol （软件包： <code class="highlighter-rouge">pavucontrol</code> ） 这个 PulseAudio 的前端控制软件。可以先使用浏览器或是本地的影音软件打开一个音频或视频，在「回放」这个标签栏的最下方选择显示「All Streams」，确认显示的对应的音频流使用的是「JACK Sink」（如果不是就调整过来）。</p>
+
+<p>现在应该能正常听到声音了。到此 JACK 的配置工作就基本完成。</p>
+
+<p>注意接下来提到的软件都需要在 JACK 运行时使用。</p>
+
+<h1 id="音序器">音序器</h1>
+
+<p><a href="https://rosegardenmusic.com">Rosegarden</a> （软件包： <code class="highlighter-rouge">rosegarden</code> ） 是 Linux 下最好用的原生音序器。</p>
+
+<p>安装 Rosegarden 后用其打开 MIDI 文件，会发现没有声音。因为 Rosegarden 本身并不包含 soundfont ，也不自带合成器。</p>
+
+<p>合成器一般使用 Fluidsynth （软件包： <code class="highlighter-rouge">fluidsynth</code> ） ，推荐安装它的一个前端工具叫做 Qsynth （软件包： <code class="highlighter-rouge">qsynth</code> ），安装 Qsynth 会自动将 Fluidsynth 作为依赖安装。Arch Linux 还将 Fluidsynth 的 soundfont 独立成一个包 <code class="highlighter-rouge">soundfont-fluid</code> ，需要额外安装，而 Ubuntu 不需要。</p>
+
+<p>安装好后，打开 Qsynth ，进入「Setup」-&gt;「Soundfonts」，添加一个新的 soundfont 。在这里选择安装好的 Fluidsynth Soundfont，路径是： <code class="highlighter-rouge">/usr/share/soundfonts/FluidR3_GM.sf2</code> 。</p>
+
+<p>这时候用 Rosegarden 打开 MIDI 文件，应该能听到声音了。</p>
+
+<p>也就是说，在使用 Rosegarden 前，需要先使用 Qsynth 开启 Fluidsynth 。</p>
+
+<h1 id="daw">DAW</h1>
+
+<p><a href="https://ardour.org">Ardour</a> （软件包： <code class="highlighter-rouge">ardour</code> ） 是 Linux 下最好用的 DAW 。</p>
+
+<p>虽然 Ardour 是开源软件，但推荐的做法是去 Ardour 的官网上付费下载（可以选择任意价格捐赠），毕竟开发这种软件相当不容易。如果想使用发行版仓库的版本，也可以考虑捐一下款。</p>
+
+<p>这里再给出一个 Ardour 的教程以供参考：<a href="http://brunoruviaro.github.io/ardour4-tutorial/">BEGINNER’S TUTORIAL - Ardour 4</a> 。有能力的可以上 Youtube 找到更多的教学视频。更详细的信息可以参考<a href="http://manual.ardour.org">官方手册</a>。</p>
+
+<p>如果想做电子音乐，LMMS（软件包： <code class="highlighter-rouge">lmms</code> ）是一个不错的的 FL Studio 替代品，当然功能没有 FL Studio 那么强大。</p>
+
+<h1 id="插件">插件</h1>
+
+<p>Linux 上支持的原声插件是 LADSPA （Linux Audio Developer’s Simple Plugin API）和 LV2 （LADSPA Version 2）插件 。LV2 是使用最多的插件。基本上常用的插件都可以在 KXStudio 仓库或者 AUR 中找到。</p>
+
+<p>我使用过的插件不多，只推荐一些常用的（Linux 有非常丰富的插件等着大家去发现）：</p>
+
+<ul>
+  <li>合成器
+    <ul>
+      <li>ZynAddSubFX</li>
+      <li>Zyn-Fusion（推荐，更好的 ZynAddSubFX 前端界面）</li>
+      <li>Yoshimi（适合做弦乐和风琴）</li>
+    </ul>
+  </li>
+  <li>采样器
+    <ul>
+      <li>DrMr（用于加载hydrogen音源）</li>
+      <li>Fabla</li>
+      <li>Drumkv1</li>
+      <li>Drumgizmo</li>
+      <li>avldrums</li>
+    </ul>
+  </li>
+  <li>效果
+    <ul>
+      <li>Calf 系列插件（强烈推荐）</li>
+      <li>Guitarix 系列插件</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="midi-键盘">MIDI 键盘</h1>
+
+<p>为了在 Ardour 中使用 MIDI 键盘，要在终端开启 JACK MIDI &lt;-&gt; ALSA sequencer MIDI bridge。</p>
+
+<p>需要在终端运行 <code class="highlighter-rouge">a2jmidid</code> （需要安装同名软件包）：</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>a2jmidid <span class="nt">-e</span>
+</code></pre></div></div>
+
+<p>具体可以参考<a href="http://manual.ardour.org/setting-up-your-system/setting-up-midi/midi-on-linux/">Ardour官方手册</a>。</p>
+
+<h1 id="软件效果器">软件效果器</h1>
+
+<p>这里重点介绍的是 <a href="http://guitarix.org">Guitarix</a> ，使用它能让我们带上耳机练琴。设置步骤如下：</p>
+
+<p>首先在 Cadence 中设置输入设备为自己的 USB 声卡，再运行。</p>
+
+<p>第二步，打开 Guitarix ，挑选自己需要的效果，组成效果链路。</p>
+
+<p>第三步，打开 Cadence 的工具 Catia 。可以看到系统中所有软件音频接口的连接，将系统音频输入连接到 Guitarix 的输入，将 Guitarix 的输出（一般是双声道）分辨连接到两个系统 playback 。</p>
+
+<p>设置完成后之后就可以听到自己乐器的声音了。</p>
+
+<h1 id="其他">其他</h1>
+
+<h2 id="打谱">打谱</h2>
+
+<p>如果是五线谱制作，最简单的就是使用 <a href="https://musescore.org">MuseScore</a> ，运行它无需开启 JACK 。如果想要制作更加复杂或者排版精良的乐谱，可以使用 GNU 的软件 <a href="http://lilypond.org">LilyPond</a> ，它使用一套标记语言，最后渲染成乐谱（类似于 LaTeX）。</p>
+
+<p>Linux 下也有 Guitar Pro 的替代品——<a href="http://tuxguitar.com.ar/">TuxGuitar</a>。Ubuntu 用户可以去官方网站下载 deb 包，Arch 用户可以在 AUR 找到。由于 TuxGuitar 是用 Java 开发的，需要安装 JRE 才可以运行。因为这个软件很长时间没有用，现在也没有安装，不确定是否需要 JACK 。</p>
+
+<h2 id="鼓机">鼓机</h2>
+
+<p>最常用的就是 <a href="http://hydrogen-music.org/">Hydrogen</a> 了。</p>
+
+<h2 id="简单录音">简单录音</h2>
+
+<p>如果只是想简单录音，可以直接使用 <a href="https://www.audacityteam.org/">Audacity</a> ，这个软件不需要 JACK 也可以运行。</p>
+
+<h1 id="后记">后记</h1>
+
+<p>这篇博客只是流水帐式的简单过一遍 Linux 下的音频配置方法。一些更深入的内容（比如利用 Carla 和 Wine 运行 VST 插件）没有提到。不过我相信上面提到的内容已经足够日常的练习和 Demo 制作了。</p>
+
+<p>使用 Linux 进行音频制作本身就是一个小众的领域，工业级的优质软件相比 Windows 和
+MacOS 还是少之又少。但是了解并使用 Linux 制作音乐确实是一件很有意思的事情，尤其
+是几乎所有的软件都是自由软件，意味着能够免费获取和自由修改源代码，不需要花大价钱
+购买商业软件，或者费力气去破解（从来都不推荐这么做），用户也可以借助软件仓库简单
+快速获得大部分需要的插件。虽然 Linux 的插件选择有限，但对于非工业级的音乐制作来
+说，有限的选项可能反而是件好事。对于半专业的音乐制作，Linux 也足够满足人们的需求。</p>
+
+<p>此外，善于使用英文搜索也是十分重要的。Linux 自身的很多信息都只能通过英文搜索获得，更不必说关于 Linux 的音乐制作信息了，在这方面国内算得上是一片空白。使用 Bing 是个不错的选择，有能力的话当然是用 Google 了。</p>
+
+<p>最后推荐一个论坛叫做 <a href="https://linuxmusicians.com/">LinuxMusicians</a> ，里面都是关
+于使用 Linux 进行音乐制作的讨论，你可以在里面得到很多有益的帮助。我曾经为了提取
+一个 VST 插件内置的 MIDI 文件，在这个论坛上找到了一个网友写的 Ruby 脚本（可能这
+里的 musicians 都是 hackers 吧^^）。</p>
+
+  </div>
+
+<!--
+  <footer class="article-footer">
+  <section class="share">
+  <a class="share-link" href="" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+    Twitter
+  </a>
+  <a class="share-link" href="" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+    Facebook
+  </a>
+  <a class="share-link" href="" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530'); return false;">
+    Google+
+  </a> 
+</section>
+
+  <hr/>
+  <section class="author">
+  <div class="authorimage box" style="background: url(/assets/img/Yilin.png)"></div>
+  <div class="authorinfo box">
+    <p>Yilin Zhang</p>
+    <p class="bio">
+      Currently a Master student in Georgia Tech, majoring in Music Technology.
+    </p>
+  </div>
+</section>
+
+  </footer>-->
+
+<!-- LiveRe -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MjQ4NS8xOTAzMg==">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- LiveRe -->
+
+<!--
+  
+
+-->
+</article>
+
+          </div>
+        </div>
+      </div>
+      <footer class="site-footer">
+  <div class="container">
+    <div class="footer left column one-half">
+        <section class="small-font">
+            <a href="/">Back to Top</a><br/>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br/>
+            Theme <a href="https://github.com/wild-flame/jekyll-simple"> Simple </a> by <a href="http://wildflame.me">wildflame</a>
+      </section>
+    </div>
+
+    <div class="footer right column one-half">
+      <section class="small-font">
+        
+        <a href="https://github.com/yilin-zhang"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span></a>
+
+        
+        
+      </section>
+    </div>
+  </div>
+</footer>
+ 
+    </div>
+  </body>
+</html>
