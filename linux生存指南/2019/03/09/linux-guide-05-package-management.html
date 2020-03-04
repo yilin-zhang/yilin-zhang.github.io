@@ -331,8 +331,8 @@
 <p>可能出现类似情况的还有 Node.js 的包管理器 npm 。不过由于 <code class="highlighter-rouge">nodejs</code> 并不是系统自带的软件包，因此出现包管理冲突的可能性不大，不过最好还是不要用 npm 把全局包装在系统目录下，也就是避免使用 <code class="highlighter-rouge">sudo npm install &lt;package name&gt; -g</code> 。我的解决方法是在用户目录下的 <code class="highlighter-rouge">.bashrc</code> 或 <code class="highlighter-rouge">.profile</code> 添加如下两行：</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">NPM_CONFIG_PREFIX</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.npm-global"</span>
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.npm-global/bin:</span><span class="nv">$PATH</span><span class="s2">""
-</span></code></pre></div></div>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.npm-global/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+</code></pre></div></div>
 
 <p>第一行告诉 npm 将全局包装在 <code class="highlighter-rouge">~/.npm-global</code> 下，第二行将 <code class="highlighter-rouge">~/.npm-global</code> 这个路径加入环境变量 <code class="highlighter-rouge">PATH</code> 。我参考的是<a href="https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally">这篇文章</a>。</p>
 

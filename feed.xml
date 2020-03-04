@@ -6,8 +6,8 @@
 </description>
     <link>http://yilin-zhang.github.io/</link>
     <atom:link href="http://yilin-zhang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 Mar 2020 13:09:05 -0500</pubDate>
-    <lastBuildDate>Sun, 01 Mar 2020 13:09:05 -0500</lastBuildDate>
+    <pubDate>Tue, 03 Mar 2020 23:15:25 -0500</pubDate>
+    <lastBuildDate>Tue, 03 Mar 2020 23:15:25 -0500</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -831,8 +831,8 @@ MacOS 还是少之又少。但是了解并使用 Linux 制作音乐确实是一�
 &lt;p&gt;可能出现类似情况的还有 Node.js 的包管理器 npm 。不过由于 &lt;code class=&quot;highlighter-rouge&quot;&gt;nodejs&lt;/code&gt; 并不是系统自带的软件包，因此出现包管理冲突的可能性不大，不过最好还是不要用 npm 把全局包装在系统目录下，也就是避免使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo npm install &amp;lt;package name&amp;gt; -g&lt;/code&gt; 。我的解决方法是在用户目录下的 &lt;code class=&quot;highlighter-rouge&quot;&gt;.bashrc&lt;/code&gt; 或 &lt;code class=&quot;highlighter-rouge&quot;&gt;.profile&lt;/code&gt; 添加如下两行：&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;NPM_CONFIG_PREFIX&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/.npm-global&quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/.npm-global/bin:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/.npm-global/bin:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;第一行告诉 npm 将全局包装在 &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.npm-global&lt;/code&gt; 下，第二行将 &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.npm-global&lt;/code&gt; 这个路径加入环境变量 &lt;code class=&quot;highlighter-rouge&quot;&gt;PATH&lt;/code&gt; 。我参考的是&lt;a href=&quot;https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally&quot;&gt;这篇文章&lt;/a&gt;。&lt;/p&gt;
 
