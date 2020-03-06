@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
+  <title>Fun.js</title>
   <meta name="description" content="Yilin Zhang's personal blog.
 ">
 
@@ -17,10 +17,11 @@
   <!-- todo: include this into main.css -->
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yilin-zhang.github.io/about/">
+  <link rel="canonical" href="http://yilin-zhang.github.io/fun_js.html">
   <link rel="alternate" type="application/rss+xml" title="Yilin's Blog" href="http://yilin-zhang.github.io/feed.xml">
 </head>
 
+  <link rel="stylesheet" href="/css/fun_js.css">
   <body>
     <div class="page-content">
       <div class="container">
@@ -61,33 +62,56 @@
 
         <div class="nine columns" style="z-index:100;">
           <div class="wrapper">
-            <article class="post">
+            <div>
+  <h2>Fun.js</h2>
 
-  <header class="post-header">
-    <h1 class="post-title">About</h1>
-  </header>
-
-  <div class="article-content">
-    <p>Enjoy music and programming.</p>
-
+  <div id="chord-displayer" align="center">
+      <h3>Chord Displayer</h3>
+    <div id="keyboard">
+        <svg xml:space="preserve" width="161px" height="120">
+            <!-- White keys  -->
+            <rect class="white-key note-c" x="0" y="0" width="23" height="120"/>
+            <rect class="white-key note-d" x="23" y="0" width="23" height="120"/>
+            <rect class="white-key note-e" x="46" y="0" width="23" height="120"/>
+            <rect class="white-key note-f" x="69" y="0" width="23" height="120"/>
+            <rect class="white-key note-g" x="92" y="0" width="23" height="120"/>
+            <rect class="white-key note-a" x="115" y="0" width="23" height="120"/>
+            <rect class="white-key note-b" x="138" y="0" width="23" height="120"/>
+            <!-- Black keys (overlap with the white keys) -->
+            <rect class="black-key note-c#" x="14.33333" y="0" width="13" height="80"/>
+            <rect class="black-key note-d#" x="41.66666" y="0" width="13" height="80"/>
+            <rect class="black-key note-f#" x="82.25" y="0" width="13" height="80"/>
+            <rect class="black-key note-g#" x="108.25" y="0" width="13" height="80"/>
+            <rect class="black-key note-a#" x="134.75" y="0" width="13" height="80"/>
+        </svg>
+    </div>
+    <div id="chord-text">
+    </div>
+    <div id="chord-select">
+        <select id="chord-root">
+            <option value="c">C</option>
+            <option value="c#">C♯/D♭</option>
+            <option value="d">D</option>
+            <option value="d#">D♯/E♭</option>
+            <option value="e">E</option>
+            <option value="f">F</option>
+            <option value="f#">F♯/G♭</option>
+            <option value="g">G</option>
+            <option value="g#">G♯/A♭</option>
+            <option value="a">A</option>
+            <option value="a#">A♯/B♭</option>
+            <option value="b">B</option>
+        </select>
+        <select id="chord-type">
+            <option value="major">major</option>
+            <option value="minor">minor</option>
+            <option value="major7">major 7th</option>
+            <option value="minor7">minor 7th</option>
+            <option value="dominant7">dominant 7th</option>
+        </select>
+    </div>
   </div>
-
-  <br/>
-
-  <section class="author">
-  <div class="authorimage box" style="background: url(/assets/img/Yilin.png)"></div>
-  <div class="authorinfo box">
-    <p>Yilin Zhang</p>
-    <p class="bio">
-      Currently a Master student in Georgia Tech, majoring in Music Technology.
-    </p>
-  </div>
-</section>
-
-
-
-
-</article>
+</div>
 
           </div>
         </div>
@@ -114,7 +138,8 @@
     </div>
   </div>
 </footer>
- 
+
     </div>
+    <script type="text/javascript" src="/assets/fun_js.js"></script>
   </body>
 </html>
