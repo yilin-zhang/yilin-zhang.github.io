@@ -6,9 +6,82 @@
 </description>
     <link>http://yilin-zhang.github.io/</link>
     <atom:link href="http://yilin-zhang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 May 2020 17:03:01 -0400</pubDate>
-    <lastBuildDate>Wed, 13 May 2020 17:03:01 -0400</lastBuildDate>
+    <pubDate>Sun, 17 May 2020 00:53:08 -0400</pubDate>
+    <lastBuildDate>Sun, 17 May 2020 00:53:08 -0400</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>Off-topic | 试图理解电子音乐</title>
+        <description>&lt;p&gt;回想起本科时代，真正能算得上音乐的，就是 Blues、Rock、Jazz 这些，电子乐什么的根
+本不感兴趣，甚至觉得这是一种低劣的，妄图摧毁美妙的音乐世界的东西。自己也实在是后
+知后觉，到了这里之后才对电子音乐产生了兴趣。&lt;/p&gt;
+
+&lt;p&gt;现在回想一下的话，其实主要是对电子音乐背后的 Geek 文化感兴趣，这种兴趣与我对
+Blues、Rock、Jazz 的爱完全不相同。说实话，现在的我还是不能完全接纳电子音乐本身给
+人带来的听觉享受，那种情绪化的东西，在我看来相比那些传统的音乐要少得多，可能主要
+是缺少了「人」在音乐中直观、即时、直接的参与。很多电子音乐的先驱或是先锋的音乐，
+总体上还是非常的单调乏味，同一个乐句或动机重复太多次，而变化（evolving）又过于细
+微。不知道是不是我的耳朵还不习惯这种音乐。相比音色，我还是更看重更高层次或抽象度
+的表达，比如旋律、律动，还有人演奏时或多或少带入的那种细节。&lt;/p&gt;
+
+&lt;p&gt;我其实也一直在寻找电子音乐的那种独特的地方。当时真正让我对电子乐产生兴趣的诱因是
+它的音色。使用基础波形进行的调制发出的声音，尤其是拉动 slider 让音色发生变化的时
+候，是最让我享受的时刻。当我去听那些不同的电子音乐的时候，我还是试图会在一开始将
+关注点放在音色上。但是似乎不知不觉在听的过程中，自己的听觉最终还是落在了那些高层
+次的表达上面。那些「眼花缭乱」的音色，最终也不过是高层次表达的工具而已。这些音乐
+自己听得越多，就越发现这种音乐对于 evolving 的不重视。很多音乐音色本身的变化非常
+细微，甚至整首曲子没有太多变化，pattern 的编排上也有类似的问题，整首曲子旋律、节
+奏的布局过于简单或是重复，无法调动听者的注意力和情绪。&lt;/p&gt;
+
+&lt;p&gt;这些问题，也许和电子音乐的制作方法有关。不过大部分的 EDM 要排除在外，因为它本质
+上和传统的音乐作品有类似的制作方法。而很多 IDM，或是更加实验的音乐制作，很可能是
+使用硬件设备（比如模块合成器）做即时的录音。我前阵子听了 Omri Cohen （他在 YT 上
+有一个以讲解 VCV Rack 为主的频道）作为嘉宾的一期 podcast，他在中间提到他的音乐制
+作方法，基本上都是即时演奏，而且不同乐器的 clock 并没有刻意对齐，由此产生了丰富
+的听觉效果。这种制作方法的优点是尽可能保留了人在音乐流动过程中的即时参与度，也更
+能捕捉那种即时的音乐流动，这在 Omri 的作品之中体现得很明显。但是缺点也同样明显，
+人在操作的过程中不太容易快速的切换 pattern 或者调整参数，导致音乐的流动中的变化
+感不强，而更像是进展缓慢的渐变。这种硬件 patch 一旦搭建也不易调整，所以音色产生
+的变化有限。而且，这种制作方法下，制作者也往往不会花很大的精力在音乐的整体结构上，
+因为如果你没有思路，不可能把现在的 patch 给拆掉做下一首，因此你会不惜代价将现在
+的声音保留下来。&lt;/p&gt;
+
+&lt;p&gt;所以归根结底，非 EDM 类的电子音乐中，对于声音本身的追求已经远远盖过了其它的音乐
+元素。如果能有第二个，那可能是算法作曲带来的 generative 属性，但不得不说这种东西
+听起来虽然非常新鲜，但和那些音色一样，不一定「悦耳」。当然，音乐不一定要悦耳，但
+是长期听这种音乐对自己的听觉也的确是一种折磨。&lt;/p&gt;
+
+&lt;p&gt;当进一步观察热爱这种音乐的群体的时候，我发现这些爱好者普遍具有制作这种音乐的能力，
+或者有对制作起码的爱好和理解。所以我也合理猜测，对于这种音乐的热情主要来自于对于
+「技术」的钻研，在听音乐的时候将关注点放在「这个声音是如何制作出来的」，像听爵士
+乐关注旋律节奏的流动一样，用放大镜来观察电子音乐的音色和 pattern。如果我的猜测是
+对的，那么这种音乐不仅是对听觉的考验，还是对技术理解的考验。我相信因为电子乐带来
+的无限可能，听觉中的那种不熟悉感和新鲜感不会随着技术的进步而消退，就像 Blues 或
+Jazz 音乐里面的即兴一样，但是对技术的理解又的确是一个门槛。如果不理解技术，那么
+可能在音乐播放到一半，那种听觉本身的新鲜感就消退殆尽了。&lt;/p&gt;
+
+&lt;p&gt;对于听觉消费而言，我对这种音乐的看法是保守的，我不觉得这样的音乐会成为主流，起码
+在可见的未来不会。而如果要让这样的音乐突破小众的圈子，给予所有人平等的音乐制作的
+机会也许是一个办法。当下的个人计算机足以支持这样的音乐制作，只是缺乏一个足够好的
+平台让所有人都参与进来。Live Coding 可以算是一次尝试，即便这可能并不成功，也不是
+它的初衷。当技术的迷雾被更先进的技术破除了之后，所有人都有能力站在聆听音乐的另一
+面，也就是制作音乐上，那么音乐在听感上即便有再大的不适，也会被制作过程中的享受所
+补偿。实在不行的话，和现今流行的风格做结合也总会是个不错的办法。当年的 Synth Pop
+已经算是一次相当成功的尝试了。&lt;/p&gt;
+
+&lt;p&gt;这就是我现在对电子音乐的粗浅且不成熟的理解。如果这些理解能够在今后被推翻，我应该
+会很开心，那就起码证明了这种音乐的深度和生命力比我想象的更深更顽强。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 17 May 2020 00:00:00 -0400</pubDate>
+        <link>http://yilin-zhang.github.io/off-topic/2020/05/17/off-topic-try-to-understand-electronic-music.html</link>
+        <guid isPermaLink="true">http://yilin-zhang.github.io/off-topic/2020/05/17/off-topic-try-to-understand-electronic-music.html</guid>
+        
+        <category>杂谈</category>
+        
+        
+        <category>Off-topic</category>
+        
+      </item>
     
       <item>
         <title>Off-topic | 信息过载</title>
@@ -1551,122 +1624,6 @@ Ubuntu的部分flavors&lt;/div&gt;
         <pubDate>Thu, 31 Jan 2019 00:00:00 -0500</pubDate>
         <link>http://yilin-zhang.github.io/linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/2019/01/31/linux-guide-02-introduction.html</link>
         <guid isPermaLink="true">http://yilin-zhang.github.io/linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/2019/01/31/linux-guide-02-introduction.html</guid>
-        
-        <category>Linux</category>
-        
-        
-        <category>Linux生存指南</category>
-        
-      </item>
-    
-      <item>
-        <title>Linux生存指南01 | 序言</title>
-        <description>&lt;p&gt;「如果你没有认真地去尝试另一个系统，你会错过本来能看到的许多风景。它们不一定真的很美，或者让你值回票价，但这个世界上大多数的人都在big companies限定的路上使用电脑使用了一辈子。你确实安逸，但你从没看过道路以外的事物，而那才是真正的自由。&lt;/p&gt;
-
-&lt;p&gt;当你试图跨出那一步的时候，一开始必定都很艰难，但你并不孤单。在使用Linux的路上，你会找到热心的良师益友，嘴臭的世外高人，无数跟你一样的初学者，以及更重要的，你找回了当初那个勇于选择新道路的自己。&lt;/p&gt;
-
-&lt;p&gt;——要是不能选择的话，这世界也太黑暗了。」&lt;/p&gt;
-
-&lt;h1 id=&quot;序言&quot;&gt;序言&lt;/h1&gt;
-
-&lt;p&gt;为什么要把这篇Linux入门指南作为自己博客的开篇呢？&lt;/p&gt;
-
-&lt;p&gt;我从2018年6月开始正式使用Linux，所谓「正式」，就是彻底告别Windows，将自己笔记本电脑的操作系统换成Linux。我初次接触Linux比这更早一些，是大一还是大二已经记不清了。因此我并不是一开始就粗暴地甩开Windows直接投入Linux的怀抱。这看起来也不太现实，因为Windows和Linux（或者说Unix）之间的差别实在太大，如果没有一定的了解，是无法顺利把思维转换过来的。&lt;/p&gt;
-
-&lt;p&gt;我起初学习Linux的理由也许和大多数人不一样。我猜想大部分人学习Linux的原因是自己不得不用到Linux，比如要做智能小车，要架设或管理一个服务器，要做深度学习等等。而我只是因为觉得Linux很有趣。大部分说出这类话的人可能都是天才，我肯定是个例外。（Linus Torvalds因为觉得编程很有趣，写一个操作系统很有趣，所以写出了Linux。当然现在的Linux早就不是Linus一个人的功劳了。）我不过是一个不怎么会编程的「普通用户」，对一个开放且未知的操作系统世界充满好奇而已。&lt;/p&gt;
-
-&lt;p&gt;自己最初看的，是一部是个查过Linux中文教材的人都知道的教材——鸟哥的Linux私房菜。这部教材大而全，关于Linux的很多细节都覆盖到了，但是我没法完整读下去，因为其中的内容对初学者而言过于细枝末节，且其面向的读者是学习Linux服务器运维的人，这显然和我的初衷不符。我看了必要的一些章节后就自己在虚拟机上把玩，但也仅此而已。&lt;/p&gt;
-
-&lt;p&gt;2018年初，我决定尝试把Linux装在物理机上，和Windows并存（dual boot）。安装过程自己早已驾轻就熟，然而装好后发现操作系统的音频控制会出现莫名其妙的bug。经过网上的搜索，发现是自己电脑声卡或声卡驱动的问题，导致无法支持双系统，无奈之下只好移除Linux。还是活在Windows的世界最安稳啊，当时的我就是这么想的。但是对Linux的好奇仍然没有离开我。2018年6月，自己下定决心，换了系统。就这么简单。&lt;/p&gt;
-
-&lt;p&gt;然而当我走进这个崭新的世界后，我发现这个世界将自己引向了一个更大的世界——自由软件。很难形容这种奇妙的感觉，用一个不恰当的比喻，这就像是一个从前一心想成为富豪的穷人看到了共产主义，同时也看到了自己在社群中无法用金钱衡量的重要价值。&lt;/p&gt;
-
-&lt;p&gt;在这大半年间，自己也换过Linux发行版（distro hopping），遇到过无数问题，也为了解决问题或是发掘新鲜事物看了无数博客和Youtube视频，积攒了很多笔记。笔记的内容包括了很多问题解决（trouble shooting）的方法，Linux基础知识和一些工具的配置使用方法。而让我真正写一个入门指南的的原因，是给同学装操作系统和帮同学解决问题的经历。我费了一番功夫给没有任何技术需求的室友推荐Linux，并帮他安装。现在看来这么做有点蠢，因为不能说Linux优于其他操作系统，Linux也不适用于所有人，更不能强迫别人接受Linux的一切。而值得欣慰的是他现在已经完全适应Linux，并且不喜欢Windows了（笑）。在这个过程中，我渐渐明白一个真正的「普通用户」到底希望在Linux中得到什么。此外，帮其他有需求的同学解决问题时，我也感受到经验分享的重要性。在Linux或者自由软件的世界，经验分享无疑会帮助他人少走很多弯路，而这也是社区存在的目的。&lt;/p&gt;
-
-&lt;p&gt;让我真正走出写博客这一步的，是Sacha Chua写的一本小书，叫做A No-Excuses Guide to Blogging。我曾犹豫过是否真的要以这种方式分享自己的经验，因为感觉自己对这么一个深不见底的领域的了解实在太少太少了。但这本书中的一些话确实鼓舞到了我，让我感到经验的分享的必要性。我在下笔的同时，也希望自己能产出一系列高质量的文章，拒绝CSDN式复制粘贴，拒绝琐碎和冗杂，拒绝只有自己看得懂的自言自语。&lt;/p&gt;
-
-&lt;p&gt;总之，希望能以自己的绵薄之力帮到大家。&lt;/p&gt;
-
-&lt;h1 id=&quot;目标和为什么学&quot;&gt;目标和为什么学&lt;/h1&gt;
-
-&lt;p&gt;不同的人因为不同的目的学Linux。无论你的目标是什么，只要你对Linux不太了解，并且有了解的兴趣，我都希望你能够在我的系列博客中有所收获。但是我还是想事先说明，我的系列博客的目标是：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;帮助大家将Linux作为日常使用的桌面操作系统。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;很多对Linux有所了解的人都会认为这有些荒唐，尤其在知乎这个「反Linux」情绪严重的平台。为什么荒唐？主要的理由集中在：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;学习成本高&lt;/li&gt;
-    &lt;li&gt;容易遇到很多问题，都需要自己投入精力解决&lt;/li&gt;
-    &lt;li&gt;Linux的桌面环境不稳定&lt;/li&gt;
-    &lt;li&gt;没有多数Windows软件的支持&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;光是这四条就足以把人吓跑了。那为什么还要学习Linux，还把它作为日常使用的操作系统？我也给出我的理由：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;虽然学习成本高，但掌握后能显著提升工作效率&lt;/li&gt;
-    &lt;li&gt;用户控制系统，而非系统囚禁用户（对比Windows根本无法关闭的强制更新）&lt;/li&gt;
-    &lt;li&gt;自由软件生态（Linux本身开源免费，且其使用的所有软件几乎都是自由软件(开放源代码、免费、可自由修改和分发)，并且你会发现日常使用的90%的商业软件，都有自由软件的替代品，并且能满足多数人的日常需求，这样就用不着费尽心思装那些只能用到其5%的功能的几个G的商业软件还要想办法破解啦！）&lt;/li&gt;
-    &lt;li&gt;遇到的问题容易找到简洁明了的答案，对症下药，精准打击（对比Windows的重启、软件重装、系统重装三连）&lt;/li&gt;
-    &lt;li&gt;不会中病毒&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;最重要的一点：有趣&lt;/strong&gt;（最奇妙的事情莫过于自己成功解决问题后的感叹：「原来还可以这样！」）&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;那Linux桌面环境不稳定的问题呢？我的答案是：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;没有其他商业操作系统那么稳定，但够稳定。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Linux的桌面环境是Linux中一个可有可无的组件。当然啦，要是把它作为桌面操作系统，这必不可少。桌面环境的不稳定，主要来源于过高的可定制性，比如你可以自己写主题或插件把桌面改成任何你想要的样子。但根据亲身体会，桌面环境崩溃或出bug的发生频率实在太低，低到完全可以忽略。并且抛去桌面环境这个不稳定因素不谈，Linux实在太稳定了，不然为什么世界上大部分的服务器都在用Linux？这个优势完全可以弥补桌面环境的瑕疵。（桌面卡死？切到另一个TTY用命令行重启桌面环境就行了。）&lt;/p&gt;
-
-&lt;p&gt;最后，Windows软件的问题？我的答案是：&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;多数软件都能找到自由软件替代品，还有一些Windows软件可以用通过WINE来运行。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;如果不知道WINE是什么，别着急，在后面的章节会提到。大家关心的国内鹅厂出品的中国特色即时聊天工具可以在Linux上运行。至于Microsoft Office，这的确是Linux的软肋。虽说是软肋，这也是Microsoft亲手造成的，和Linux本身并无多大关系。理论上最好的替代品是Office Online，可惜国内OneDrive被墙，因此最好的替代品实际上是WPS Office。我明白这套软件会给很多人造成困扰，不过首先它能满足最基本的Office文档编辑需求，其次你今后会爱上纯文本文件，越来越少用Office。&lt;/p&gt;
-
-&lt;p&gt;说到这里，我相信仍然有很多人对Linux并没有产生多大兴趣，或者依然抱有疑惑。这很正常，因为Linux并不适合所有人。什么样的人不适合日常使用Linux？&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;认为Windows或macOS的功能完全满足需要，且对Linux的世界没有多少好奇&lt;/li&gt;
-    &lt;li&gt;需要在Windows或macOS下完成&lt;strong&gt;专业的&lt;/strong&gt;影音制作和编辑工作&lt;/li&gt;
-    &lt;li&gt;需要经常在Windows下玩游戏（即便很多在Steam平台的游戏，甚至Steam上的Windows独占游戏都能在Linux下，但使用Windows游戏仍然是一个更好的选择）&lt;/li&gt;
-    &lt;li&gt;不希望花费任何精力学习关于操作系统的知识、工具，也不愿意trouble shooting&lt;/li&gt;
-    &lt;li&gt;不能接受英文搜索和查阅英文文档&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;什么样的人适合使用Linux？&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;对Linux世界好奇&lt;/li&gt;
-    &lt;li&gt;希望提升工作效率（尤其是编程工作）&lt;/li&gt;
-    &lt;li&gt;学习工作上的硬性需求&lt;/li&gt;
-    &lt;li&gt;注重隐私、希望得到自由&lt;/li&gt;
-    &lt;li&gt;反感其它商业操作系统的强制更新对计算机和工作造成的影响&lt;/li&gt;
-    &lt;li&gt;想要真正掌控自己的计算机&lt;/li&gt;
-    &lt;li&gt;没钱买Windows正版（我是在开玩笑）&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;为什么开头要这么啰嗦写这么多呢？就是怕有人看了好久然后觉得自己被骗了！就像我在开头说的，用什么操作系统只是个人选择而已，我也不希望将自己的看法强加于他人。不过只要你真的感兴趣，就请看下去吧！&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 30 Jan 2019 00:00:00 -0500</pubDate>
-        <link>http://yilin-zhang.github.io/linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/2019/01/30/linux-guide-01-preface.html</link>
-        <guid isPermaLink="true">http://yilin-zhang.github.io/linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/2019/01/30/linux-guide-01-preface.html</guid>
         
         <category>Linux</category>
         
