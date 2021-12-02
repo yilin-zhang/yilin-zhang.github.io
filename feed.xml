@@ -6,8 +6,8 @@
 </description>
     <link>http://yilin-zhang.github.io/</link>
     <atom:link href="http://yilin-zhang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 21 Sep 2020 15:11:39 -0400</pubDate>
-    <lastBuildDate>Mon, 21 Sep 2020 15:11:39 -0400</lastBuildDate>
+    <pubDate>Wed, 01 Dec 2021 22:38:27 -0800</pubDate>
+    <lastBuildDate>Wed, 01 Dec 2021 22:38:27 -0800</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -72,7 +72,7 @@ Jazz 音乐里面的即兴一样，但是对技术的理解又的确是一个门
 &lt;p&gt;这就是我现在对电子音乐的粗浅且不成熟的理解。如果这些理解能够在今后被推翻，我应该
 会很开心，那就起码证明了这种音乐的深度和生命力比我想象的更深更顽强。&lt;/p&gt;
 </description>
-        <pubDate>Sun, 17 May 2020 00:00:00 -0400</pubDate>
+        <pubDate>Sun, 17 May 2020 00:00:00 -0700</pubDate>
         <link>http://yilin-zhang.github.io/off-topic/2020/05/17/off-topic-try-to-understand-electronic-music.html</link>
         <guid isPermaLink="true">http://yilin-zhang.github.io/off-topic/2020/05/17/off-topic-try-to-understand-electronic-music.html</guid>
         
@@ -130,7 +130,7 @@ Jazz 音乐里面的即兴一样，但是对技术的理解又的确是一个门
 &lt;p&gt;也许如今的「弱人工智能」已经超越人类了，因为人类的大脑已经缴械投降。我甚至觉得
 当人工智能有了人性，成了「强人工智能」，反倒能让人更有人性一些。&lt;/p&gt;
 </description>
-        <pubDate>Mon, 20 Apr 2020 00:00:00 -0400</pubDate>
+        <pubDate>Mon, 20 Apr 2020 00:00:00 -0700</pubDate>
         <link>http://yilin-zhang.github.io/off-topic/2020/04/20/off-topic-information-overload.html</link>
         <guid isPermaLink="true">http://yilin-zhang.github.io/off-topic/2020/04/20/off-topic-information-overload.html</guid>
         
@@ -174,7 +174,7 @@ Jazz 音乐里面的即兴一样，但是对技术的理解又的确是一个门
 时，也许质量与数量的讨论是有益的，但只是对大多数人来说，这并不应该是必需品。&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 19 Feb 2020 00:00:00 -0500</pubDate>
+        <pubDate>Wed, 19 Feb 2020 00:00:00 -0800</pubDate>
         <link>http://yilin-zhang.github.io/off-topic/2020/02/19/off-topic-quality-quantity-habit.html</link>
         <guid isPermaLink="true">http://yilin-zhang.github.io/off-topic/2020/02/19/off-topic-quality-quantity-habit.html</guid>
         
@@ -182,207 +182,6 @@ Jazz 音乐里面的即兴一样，但是对技术的理解又的确是一个门
         
         
         <category>Off-topic</category>
-        
-      </item>
-    
-      <item>
-        <title>Conversation | AI与艺术创作</title>
-        <description>&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
-
-&lt;p&gt;这个专栏记录了我和准漫画家兄弟的聊天内容。正文完全以对话形式呈现。这么做的主要原因是自己偷懒，不想把所有内容重新整理，然后写一篇大作文。而且当下，一段只有一句的文章才是主流。&lt;/p&gt;
-
-&lt;p&gt;这次的讨论话题是「AI与艺术创作」。究竟AI是否适合艺术创作？&lt;/p&gt;
-
-&lt;p&gt;加粗的段落代表「我」，其他段落代表「兄弟」。&lt;/p&gt;
-
-&lt;h1 id=&quot;对话&quot;&gt;对话&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;说起来我又有了一点感悟。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;你说。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;当机器学习得到的艺术效果和随机数生成的效果不分伯仲的时候，机器学习还有意义吗？&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;好问题。&lt;/p&gt;
-
-&lt;p&gt;应该没有意义吧?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;我现在越来越感觉到机器学习在艺术领域存在滥用。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;如果是实验性质的，我完全支持。但如果你追求结果，并且希望这是个学习的过程，那机器学习会有负面作用。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;你的意思是，本质上来说，机器学习并没有能超越随机数生产的艺术效果？&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;随机数+手工规则往往还好于深度学习。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;甚至跟随机数一样……&lt;/p&gt;
-
-&lt;p&gt;甚至随机数更好。&lt;/p&gt;
-
-&lt;p&gt;因为人类做不到随机数。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;我觉得问题在这里：艺术这个东西必须要藉由「人」来阐述。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;这很有意思。&lt;/p&gt;
-
-&lt;p&gt;你想，我对你说「随机猜个1到100」，其实你的答案是有规律的，你会有偏爱的数字，或者你选了一个数字，下次就不会选了，但机器的随机数就是真的随机数。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;是的，不过你这个例子有点类似随机数+手工规则vs不受控制的随机数。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;当然。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;我是这么想的：艺术是比较个人化（personal）的，比如不同的钢琴家演绎同一个曲子是不一样的。而机器学习坏就坏在，没有个性（personality）。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;但是手工规则可以。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;你即便输入上亿的曲子做训练，即便能让机器懂得音乐的规律，那也最多也只能做到音阶、和弦这种有共性/共识的东西，因为这是大部分音乐的交集。如果一百个人有一百种阐释，机器学不会那个个性或是偏好，并且因为个性化、偏好的成因过于复杂，纯数据很难抓到构成其根本的东西。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;但是为什么手工规则+随机数好呢？因为人在手工的部分实际上控制了随机，加入了个性的部分。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;懂了。&lt;/p&gt;
-
-&lt;p&gt;wow！&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;因为你知道概率分布了，它某种程度也是一种决定性（deterministic）的东西，不全是随机（stochastic）。虽然学界不是这么理解和分类的，但我相信从人类主观选择的角度是这样。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;那做初级的应用，是不是就是效果器。比如给声音加上颤音，本质上就是给do这个音加上一种随机效果。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;有点类似，比如说你想让这个颤音调制没有固定的频率，随机就有用了。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;对的。&lt;/p&gt;
-
-&lt;p&gt;但是音阶，和声，都还是人类的做的，本质上也是一种手工规则。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;对。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;现在很多的误用是，把无法控制的随机（AI）当随机用。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;而且曾经的算法作曲我认为才是真正的算法作曲。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;这又牵扯到我觉得很关键的一点：可解释性。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;请说。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;我觉得真正的艺术是需要有意图（intention）的，虽然你的表达可以没有什么具体的意义。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;这个有意思。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;意图的表现是需要刻意为之的，即便那个刻意可以是你表现为不刻意的刻意。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;很绕……&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;比如说在纸上乱画，你事先安排自己就是要乱画，虽然过程是无目的的乱画。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;即使是最抽象的现代艺术，本质上也是intentional的。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;没错。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;那么可解释性就是说，我要有能力解读我自己的作品。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;如果你刻意用AI制造AI的效果，那就有艺术性了。但是很多时候并没有。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;比如我要AI作曲，我要的结果是做出来的曲子好听，但是注意，这个不是艺术创作中的「意图」，有本质区别。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;当你这么做的时候，你实际上把决定权交给了机器，而机器是个黑箱。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;AI制作的艺术的艺术性并不在于AI制造的艺术本身，而在于「AI制造」这四个字。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;对！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;你get到了。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I get it。&lt;/p&gt;
-
-&lt;p&gt;那些算法，只是制造黑箱的方法，而不是黑箱里的东西。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;黑箱里的东西你无法解读，那么相比之下艺术性就少很多了，你只能从「结果好不好听」这个肤浅的层次去理解。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;机器学习的算法是这样的，但是以前有些基于数学的算法，有明确的公式，那就不是黑箱了。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;那些基于明确公式的算法有点像管道制造。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;是的。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;你不觉得当下有关机器学习的一切都十分刻意吗？曾经的照相机和电吉他都是不经意间发明的。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;是的，有点病态了。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;因为当时有了新技术，而且这个技术也比较成熟了，新艺术就顺势出来，为人类新添了很多艺术表达方式。但是现在机器学习/深度学习刚刚起步，而且上来就要妄图代替人类独有的艺术表达能力。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;我不反对（甚至是支持）用机器学习增强表现力，在简单的任务上，机器可以fake出人类的那个intention。但这是有个阈值的，我觉得手工规则+随机就是一个阈值。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;好像有点get到了。&lt;/p&gt;
-
-&lt;p&gt;弱人工智能本质上始终无法与随机数匹敌。在真正的强人工智能（可能永远不会出现）之前，都是没意义的，或者说意义很小。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;这个和非艺术领域的机器学习有那么一点点像（但并不一样，艺术相关的东西更复杂了），如果神经网络无法打败手工特征，那也没有意义。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;所以我觉得弱人工智能不适合艺术创作，仅适合于增强表现力，也就是把部分的人类创作交给黑箱，让结果变漂亮，本质上是提升浅层次的审美（比如是否悦耳）。虽然我觉得从艺术本质上是扣分的，但如果只追求浅层次的审美结果也没什么。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;最开始的艺术都是好听和好看，比如古典绘画、古典音乐，但他们都没有触及本质。&lt;/p&gt;
-
-&lt;p&gt;艺术像数学一样，一开始数学都是为了计算一个苹果和两个苹果等于三个苹果，但背后的数学/艺术是某种别的更本质的东西&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;没错，我感觉数学也是艺术了。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;我也这么觉得！&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;艺术的本质可能可以回归数学，但是不应该是数据。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;这就是每本艺术史都在说但不明说的东西：「漂亮不是艺术」。&lt;/p&gt;
-
-&lt;p&gt;艺术能帮我们达到美、好看，但他还可以去很多地方，来自于应用又会回馈于应用但本质绝非应用。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;是的。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;总之还是需要人类。&lt;/p&gt;
-
-&lt;p&gt;人工智能这个话题太大了，很多时候我们只是在灌水，全是垃圾。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;对的，而且大多时候，技术上的事情让那些AI专家做就可以了，其他领域的人应该只把AI当工具。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;这个黑箱还有个很大的缺点，那就是会让你失去对事物本质了解的兴趣。就我们系而言，太多人都在搞机器学习，但我觉得应该把注意力放在声音（sound）上。信号生成处理、编程、交互设计、音乐认知和感知……这些才是根本。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;如果是在音乐信息检索的角度，使用机器学习我觉得合情合理，甚至相当合适，但是如果去做音乐创作，那可能就得再想想了。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;不需要机器学习就可以做到的，宁愿不用机器学习。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;还是要分清主次。&lt;/p&gt;
-
-&lt;p&gt;比如对漫画来说，画技是没那么重要的。机器学习音乐应该也是这样，音乐才是根本。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;没错，要关注的是音乐，或者说宽点就是声音。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;所以这就是我最近渐渐想通的事情。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;我相信所有那些去做莫名其妙的事情的艺术家，起码都理解了“艺术”是什么。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;我也想想通……&lt;/p&gt;
-
-&lt;p&gt;最近算是小半个瓶颈期吧。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;我觉得大兄弟已经想通很多东西了吧。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;我也学到了一课，艺术，intention。&lt;/p&gt;
-
-&lt;p&gt;其实我想的还是关于比较通俗的东西。&lt;/p&gt;
-
-&lt;p&gt;我现在有点理解，通俗艺术家的本质是一个桥梁。沟通着艺术家和观者的桥梁。&lt;/p&gt;
-
-&lt;p&gt;我还不能很好的说清楚。纯艺也许无关欣赏，重点是intention这件事情。桥梁本身重要，而不是结果和出发点。&lt;/p&gt;
-
-&lt;p&gt;（完）&lt;/p&gt;
-</description>
-        <pubDate>Sun, 24 Nov 2019 00:00:00 -0500</pubDate>
-        <link>http://yilin-zhang.github.io/conversation/2019/11/24/conversation-ai-art-creation.html</link>
-        <guid isPermaLink="true">http://yilin-zhang.github.io/conversation/2019/11/24/conversation-ai-art-creation.html</guid>
-        
-        <category>艺术</category>
-        
-        <category>AI</category>
-        
-        
-        <category>Conversation</category>
         
       </item>
     
@@ -551,7 +350,7 @@ MacOS 还是少之又少。但是了解并使用 Linux 制作音乐确实是一�
 一个 VST 插件内置的 MIDI 文件，在这个论坛上找到了一个网友写的 Ruby 脚本（可能这
 里的 musicians 都是 hackers 吧^^）。&lt;/p&gt;
 </description>
-        <pubDate>Sat, 13 Apr 2019 00:00:00 -0400</pubDate>
+        <pubDate>Sat, 13 Apr 2019 00:00:00 -0700</pubDate>
         <link>http://yilin-zhang.github.io/tutorial/2019/04/13/tutorial-linux-audio-setup.html</link>
         <guid isPermaLink="true">http://yilin-zhang.github.io/tutorial/2019/04/13/tutorial-linux-audio-setup.html</guid>
         
@@ -681,7 +480,7 @@ MacOS 还是少之又少。但是了解并使用 Linux 制作音乐确实是一�
 
 &lt;p&gt;在使用 Linux 后，我才深切地感受到「工具」本身是如何改变人的思维的。我们都能认识到，先有想法，再去通过工具去实现想法，但是「工具改变想法」这一点常被人忽略。可能这就是学习新工具的真正意义所在吧。&lt;/p&gt;
 </description>
-        <pubDate>Mon, 01 Apr 2019 00:00:00 -0400</pubDate>
+        <pubDate>Mon, 01 Apr 2019 00:00:00 -0700</pubDate>
         <link>http://yilin-zhang.github.io/off-topic/2019/04/01/off-topic-how-to-manage-files.html</link>
         <guid isPermaLink="true">http://yilin-zhang.github.io/off-topic/2019/04/01/off-topic-how-to-manage-files.html</guid>
         
@@ -1000,7 +799,7 @@ MacOS 还是少之又少。但是了解并使用 Linux 制作音乐确实是一�
   &lt;li&gt;&lt;a href=&quot;https://wiki.debian.org/CheckInstall&quot;&gt;CheckInstall - Debian Wiki&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Sat, 09 Mar 2019 00:00:00 -0500</pubDate>
+        <pubDate>Sat, 09 Mar 2019 00:00:00 -0800</pubDate>
         <link>http://yilin-zhang.github.io/linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/2019/03/09/linux-guide-05-package-management.html</link>
         <guid isPermaLink="true">http://yilin-zhang.github.io/linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/2019/03/09/linux-guide-05-package-management.html</guid>
         
@@ -1207,7 +1006,7 @@ MacOS 还是少之又少。但是了解并使用 Linux 制作音乐确实是一�
   &lt;/ol&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Fri, 08 Feb 2019 00:00:00 -0500</pubDate>
+        <pubDate>Fri, 08 Feb 2019 00:00:00 -0800</pubDate>
         <link>http://yilin-zhang.github.io/linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/2019/02/08/linux-guide-04-install-ubuntu.html</link>
         <guid isPermaLink="true">http://yilin-zhang.github.io/linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/2019/02/08/linux-guide-04-install-ubuntu.html</guid>
         
@@ -1492,7 +1291,7 @@ Linux目录结构示意图&lt;/div&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Fri, 01 Feb 2019 00:00:00 -0500</pubDate>
+        <pubDate>Fri, 01 Feb 2019 00:00:00 -0800</pubDate>
         <link>http://yilin-zhang.github.io/linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/2019/02/01/linux-guide-03-directory-structure-file-system-and-mounting.html</link>
         <guid isPermaLink="true">http://yilin-zhang.github.io/linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/2019/02/01/linux-guide-03-directory-structure-file-system-and-mounting.html</guid>
         
@@ -1621,9 +1420,125 @@ Ubuntu的部分flavors&lt;/div&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Thu, 31 Jan 2019 00:00:00 -0500</pubDate>
+        <pubDate>Thu, 31 Jan 2019 00:00:00 -0800</pubDate>
         <link>http://yilin-zhang.github.io/linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/2019/01/31/linux-guide-02-introduction.html</link>
         <guid isPermaLink="true">http://yilin-zhang.github.io/linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/2019/01/31/linux-guide-02-introduction.html</guid>
+        
+        <category>Linux</category>
+        
+        
+        <category>Linux生存指南</category>
+        
+      </item>
+    
+      <item>
+        <title>Linux生存指南01 | 序言</title>
+        <description>&lt;p&gt;「如果你没有认真地去尝试另一个系统，你会错过本来能看到的许多风景。它们不一定真的很美，或者让你值回票价，但这个世界上大多数的人都在big companies限定的路上使用电脑使用了一辈子。你确实安逸，但你从没看过道路以外的事物，而那才是真正的自由。&lt;/p&gt;
+
+&lt;p&gt;当你试图跨出那一步的时候，一开始必定都很艰难，但你并不孤单。在使用Linux的路上，你会找到热心的良师益友，嘴臭的世外高人，无数跟你一样的初学者，以及更重要的，你找回了当初那个勇于选择新道路的自己。&lt;/p&gt;
+
+&lt;p&gt;——要是不能选择的话，这世界也太黑暗了。」&lt;/p&gt;
+
+&lt;h1 id=&quot;序言&quot;&gt;序言&lt;/h1&gt;
+
+&lt;p&gt;为什么要把这篇Linux入门指南作为自己博客的开篇呢？&lt;/p&gt;
+
+&lt;p&gt;我从2018年6月开始正式使用Linux，所谓「正式」，就是彻底告别Windows，将自己笔记本电脑的操作系统换成Linux。我初次接触Linux比这更早一些，是大一还是大二已经记不清了。因此我并不是一开始就粗暴地甩开Windows直接投入Linux的怀抱。这看起来也不太现实，因为Windows和Linux（或者说Unix）之间的差别实在太大，如果没有一定的了解，是无法顺利把思维转换过来的。&lt;/p&gt;
+
+&lt;p&gt;我起初学习Linux的理由也许和大多数人不一样。我猜想大部分人学习Linux的原因是自己不得不用到Linux，比如要做智能小车，要架设或管理一个服务器，要做深度学习等等。而我只是因为觉得Linux很有趣。大部分说出这类话的人可能都是天才，我肯定是个例外。（Linus Torvalds因为觉得编程很有趣，写一个操作系统很有趣，所以写出了Linux。当然现在的Linux早就不是Linus一个人的功劳了。）我不过是一个不怎么会编程的「普通用户」，对一个开放且未知的操作系统世界充满好奇而已。&lt;/p&gt;
+
+&lt;p&gt;自己最初看的，是一部是个查过Linux中文教材的人都知道的教材——鸟哥的Linux私房菜。这部教材大而全，关于Linux的很多细节都覆盖到了，但是我没法完整读下去，因为其中的内容对初学者而言过于细枝末节，且其面向的读者是学习Linux服务器运维的人，这显然和我的初衷不符。我看了必要的一些章节后就自己在虚拟机上把玩，但也仅此而已。&lt;/p&gt;
+
+&lt;p&gt;2018年初，我决定尝试把Linux装在物理机上，和Windows并存（dual boot）。安装过程自己早已驾轻就熟，然而装好后发现操作系统的音频控制会出现莫名其妙的bug。经过网上的搜索，发现是自己电脑声卡或声卡驱动的问题，导致无法支持双系统，无奈之下只好移除Linux。还是活在Windows的世界最安稳啊，当时的我就是这么想的。但是对Linux的好奇仍然没有离开我。2018年6月，自己下定决心，换了系统。就这么简单。&lt;/p&gt;
+
+&lt;p&gt;然而当我走进这个崭新的世界后，我发现这个世界将自己引向了一个更大的世界——自由软件。很难形容这种奇妙的感觉，用一个不恰当的比喻，这就像是一个从前一心想成为富豪的穷人看到了共产主义，同时也看到了自己在社群中无法用金钱衡量的重要价值。&lt;/p&gt;
+
+&lt;p&gt;在这大半年间，自己也换过Linux发行版（distro hopping），遇到过无数问题，也为了解决问题或是发掘新鲜事物看了无数博客和Youtube视频，积攒了很多笔记。笔记的内容包括了很多问题解决（trouble shooting）的方法，Linux基础知识和一些工具的配置使用方法。而让我真正写一个入门指南的的原因，是给同学装操作系统和帮同学解决问题的经历。我费了一番功夫给没有任何技术需求的室友推荐Linux，并帮他安装。现在看来这么做有点蠢，因为不能说Linux优于其他操作系统，Linux也不适用于所有人，更不能强迫别人接受Linux的一切。而值得欣慰的是他现在已经完全适应Linux，并且不喜欢Windows了（笑）。在这个过程中，我渐渐明白一个真正的「普通用户」到底希望在Linux中得到什么。此外，帮其他有需求的同学解决问题时，我也感受到经验分享的重要性。在Linux或者自由软件的世界，经验分享无疑会帮助他人少走很多弯路，而这也是社区存在的目的。&lt;/p&gt;
+
+&lt;p&gt;让我真正走出写博客这一步的，是Sacha Chua写的一本小书，叫做A No-Excuses Guide to Blogging。我曾犹豫过是否真的要以这种方式分享自己的经验，因为感觉自己对这么一个深不见底的领域的了解实在太少太少了。但这本书中的一些话确实鼓舞到了我，让我感到经验的分享的必要性。我在下笔的同时，也希望自己能产出一系列高质量的文章，拒绝CSDN式复制粘贴，拒绝琐碎和冗杂，拒绝只有自己看得懂的自言自语。&lt;/p&gt;
+
+&lt;p&gt;总之，希望能以自己的绵薄之力帮到大家。&lt;/p&gt;
+
+&lt;h1 id=&quot;目标和为什么学&quot;&gt;目标和为什么学&lt;/h1&gt;
+
+&lt;p&gt;不同的人因为不同的目的学Linux。无论你的目标是什么，只要你对Linux不太了解，并且有了解的兴趣，我都希望你能够在我的系列博客中有所收获。但是我还是想事先说明，我的系列博客的目标是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;帮助大家将Linux作为日常使用的桌面操作系统。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;很多对Linux有所了解的人都会认为这有些荒唐，尤其在知乎这个「反Linux」情绪严重的平台。为什么荒唐？主要的理由集中在：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;学习成本高&lt;/li&gt;
+    &lt;li&gt;容易遇到很多问题，都需要自己投入精力解决&lt;/li&gt;
+    &lt;li&gt;Linux的桌面环境不稳定&lt;/li&gt;
+    &lt;li&gt;没有多数Windows软件的支持&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;光是这四条就足以把人吓跑了。那为什么还要学习Linux，还把它作为日常使用的操作系统？我也给出我的理由：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;虽然学习成本高，但掌握后能显著提升工作效率&lt;/li&gt;
+    &lt;li&gt;用户控制系统，而非系统囚禁用户（对比Windows根本无法关闭的强制更新）&lt;/li&gt;
+    &lt;li&gt;自由软件生态（Linux本身开源免费，且其使用的所有软件几乎都是自由软件(开放源代码、免费、可自由修改和分发)，并且你会发现日常使用的90%的商业软件，都有自由软件的替代品，并且能满足多数人的日常需求，这样就用不着费尽心思装那些只能用到其5%的功能的几个G的商业软件还要想办法破解啦！）&lt;/li&gt;
+    &lt;li&gt;遇到的问题容易找到简洁明了的答案，对症下药，精准打击（对比Windows的重启、软件重装、系统重装三连）&lt;/li&gt;
+    &lt;li&gt;不会中病毒&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;最重要的一点：有趣&lt;/strong&gt;（最奇妙的事情莫过于自己成功解决问题后的感叹：「原来还可以这样！」）&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;那Linux桌面环境不稳定的问题呢？我的答案是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;没有其他商业操作系统那么稳定，但够稳定。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Linux的桌面环境是Linux中一个可有可无的组件。当然啦，要是把它作为桌面操作系统，这必不可少。桌面环境的不稳定，主要来源于过高的可定制性，比如你可以自己写主题或插件把桌面改成任何你想要的样子。但根据亲身体会，桌面环境崩溃或出bug的发生频率实在太低，低到完全可以忽略。并且抛去桌面环境这个不稳定因素不谈，Linux实在太稳定了，不然为什么世界上大部分的服务器都在用Linux？这个优势完全可以弥补桌面环境的瑕疵。（桌面卡死？切到另一个TTY用命令行重启桌面环境就行了。）&lt;/p&gt;
+
+&lt;p&gt;最后，Windows软件的问题？我的答案是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;多数软件都能找到自由软件替代品，还有一些Windows软件可以用通过WINE来运行。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;如果不知道WINE是什么，别着急，在后面的章节会提到。大家关心的国内鹅厂出品的中国特色即时聊天工具可以在Linux上运行。至于Microsoft Office，这的确是Linux的软肋。虽说是软肋，这也是Microsoft亲手造成的，和Linux本身并无多大关系。理论上最好的替代品是Office Online，可惜国内OneDrive被墙，因此最好的替代品实际上是WPS Office。我明白这套软件会给很多人造成困扰，不过首先它能满足最基本的Office文档编辑需求，其次你今后会爱上纯文本文件，越来越少用Office。&lt;/p&gt;
+
+&lt;p&gt;说到这里，我相信仍然有很多人对Linux并没有产生多大兴趣，或者依然抱有疑惑。这很正常，因为Linux并不适合所有人。什么样的人不适合日常使用Linux？&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;认为Windows或macOS的功能完全满足需要，且对Linux的世界没有多少好奇&lt;/li&gt;
+    &lt;li&gt;需要在Windows或macOS下完成&lt;strong&gt;专业的&lt;/strong&gt;影音制作和编辑工作&lt;/li&gt;
+    &lt;li&gt;需要经常在Windows下玩游戏（即便很多在Steam平台的游戏，甚至Steam上的Windows独占游戏都能在Linux下，但使用Windows游戏仍然是一个更好的选择）&lt;/li&gt;
+    &lt;li&gt;不希望花费任何精力学习关于操作系统的知识、工具，也不愿意trouble shooting&lt;/li&gt;
+    &lt;li&gt;不能接受英文搜索和查阅英文文档&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;什么样的人适合使用Linux？&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;对Linux世界好奇&lt;/li&gt;
+    &lt;li&gt;希望提升工作效率（尤其是编程工作）&lt;/li&gt;
+    &lt;li&gt;学习工作上的硬性需求&lt;/li&gt;
+    &lt;li&gt;注重隐私、希望得到自由&lt;/li&gt;
+    &lt;li&gt;反感其它商业操作系统的强制更新对计算机和工作造成的影响&lt;/li&gt;
+    &lt;li&gt;想要真正掌控自己的计算机&lt;/li&gt;
+    &lt;li&gt;没钱买Windows正版（我是在开玩笑）&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;为什么开头要这么啰嗦写这么多呢？就是怕有人看了好久然后觉得自己被骗了！就像我在开头说的，用什么操作系统只是个人选择而已，我也不希望将自己的看法强加于他人。不过只要你真的感兴趣，就请看下去吧！&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 30 Jan 2019 00:00:00 -0800</pubDate>
+        <link>http://yilin-zhang.github.io/linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/2019/01/30/linux-guide-01-preface.html</link>
+        <guid isPermaLink="true">http://yilin-zhang.github.io/linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/2019/01/30/linux-guide-01-preface.html</guid>
         
         <category>Linux</category>
         
