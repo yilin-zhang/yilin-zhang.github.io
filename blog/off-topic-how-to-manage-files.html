@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-09-04 Sun 14:23 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Off-topic | 如何管理自己的文件</title>
+<meta name="author" content="Yilin Zhang" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/css/rethink.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav>
+  <a href="/">&lt; Home</a>
+  <a href="/blog">&lt; Blog</a>
+  <a href="/about.html">&lt; About</a>
+</nav>
+<div id="updated">Updated: 2022-09-04 Sun 14:05</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">Off-topic | 如何管理自己的文件</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org070d7a5">1. 个人文件</a>
+<ul>
+<li><a href="#org589873c">1.1. 分类</a></li>
+<li><a href="#orgb438eff">1.2. 归档</a></li>
+<li><a href="#org2d1444f">1.3. 软链接</a></li>
+<li><a href="#orgc2d92c7">1.4. 回收站</a></li>
+</ul>
+</li>
+<li><a href="#org9e9fdc4">2. 配置文件</a>
+<ul>
+<li><a href="#org9b72785">2.1. 软链接</a></li>
+<li><a href="#org8cd5332">2.2. XDG</a></li>
+</ul>
+</li>
+<li><a href="#orgfaeac74">3. 后记</a></li>
+</ul>
+</div>
+</div>
+<p>
+Off-topic 是一个新开的分类，讨论其它有趣的话题。
+</p>
+
+<p>
+这次的话题是 Linux 下的文件管理。
+</p>
+
+<p>
+我觉得 Linux 有一种让人养成良好习惯的力量，这其中就包括养成管理文件的习惯。
+</p>
+
+<p>
+我们在日常使用中会产生很多文件，也许是记录工作内容的文本文档、MS Office文档，或者是一些应用程序的配置文件和日志文件。如果不加以整理，很容易发生下面几个问题：
+</p>
+<ul class="org-ul">
+<li>经常找不到文件；</li>
+<li>经常误删文件；</li>
+<li>在重装系统后或使用另一个系统时，难以还原熟悉的配置。</li>
+</ul>
+
+<p>
+前两个问题和个人文件整理有关，最后一个问题和配置文件有关。
+</p>
+
+<div id="outline-container-org070d7a5" class="outline-2">
+<h2 id="org070d7a5"><span class="section-number-2">1.</span> 个人文件</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+先来说个人文件整理。这点对很多人来说可能是最有用的。这里说的「个人文件」主要指的是个人文档，比如 MS Office 文档（实验报告、项目申请书、电子表格等）、代码源文件之类。音乐、电影这些，相信大家也不会找不到吧XD。
+</p>
+
+<p>
+我总结一下自己管理个人文件的一些经验，大致分为四点：分类、归档、软链接和回收站。
+</p>
+</div>
+
+<div id="outline-container-org589873c" class="outline-3">
+<h3 id="org589873c"><span class="section-number-3">1.1.</span> 分类</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+<b>文件的分类是这四点中最重要的。良好的分类可以大大降低找不到文件或者误删文件的概率。</b>
+</p>
+
+<p>
+其中最重要的是搞清楚要把文件放在哪里。
+</p>
+
+<p>
+拿 Linux 中用户的家目录来说，有很多软件会将他们的配置文件或是存放配置文件的目录，直接放在这个目录下面，一般这些文件或目录都是以 <code>.</code> 开头的隐藏文件或目录。除此之外，有些软件的工程目录也会放在家目录下（比如 Ardour），或者也会放在家目录的「文档」目录下（比如 MuseScore）。如果直接将个人文件不加区别地和这些文件放在一起，很难做整理。
+</p>
+
+<p>
+但这些目录就真的没有用了吗？也未必。不同的目录的作用不同。我们不妨将「个人文件」分为三个等级：用户域、项目域、个人域。（这三个词都是我自创的 XD）
+</p>
+
+<p>
+家目录是用来存放「用户域」的文件的，包括一些用户专属的本地软件，编程语言相关的目录。这些一般都不算是狭义上的「个人文件」。除此之外，一些非常常用的文件也可以直接放在家目录下，或者在家目录下新建一个目录放置，比如常用的脚本，经常打开的笔记文件等等。
+</p>
+
+<p>
+「文档」目录实际上比家目录干净得多，因此可以存放「项目域」文件。比如当前写的代码的源文件或工程文件就可以直接在「文档」下面新建目录放置。
+</p>
+
+<p>
+为了保存个人的文档（课件、实验报告、项目申请书、论文等），我的习惯是单独建立一个目录，将所有的文件放在这个目录下面。具体的位置无所谓（我自己是放在「文档」下）。
+</p>
+
+<p>
+做到了这一点，其实就已经分类得很不错了。再下来就是各个目录内部的细分。不过这件事相信大家都知道应该怎么做，只要找到适合自己的方法即可。
+</p>
+</div>
+</div>
+<div id="outline-container-orgb438eff" class="outline-3">
+<h3 id="orgb438eff"><span class="section-number-3">1.2.</span> 归档</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+<b>适时归档，keep yourself simple 。</b>
+</p>
+
+<p>
+如果你已经将所有个人文件都分类存放了，那很好。但是如果不适时归档，当东西越来越多，你也就越来越难找到想到的文件。
+</p>
+
+<p>
+人是懒惰的，尤其是当自己的硬盘有 1TB 的时候。
+</p>
+
+<p>
+另一个适时归档的理由是，如果哪一天需要备份文件，那么也许有将近 1TB 的个人文件躺在硬盘里等着你。
+</p>
+
+<p>
+人是懒惰的，尤其是宁愿花钱充会员也不愿省钱买一个移动硬盘的时候。
+</p>
+
+<p>
+没错，这个问题的答案很简答，买一个移动硬盘，每隔一段时间就将文件归档，存放在移动硬盘。自己硬盘上只留下有用的文件。
+</p>
+
+<p>
+另外，移动硬盘还能拿来做备份，一举两得。
+</p>
+</div>
+</div>
+<div id="outline-container-org2d1444f" class="outline-3">
+<h3 id="org2d1444f"><span class="section-number-3">1.3.</span> 软链接</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+<b>软链接就是「快捷方式」，但比你想象的有用。</b>
+</p>
+
+<p>
+有了软链接，常用的文件夹就不必放在桌面了，而是可以按照上面说的分类方法存放，随后创建一个软链接放在桌面，指向自己的文件夹即可。
+</p>
+
+<p>
+这就是软链接的第一个用处——将工作目录和实际目录分开。
+</p>
+
+<p>
+我们总是可以在桌面上放置自己需要处理的文件，只不过这些文件都只是指向实际文件路径的软链接。这样就可以保证在文件合理分类的情况下，高效处理这些文件。等到文件处理完毕，暂时无需使用时，删除软链接即可。如果不使用软链接，每次就得在文件处理完毕时才分类，这会加大分类难度。因为文件数量在工作时往往会增多，文件越多，分类的成本就越大。而且堆积越多，人的惰性会让人越难处理这些文件。很多人的桌面上放着一大堆文件，往往是这个原因导致。
+</p>
+
+<p>
+软链接还有第二个用处——作为文件的引用而非拷贝，节省空间。
+</p>
+
+<p>
+学过编程的同学一定知道引用和拷贝的区别。假如你的两个工程目录下需要用到同一个数据集，但这个数据集有好几个G，那么较好的方法不是将数据集拷贝到两个工程目录下，而是在两个目录下放置指向这个数据集目录的软链接。对于文件系统而言，软链接和目录是有区别的，因为软链接本身只是一个指向文件目录的特殊文件。但是对于文件系统之上的应用程序，当需要访问指定路径时，软链接和目录并无区别。因此软链接作为目录的引用，能够为用户节省磁盘空间。
+</p>
+
+<p>
+软链接还有第三个用处——便于配置文件的管理。下文再提。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc2d92c7" class="outline-3">
+<h3 id="orgc2d92c7"><span class="section-number-3">1.4.</span> 回收站</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+<b>回收站是删除操作的缓冲区。</b>
+</p>
+
+<p>
+<code>Shift+Del</code> 或是使用命令行 <code>rm</code> 一个文件是有风险的，因为这意味着永久删除。因此在做此操作前必须谨慎。
+</p>
+
+<p>
+不过在日常使用时，我们往往难以衡量当前想要删除的文件的重要程度，也不能确定我们一定不会误删。这时候将文件放到回收站是一个比较好的办法。
+</p>
+
+<p>
+回收站可以作为删除操作的缓冲区。先将文件放入回收站，过一段时间确认回收站中的文件确实无用后，再做彻底删除。
+</p>
+
+<p>
+如果使用命令行，可以使用 <code>gio trash</code> 命令将文件移动到回收站，而不是使用 <code>rm</code> 彻底删除。为了方便，可以起一个别名，比如我就使用 <code>trash</code> 命令代替 <code>gio trash</code> ：
+</p>
+<div class="org-src-container">
+<pre class="src src-sh"><span style="font-weight: bold;">alias</span> <span style="font-weight: bold; font-style: italic;">trash</span>=<span style="font-style: italic;">'gio trash'</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org9e9fdc4" class="outline-2">
+<h2 id="org9e9fdc4"><span class="section-number-2">2.</span> 配置文件</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Linux 中的大部分配置文件是以 dotfiles 的形式存在的。这里的「配置文件」主要是用户常用的个性化定制文件，不包括多数 GUI 软件的配置文件。
+</p>
+
+<p>
+dotfiles 的意思其实就是以 <code>.</code> 开头的文件。在 Linux 中属于隐藏文件。这些文件往往是一些配置文件，一般都放在用户目录 <code>~</code> 下面。比如 bash shell 的存在感很强的配置文件 <code>.bashrc</code> ，或者是 Emacs 的配置文件 <code>.emacs</code> 等。另外还有一些配置文件存放在以 <code>.</code> 开头的隐藏目录中。比如大多数软件的配置文件都存放在 <code>~/.config</code> 目录下面。
+</p>
+
+<p>
+这些配置文件中，大部分是软件自行生成的，用户不太需要管理。而有些配置文件则经常被用户修改，比如 <code>.bashrc</code> 或 zshell 的 <code>.zshrc</code> 等。
+</p>
+</div>
+
+<div id="outline-container-org9b72785" class="outline-3">
+<h3 id="org9b72785"><span class="section-number-3">2.1.</span> 软链接</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+软链接是管理配置文件的一个好办法。我们可以将所有的自定义配置文件统一放在同一个目录下，再软链接到 <code>~</code> 下面。这么做方便了用户的管理，也方便移动。
+</p>
+
+<p>
+用户在查找自定义的配置文件时，可以直接进入自己的目录查看。这么做也不会出现因为忘了自己的 dotfile 叫什么名字而找不到的情况。另外当更换系统前备份时，也可以直接将该配置文件目录备份，这样就无需一个个找自己修改了哪些配置文件，确认哪些配置文件需要保留。在更换系统后，也可以很快地利用这些配置文件恢复自己熟悉的操作环境。
+</p>
+
+<p>
+当自己的配置文件越来越多时，可以考虑建立一个 git 仓库做版本管理，甚至可以考虑写一个脚本自动建立软链接，在新系统上做到一键配置。
+</p>
+</div>
+</div>
+<div id="outline-container-org8cd5332" class="outline-3">
+<h3 id="org8cd5332"><span class="section-number-3">2.2.</span> XDG</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+根据<a href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html">XDG Base Directory Specification</a>，所有软件的配置文件应当放在 <code>~/.config</code> 下面，但是实际上很多软件并没有遵守这个规定。这也是很多用户的 <code>~</code> 目录下堆满了 dotfiles 的原因。
+</p>
+
+<p>
+不过这件事用户做不了主，这是程序员的责任。
+</p>
+
+<p>
+现在越来越多的软件开始遵守这个协定了，因此如果哪天找不到某个软件在 <code>~</code> 下面的配置文件了，也许就在 <code>~/.config</code> 下面。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfaeac74" class="outline-2">
+<h2 id="orgfaeac74"><span class="section-number-2">3.</span> 后记</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+在使用 Linux 后，我才深切地感受到「工具」本身是如何改变人的思维的。我们都能认识到，先有想法，再去通过工具去实现想法，但是「工具改变想法」这一点常被人忽略。可能这就是学习新工具的真正意义所在吧。
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<hr/>
+<footer>
+  <div class="copyright-container">
+    <div class="copyright">
+      Copyright &copy; 2019-2022 Yilin Zhang some rights reserved<br/>
+      Content is available under
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        CC-BY-SA 4.0
+      </a> unless otherwise noted
+    </div>
+    <div class="cc-badge">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License"
+             src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+      </a>
+    </div>
+  </div>
+
+  <div class="generated">
+    Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.1 (<a href="https://orgmode.org">Org</a> mode 9.5.2)
+  </div>
+</footer>
+</div>
+</body>
+</html>
