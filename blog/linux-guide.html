@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-19 Sun 22:22 -->
+<!-- 2023-02-20 Mon 01:00 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Tutorial | Linux生存指南</title>
@@ -18,7 +18,6 @@
 <nav>
   <a href="/">Home</a>
   <a href="/blog">Blog</a>
-  <a href="/about.html">About</a>
   <a href="/resources.html">Resources</a>
 </nav>
 <!-- <div id="updated">Updated: 2023-02-19 Sun 19:31</div> -->
@@ -29,13 +28,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgdd5146a">1. 序言</a>
+<li><a href="#orgc08adc1">1. 序言</a>
 <ul>
 <li><a href="#序言">1.1. 序言</a></li>
 <li><a href="#目标和为什么学">1.2. 目标和为什么学</a></li>
 </ul>
 </li>
-<li><a href="#org3e04cd2">2. Linux简介</a>
+<li><a href="#org9652a5a">2. Linux简介</a>
 <ul>
 <li><a href="#什么是linux">2.1. 什么是Linux</a></li>
 <li><a href="#选一个发行版">2.2. 选一个发行版</a></li>
@@ -45,7 +44,7 @@
 <li><a href="#延伸阅读">2.6. 延伸阅读</a></li>
 </ul>
 </li>
-<li><a href="#orga9d1212">3. 文件系统与挂载</a>
+<li><a href="#org40c5d36">3. 文件系统与挂载</a>
 <ul>
 <li><a href="#目录结构">3.1. 目录结构</a>
 <ul>
@@ -71,7 +70,7 @@
 <li><a href="#延伸阅读">3.5. 延伸阅读</a></li>
 </ul>
 </li>
-<li><a href="#org8a89247">4. 安装Ubuntu</a>
+<li><a href="#orgfa6095f">4. 安装Ubuntu</a>
 <ul>
 <li><a href="#确认硬件兼容性">4.1. 确认硬件兼容性</a></li>
 <li><a href="#iso映像文件">4.2. iso映像文件</a>
@@ -100,36 +99,36 @@
 <li><a href="#延伸阅读">4.5. 延伸阅读</a></li>
 </ul>
 </li>
-<li><a href="#org180bca5">5. 包管理</a>
+<li><a href="#org2b54d76">5. 包管理</a>
 <ul>
-<li><a href="#org4acdef3">5.1. 有关命令行</a></li>
-<li><a href="#orgb614ebf">5.2. 为什么需要包管理</a></li>
-<li><a href="#org4652ba3">5.3. APT之超级牛力</a>
+<li><a href="#orgcf5a42c">5.1. 有关命令行</a></li>
+<li><a href="#org8346f7d">5.2. 为什么需要包管理</a></li>
+<li><a href="#org465d89d">5.3. APT之超级牛力</a>
 <ul>
-<li><a href="#org48a310a">5.3.1. 安装、卸载和搜索包</a></li>
-<li><a href="#orgb9906c5">5.3.2. 自动安装、手动安装和孤儿包</a></li>
-<li><a href="#org3216730">5.3.3. 包从哪里来</a></li>
-<li><a href="#orgd346007">5.3.4. 手动解决依赖问题</a></li>
+<li><a href="#org5e257b2">5.3.1. 安装、卸载和搜索包</a></li>
+<li><a href="#org645f541">5.3.2. 自动安装、手动安装和孤儿包</a></li>
+<li><a href="#org9a0592a">5.3.3. 包从哪里来</a></li>
+<li><a href="#orgf3944b1">5.3.4. 手动解决依赖问题</a></li>
 </ul>
 </li>
-<li><a href="#orgf83f393">5.4. Synaptic</a></li>
-<li><a href="#org2d21e56">5.5. 别弄乱系统目录</a>
+<li><a href="#org51075c6">5.4. Synaptic</a></li>
+<li><a href="#org0aee771">5.5. 别弄乱系统目录</a>
 <ul>
-<li><a href="#orgf35c129">5.5.1. 编译安装</a></li>
-<li><a href="#org63cfef5">5.5.2. 多个包管理器</a></li>
+<li><a href="#org90f773c">5.5.1. 编译安装</a></li>
+<li><a href="#org65d992b">5.5.2. 多个包管理器</a></li>
 </ul>
 </li>
-<li><a href="#orgd2918ce">5.6. 谨慎使用第三方仓库</a></li>
-<li><a href="#orge706b64">5.7. Snap，Flatpak和Appimage</a></li>
-<li><a href="#orgf9f3b37">5.8. 延伸阅读</a></li>
+<li><a href="#orgca63648">5.6. 谨慎使用第三方仓库</a></li>
+<li><a href="#org540dc2f">5.7. Snap，Flatpak和Appimage</a></li>
+<li><a href="#orgeabf622">5.8. 延伸阅读</a></li>
 </ul>
 </li>
-<li><a href="#orgd031ce6">6. 权限/用户与用户组</a></li>
+<li><a href="#org399638a">6. 权限/用户与用户组</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdd5146a" class="outline-2">
-<h2 id="orgdd5146a"><span class="section-number-2">1.</span> 序言</h2>
+<div id="outline-container-orgc08adc1" class="outline-2">
+<h2 id="orgc08adc1"><span class="section-number-2">1.</span> 序言</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 「如果你没有认真地去尝试另一个系统，你会错过本来能看到的许多风景。它们不一定真的很美，或者让你值回票价，但这个世界上大多数的人都在big
@@ -301,8 +300,8 @@ shooting</li>
 </div>
 </div>
 </div>
-<div id="outline-container-org3e04cd2" class="outline-2">
-<h2 id="org3e04cd2"><span class="section-number-2">2.</span> Linux简介</h2>
+<div id="outline-container-org9652a5a" class="outline-2">
+<h2 id="org9652a5a"><span class="section-number-2">2.</span> Linux简介</h2>
 <div class="outline-text-2" id="text-2">
 </div>
 <div id="outline-container-什么是linux" class="outline-3">
@@ -530,8 +529,8 @@ Studio是专为影音工作而设计的，因此对这方面的系统设置进�
 </div>
 </div>
 </div>
-<div id="outline-container-orga9d1212" class="outline-2">
-<h2 id="orga9d1212"><span class="section-number-2">3.</span> 文件系统与挂载</h2>
+<div id="outline-container-org40c5d36" class="outline-2">
+<h2 id="org40c5d36"><span class="section-number-2">3.</span> 文件系统与挂载</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 也许很多小伙伴都迫不及待想安装上Linux尝尝鲜，但是在介绍安装Linux前，还是想先把Linux的目录结构、文件系统和挂载讲明白。
@@ -981,8 +980,8 @@ point）」。
 </div>
 </div>
 
-<div id="outline-container-org8a89247" class="outline-2">
-<h2 id="org8a89247"><span class="section-number-2">4.</span> 安装Ubuntu</h2>
+<div id="outline-container-orgfa6095f" class="outline-2">
+<h2 id="orgfa6095f"><span class="section-number-2">4.</span> 安装Ubuntu</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 终于到了安装Linux的时候了！不过在这里得先说明两点：
@@ -1358,12 +1357,12 @@ iB结尾的单位以2为底，B结尾的单位以10为底。1KiB是1024Byte，1K
 </div>
 </div>
 </div>
-<div id="outline-container-org180bca5" class="outline-2">
-<h2 id="org180bca5"><span class="section-number-2">5.</span> 包管理</h2>
+<div id="outline-container-org2b54d76" class="outline-2">
+<h2 id="org2b54d76"><span class="section-number-2">5.</span> 包管理</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-org4acdef3" class="outline-3">
-<h3 id="org4acdef3"><span class="section-number-3">5.1.</span> 有关命令行</h3>
+<div id="outline-container-orgcf5a42c" class="outline-3">
+<h3 id="orgcf5a42c"><span class="section-number-3">5.1.</span> 有关命令行</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 在原本的计划中，自己是打算写有关命令行的内容的，但是想到已有的很多资源都可以帮助到大家，自己再写一遍实在没有必要，而且也肯定不比优秀的教程出色；再者为了Linux的日常使用，只需要掌握基础的几个命令即可，没有必要花费整个章节去写，因此就放弃了这个想法。
@@ -1382,8 +1381,8 @@ iB结尾的单位以2为底，B结尾的单位以10为底。1KiB是1024Byte，1K
 </p>
 </div>
 </div>
-<div id="outline-container-orgb614ebf" class="outline-3">
-<h3 id="orgb614ebf"><span class="section-number-3">5.2.</span> 为什么需要包管理</h3>
+<div id="outline-container-org8346f7d" class="outline-3">
+<h3 id="org8346f7d"><span class="section-number-3">5.2.</span> 为什么需要包管理</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 不过这一篇的内容是包管理。说起这个话题，很多对此有些了解的小伙伴马上想到了一个命令—— <code>apt-get</code> ：
@@ -1427,12 +1426,12 @@ Ubuntu 使用的包管理器是 APT ，实际上它也是 Debian 的包管理器
 </p>
 </div>
 </div>
-<div id="outline-container-org4652ba3" class="outline-3">
-<h3 id="org4652ba3"><span class="section-number-3">5.3.</span> APT之超级牛力</h3>
+<div id="outline-container-org465d89d" class="outline-3">
+<h3 id="org465d89d"><span class="section-number-3">5.3.</span> APT之超级牛力</h3>
 <div class="outline-text-3" id="text-5-3">
 </div>
-<div id="outline-container-org48a310a" class="outline-4">
-<h4 id="org48a310a"><span class="section-number-4">5.3.1.</span> 安装、卸载和搜索包</h4>
+<div id="outline-container-org5e257b2" class="outline-4">
+<h4 id="org5e257b2"><span class="section-number-4">5.3.1.</span> 安装、卸载和搜索包</h4>
 <div class="outline-text-4" id="text-5-3-1">
 <p>
 在命令行输入 <code>apt</code> ，按回车。
@@ -1509,8 +1508,8 @@ Ubuntu 使用的包管理器是 APT ，实际上它也是 Debian 的包管理器
 </div>
 </div>
 
-<div id="outline-container-orgb9906c5" class="outline-4">
-<h4 id="orgb9906c5"><span class="section-number-4">5.3.2.</span> 自动安装、手动安装和孤儿包</h4>
+<div id="outline-container-org645f541" class="outline-4">
+<h4 id="org645f541"><span class="section-number-4">5.3.2.</span> 自动安装、手动安装和孤儿包</h4>
 <div class="outline-text-4" id="text-5-3-2">
 <p>
 自动安装的包和手动安装的包待遇是不同的。
@@ -1557,12 +1556,12 @@ Ubuntu 使用的包管理器是 APT ，实际上它也是 Debian 的包管理器
 </p>
 </div>
 </div>
-<div id="outline-container-org3216730" class="outline-4">
-<h4 id="org3216730"><span class="section-number-4">5.3.3.</span> 包从哪里来</h4>
+<div id="outline-container-org9a0592a" class="outline-4">
+<h4 id="org9a0592a"><span class="section-number-4">5.3.3.</span> 包从哪里来</h4>
 <div class="outline-text-4" id="text-5-3-3">
 </div>
 <ol class="org-ol">
-<li><a id="org0aad60d"></a>本地包<br />
+<li><a id="org0268875"></a>本地包<br />
 <div class="outline-text-5" id="text-5-3-3-1">
 <p>
 之前已经提到过，发行版会将上游的软件打包并纳入自己的仓库中。但是依然有两个问题存在：
@@ -1635,7 +1634,7 @@ Debian 的软件包格式是 deb ，你下载的 <code>.deb</code> 文件就是�
 </div>
 </li>
 
-<li><a id="org2ebdb9c"></a>仓库和PPA<br />
+<li><a id="orge5eb557"></a>仓库和PPA<br />
 <div class="outline-text-5" id="text-5-3-3-2">
 <p>
 但是这样还是太麻烦了，如果软件包有更新，用户还要自己去软件作者那里获得新版本重新安装。有没有更简单的办法呢？
@@ -1726,8 +1725,8 @@ sudo apt install emacs26
 </ol>
 </div>
 
-<div id="outline-container-orgd346007" class="outline-4">
-<h4 id="orgd346007"><span class="section-number-4">5.3.4.</span> 手动解决依赖问题</h4>
+<div id="outline-container-orgf3944b1" class="outline-4">
+<h4 id="orgf3944b1"><span class="section-number-4">5.3.4.</span> 手动解决依赖问题</h4>
 <div class="outline-text-4" id="text-5-3-4">
 <p>
 这种情况一般出现在自行编译安装软件的时候。比如说在运行 <code>configure</code> 的时候说缺少某个 <code>.h</code> 头文件。
@@ -1765,8 +1764,8 @@ Action:
 </div>
 </div>
 
-<div id="outline-container-orgf83f393" class="outline-3">
-<h3 id="orgf83f393"><span class="section-number-3">5.4.</span> Synaptic</h3>
+<div id="outline-container-org51075c6" class="outline-3">
+<h3 id="org51075c6"><span class="section-number-3">5.4.</span> Synaptic</h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
 APT 工具的命令确实有点多，要是记不住也问题不大，因为有一个非常好用的 GUI 前端工具叫做 Synaptic，中文叫「新立得软件包管理器」（这个翻译不错！）。
@@ -1781,12 +1780,12 @@ APT 工具的命令确实有点多，要是记不住也问题不大，因为有�
 </p>
 </div>
 </div>
-<div id="outline-container-org2d21e56" class="outline-3">
-<h3 id="org2d21e56"><span class="section-number-3">5.5.</span> 别弄乱系统目录</h3>
+<div id="outline-container-org0aee771" class="outline-3">
+<h3 id="org0aee771"><span class="section-number-3">5.5.</span> 别弄乱系统目录</h3>
 <div class="outline-text-3" id="text-5-5">
 </div>
-<div id="outline-container-orgf35c129" class="outline-4">
-<h4 id="orgf35c129"><span class="section-number-4">5.5.1.</span> 编译安装</h4>
+<div id="outline-container-org90f773c" class="outline-4">
+<h4 id="org90f773c"><span class="section-number-4">5.5.1.</span> 编译安装</h4>
 <div class="outline-text-4" id="text-5-5-1">
 <p>
 对于想长期使用 Linux 的用户来说，管理好系统目录是很重要的一件事情。比如今天你通过编译安装的方式安装了某个软件，那么它虽然把文件放在了系统目录下，但却因为绕过了 APT 而无法被其管理。
@@ -1822,8 +1821,8 @@ APT 工具的命令确实有点多，要是记不住也问题不大，因为有�
 </div>
 </div>
 
-<div id="outline-container-org63cfef5" class="outline-4">
-<h4 id="org63cfef5"><span class="section-number-4">5.5.2.</span> 多个包管理器</h4>
+<div id="outline-container-org65d992b" class="outline-4">
+<h4 id="org65d992b"><span class="section-number-4">5.5.2.</span> 多个包管理器</h4>
 <div class="outline-text-4" id="text-5-5-2">
 <p>
 除了编译安装外，也有其它弄乱系统目录的可能。以大家熟悉的 Python 做例子。可能大家会使用 Python 的包管理器 PyPI （也就是 <code>pip</code> ）来安装 Python 的第三方库。但是容易出问题的事情是，很多人会使用系统的 Python 环境跑自己的代码（非软件开发性质的），并用 PyPI 安装自己想要的第三方库。这是不推荐的做法，因为 PyPI 的包管理绕过了管理系统软件包的 APT 。正确的做法是什么呢？如果想做软件开发，尽量使用软件仓库的软件包（deb 包），如果做科学计算等任务，最好使用一套与系统 Python 环境隔离的环境，比如 Anaconda 。前一种做法保证了 Python 库文件纳入 APT 的管理范围，后一种做法干脆就把 Python 环境放在用户目录下，与系统软件包不相干，这样最省事了。
@@ -1845,16 +1844,16 @@ APT 工具的命令确实有点多，要是记不住也问题不大，因为有�
 </div>
 </div>
 
-<div id="outline-container-orgd2918ce" class="outline-3">
-<h3 id="orgd2918ce"><span class="section-number-3">5.6.</span> 谨慎使用第三方仓库</h3>
+<div id="outline-container-orgca63648" class="outline-3">
+<h3 id="orgca63648"><span class="section-number-3">5.6.</span> 谨慎使用第三方仓库</h3>
 <div class="outline-text-3" id="text-5-6">
 <p>
 第三方仓库终究只是第三方仓库，没有发行版的背书，不能保证软件的安全性和稳定性。因此作为用户，首先要甄别这个第三方仓库是否是值得信赖的仓库，否则出了问题可没人能负责。
 </p>
 </div>
 </div>
-<div id="outline-container-orge706b64" class="outline-3">
-<h3 id="orge706b64"><span class="section-number-3">5.7.</span> Snap，Flatpak和Appimage</h3>
+<div id="outline-container-org540dc2f" class="outline-3">
+<h3 id="org540dc2f"><span class="section-number-3">5.7.</span> Snap，Flatpak和Appimage</h3>
 <div class="outline-text-3" id="text-5-7">
 <p>
 Linux 世界不只有 Debian 系发行版，还有 Redhat 系，Arch 系等等，各自使用不同的包管理机制，软件包的打包格式也不相同。对于软件开发者来说，这是一件比较头疼的事情，因为他们需要把自己的软件打包成各种各样的格式，来满足不同 Linux 发行版的需要。作为 Debian 系操作系统用户，一个福利是 deb 包的官方软件仓库是全宇宙最大的，而且多数软件都会优先提供 deb 包，但是对其他发行版用户来说就不是这么回事了（不过 Arch 用户有个 AUR 倒是很方便，软件总量也许加起来比 Debian 系的还多）。
@@ -1886,8 +1885,8 @@ Flatpak 由于自己没有使用过，没有经验可以分享。而 Snap 我个
 </p>
 </div>
 </div>
-<div id="outline-container-orgf9f3b37" class="outline-3">
-<h3 id="orgf9f3b37"><span class="section-number-3">5.8.</span> 延伸阅读</h3>
+<div id="outline-container-orgeabf622" class="outline-3">
+<h3 id="orgeabf622"><span class="section-number-3">5.8.</span> 延伸阅读</h3>
 <div class="outline-text-3" id="text-5-8">
 <ul class="org-ul">
 <li><a href="https://en.wikipedia.org/wiki/Dependency_hell">Dependency hell - Wikipedia</a></li>
@@ -1900,8 +1899,8 @@ Flatpak 由于自己没有使用过，没有经验可以分享。而 Snap 我个
 </div>
 </div>
 </div>
-<div id="outline-container-orgd031ce6" class="outline-2">
-<h2 id="orgd031ce6"><span class="section-number-2">6.</span> 权限/用户与用户组</h2>
+<div id="outline-container-org399638a" class="outline-2">
+<h2 id="org399638a"><span class="section-number-2">6.</span> 权限/用户与用户组</h2>
 </div>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>

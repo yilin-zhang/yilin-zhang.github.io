@@ -6,7 +6,8 @@
 	--color-link: #c9ada7;
 	--color-link-active: #9a8c98;
 	--border-width: 2px;
-
+	--border-radius: 5px;
+	--content-padding: 0.3em;
     font-family: 'Noto Serif SC';
 }
 
@@ -30,15 +31,14 @@ a:hover, a:active {
 
 nav {
     position: fixed;
-    /* top: 1rem; */
     left: 1rem;
-    background-color: var(--color-background);
 }
 
 nav a {
     padding: 0.1em;
     border-style: solid;
     border-width: var(--border-width);
+    background-color: var(--color-background);
     text-decoration: none;
 }
 
@@ -49,10 +49,55 @@ nav a {
 .org-src-container {
     border-style: dotted;
     border-width: var(--border-width);
-    padding: 0 0.3em;
-    margin: 0.3em;
+    padding: 0 var(--content-padding);
+    margin: 0 var(--content-padding);
 }
 
 footer {
     font-size: 70%;
 }
+
+/* floating toc */
+
+#table-of-contents {
+	display: block;
+    position: relative;
+	font-size: 80%;
+}
+
+#table-of-contents h2 {
+    position: fixed;
+    right: 1rem;
+    top: 0;
+    background-color: var(--color-background);
+    font-size: 100%;
+    padding: var(--content-padding);
+    border-style: solid;
+	border-width: var(--border-width);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+#table-of-contents div {
+    display: none;
+    position: fixed;
+	top: 3rem;
+    right: 1rem;
+    background-color: var(--color-background);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+	border-width: var(--border-width);
+    padding: var(--content-padding);
+	max-width: 20rem;
+	max-height: 90vh;
+	overflow: scroll;
+}
+
+#table-of-contents h2:hover + div {
+    display: block;
+}
+
+#table-of-contents div:hover {
+    display: block;
+}
+
