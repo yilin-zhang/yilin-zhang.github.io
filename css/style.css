@@ -2,7 +2,7 @@
 	--color-background: #22223b;
 	--color-text: #f2e9e4;
 	--color-secondary: #4a4e69;
-	--color-shadow: #2a9d8f;
+	--color-shadow: #c9ada7;
 	--color-link: #c9ada7;
 	--color-link-active: #9a8c98;
 	--border-width: 2px;
@@ -53,6 +53,13 @@ nav a {
     margin: 0 var(--content-padding);
 }
 
+blockquote {
+    background-color: var(--color-secondary);
+    padding: 1em;
+    box-shadow: -3px 0 var(--color-shadow);
+    font-size: 90%
+}
+
 footer {
     font-size: 70%;
 }
@@ -81,7 +88,7 @@ footer {
 #table-of-contents div {
     display: none;
     position: fixed;
-	top: 3rem;
+    top: 3rem;
     right: 1rem;
     background-color: var(--color-background);
     border: 1px solid #ddd;
