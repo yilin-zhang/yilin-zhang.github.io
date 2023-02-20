@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-02-20 Mon 01:21 -->
+<!-- 2023-02-20 Mon 01:29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Tutorial | Linux 音频系统搭建</title>
@@ -28,21 +28,21 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8161102">1. 软件仓库</a></li>
-<li><a href="#org9f7da3e">2. JACK</a></li>
-<li><a href="#orgbeddaa2">3. 音序器</a></li>
-<li><a href="#orgf6b3f13">4. DAW</a></li>
-<li><a href="#org377ebca">5. 插件</a></li>
-<li><a href="#org17bd75d">6. MIDI 键盘</a></li>
-<li><a href="#org3b5334b">7. 软件效果器</a></li>
-<li><a href="#org8945f0f">8. 其他</a>
+<li><a href="#orgb2f86dd">1. 软件仓库</a></li>
+<li><a href="#org7bbd780">2. JACK</a></li>
+<li><a href="#org50e92f1">3. 音序器</a></li>
+<li><a href="#org9d1ea7b">4. DAW</a></li>
+<li><a href="#org1879343">5. 插件</a></li>
+<li><a href="#org9131f6e">6. MIDI 键盘</a></li>
+<li><a href="#org9762dc2">7. 软件效果器</a></li>
+<li><a href="#org66096e2">8. 其他</a>
 <ul>
-<li><a href="#org4fe00b4">8.1. 打谱</a></li>
-<li><a href="#org02644ce">8.2. 鼓机</a></li>
-<li><a href="#org3894c97">8.3. 简单录音</a></li>
+<li><a href="#org31d3b71">8.1. 打谱</a></li>
+<li><a href="#org91fb504">8.2. 鼓机</a></li>
+<li><a href="#orgea9b406">8.3. 简单录音</a></li>
 </ul>
 </li>
-<li><a href="#orgbb5775a">9. 后记</a></li>
+<li><a href="#org58c21ef">9. 后记</a></li>
 </ul>
 </div>
 </div>
@@ -61,8 +61,8 @@ Linux 下的音频系统搭建要比 Windows 和 MacOS 复杂很多，因为上�
 <p>
 在阅读下面的内容之前，推荐先了解一下 Linux 的音频组件是怎么连接的。可以参考啦哆咪的<a href="https://lado.me/2017/04/16/combination-of-linux-audio/">这篇文章</a>。
 </p>
-<div id="outline-container-org8161102" class="outline-2">
-<h2 id="org8161102"><span class="section-number-2">1.</span> 软件仓库</h2>
+<div id="outline-container-orgb2f86dd" class="outline-2">
+<h2 id="orgb2f86dd"><span class="section-number-2">1.</span> 软件仓库</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 对于 Ubuntu 用户来说，使用 KXStudio 仓库是主流的选择。查看添加仓库的方法可以进入<a href="https://kx.studio/Repositories">这个链接</a>。该仓库提供了非常全面的与音频制作相关的软件，涵盖了相当多 Ubuntu 官方仓库没有的插件。
@@ -77,8 +77,8 @@ Linux 下的音频系统搭建要比 Windows 和 MacOS 复杂很多，因为上�
 </p>
 </div>
 </div>
-<div id="outline-container-org9f7da3e" class="outline-2">
-<h2 id="org9f7da3e"><span class="section-number-2">2.</span> JACK</h2>
+<div id="outline-container-org7bbd780" class="outline-2">
+<h2 id="org7bbd780"><span class="section-number-2">2.</span> JACK</h2>
 <div class="outline-text-2" id="text-2">
 <blockquote>
 <p>
@@ -143,8 +143,8 @@ JACK 是 JACK Audio Connection Kit 的递归缩写，是一个专业的音频服
 </p>
 </div>
 </div>
-<div id="outline-container-orgbeddaa2" class="outline-2">
-<h2 id="orgbeddaa2"><span class="section-number-2">3.</span> 音序器</h2>
+<div id="outline-container-org50e92f1" class="outline-2">
+<h2 id="org50e92f1"><span class="section-number-2">3.</span> 音序器</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 <a href="https://rosegardenmusic.com">Rosegarden</a> （软件包： <code>rosegarden</code> ） 是 Linux 下最好用的原生音序器。
@@ -171,8 +171,8 @@ JACK 是 JACK Audio Connection Kit 的递归缩写，是一个专业的音频服
 </p>
 </div>
 </div>
-<div id="outline-container-orgf6b3f13" class="outline-2">
-<h2 id="orgf6b3f13"><span class="section-number-2">4.</span> DAW</h2>
+<div id="outline-container-org9d1ea7b" class="outline-2">
+<h2 id="org9d1ea7b"><span class="section-number-2">4.</span> DAW</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 <a href="https://ardour.org">Ardour</a> （软件包： <code>ardour</code> ） 是 Linux 下最好用的 DAW 。
@@ -191,8 +191,8 @@ JACK 是 JACK Audio Connection Kit 的递归缩写，是一个专业的音频服
 </p>
 </div>
 </div>
-<div id="outline-container-org377ebca" class="outline-2">
-<h2 id="org377ebca"><span class="section-number-2">5.</span> 插件</h2>
+<div id="outline-container-org1879343" class="outline-2">
+<h2 id="org1879343"><span class="section-number-2">5.</span> 插件</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Linux 上支持的原声插件是 LADSPA （Linux Audio Developer's Simple Plugin API）和 LV2 （LADSPA Version 2）插件 。LV2 是使用最多的插件。基本上常用的插件都可以在 KXStudio 仓库或者 AUR 中找到。
@@ -224,8 +224,8 @@ Linux 上支持的原声插件是 LADSPA （Linux Audio Developer's Simple Plugi
 </ul>
 </div>
 </div>
-<div id="outline-container-org17bd75d" class="outline-2">
-<h2 id="org17bd75d"><span class="section-number-2">6.</span> MIDI 键盘</h2>
+<div id="outline-container-org9131f6e" class="outline-2">
+<h2 id="org9131f6e"><span class="section-number-2">6.</span> MIDI 键盘</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 为了在 Ardour 中使用 MIDI 键盘，要在终端开启 JACK MIDI &lt;-&gt; ALSA sequencer MIDI bridge。
@@ -244,8 +244,8 @@ Linux 上支持的原声插件是 LADSPA （Linux Audio Developer's Simple Plugi
 </p>
 </div>
 </div>
-<div id="outline-container-org3b5334b" class="outline-2">
-<h2 id="org3b5334b"><span class="section-number-2">7.</span> 软件效果器</h2>
+<div id="outline-container-org9762dc2" class="outline-2">
+<h2 id="org9762dc2"><span class="section-number-2">7.</span> 软件效果器</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 这里重点介绍的是 <a href="http://guitarix.org">Guitarix</a> ，使用它能让我们带上耳机练琴。设置步骤如下：
@@ -268,12 +268,12 @@ Linux 上支持的原声插件是 LADSPA （Linux Audio Developer's Simple Plugi
 </p>
 </div>
 </div>
-<div id="outline-container-org8945f0f" class="outline-2">
-<h2 id="org8945f0f"><span class="section-number-2">8.</span> 其他</h2>
+<div id="outline-container-org66096e2" class="outline-2">
+<h2 id="org66096e2"><span class="section-number-2">8.</span> 其他</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-org4fe00b4" class="outline-3">
-<h3 id="org4fe00b4"><span class="section-number-3">8.1.</span> 打谱</h3>
+<div id="outline-container-org31d3b71" class="outline-3">
+<h3 id="org31d3b71"><span class="section-number-3">8.1.</span> 打谱</h3>
 <div class="outline-text-3" id="text-8-1">
 <p>
 如果是五线谱制作，最简单的就是使用 <a href="https://musescore.org">MuseScore</a> ，运行它无需开启 JACK 。如果想要制作更加复杂或者排版精良的乐谱，可以使用 GNU 的软件 <a href="http://lilypond.org">LilyPond</a> ，它使用一套标记语言，最后渲染成乐谱（类似于 LaTeX）。
@@ -284,16 +284,16 @@ Linux 下也有 Guitar Pro 的替代品——<a href="http://tuxguitar.com.ar/">
 </p>
 </div>
 </div>
-<div id="outline-container-org02644ce" class="outline-3">
-<h3 id="org02644ce"><span class="section-number-3">8.2.</span> 鼓机</h3>
+<div id="outline-container-org91fb504" class="outline-3">
+<h3 id="org91fb504"><span class="section-number-3">8.2.</span> 鼓机</h3>
 <div class="outline-text-3" id="text-8-2">
 <p>
 最常用的就是 <a href="http://hydrogen-music.org/">Hydrogen</a> 了。
 </p>
 </div>
 </div>
-<div id="outline-container-org3894c97" class="outline-3">
-<h3 id="org3894c97"><span class="section-number-3">8.3.</span> 简单录音</h3>
+<div id="outline-container-orgea9b406" class="outline-3">
+<h3 id="orgea9b406"><span class="section-number-3">8.3.</span> 简单录音</h3>
 <div class="outline-text-3" id="text-8-3">
 <p>
 如果只是想简单录音，可以直接使用 <a href="https://www.audacityteam.org/">Audacity</a> ，这个软件不需要 JACK 也可以运行。
@@ -301,8 +301,8 @@ Linux 下也有 Guitar Pro 的替代品——<a href="http://tuxguitar.com.ar/">
 </div>
 </div>
 </div>
-<div id="outline-container-orgbb5775a" class="outline-2">
-<h2 id="orgbb5775a"><span class="section-number-2">9.</span> 后记</h2>
+<div id="outline-container-org58c21ef" class="outline-2">
+<h2 id="org58c21ef"><span class="section-number-2">9.</span> 后记</h2>
 <div class="outline-text-2" id="text-9">
 <p>
 这篇博客只是流水帐式的简单过一遍 Linux 下的音频配置方法。一些更深入的内容（比如利用 Carla 和 Wine 运行 VST 插件）没有提到。不过我相信上面提到的内容已经足够日常的练习和 Demo 制作了。

@@ -100,11 +100,9 @@ footer {
 	overflow: scroll;
 }
 
-#table-of-contents h2:hover + div {
+#table-of-contents h2:hover + div,
+#table-of-contents h2:focus + div,
+#table-of-contents div:hover
+{
     display: block;
 }
-
-#table-of-contents div:hover {
-    display: block;
-}
-
