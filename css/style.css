@@ -1,0 +1,58 @@
+:root {
+	--color-background: #22223b;
+	--color-text: #f2e9e4;
+	--color-secondary: #4a4e69;
+	--color-shadow: #2a9d8f;
+	--color-link: #c9ada7;
+	--color-link-active: #9a8c98;
+	--border-width: 2px;
+
+    font-family: 'Noto Serif SC';
+}
+
+body {
+	font-size: 110%;
+	margin: 0 auto;
+	padding: 1em;
+	max-width: 40rem;
+	color: var(--color-text);
+	background: var(--color-background);
+}
+
+a:link, a:visited {
+	color: var(--color-link);
+}
+
+a:hover, a:active {
+	color: var(--color-link-active);
+	text-decoration: none;
+}
+
+nav {
+    position: fixed;
+    /* top: 1rem; */
+    left: 1rem;
+    background-color: var(--color-background);
+}
+
+nav a {
+    padding: 0.1em;
+    border-style: solid;
+    border-width: var(--border-width);
+    text-decoration: none;
+}
+
+#content {
+    margin-top: 2rem;  /* leave some space for nav */
+}
+
+.org-src-container {
+    border-style: dotted;
+    border-width: var(--border-width);
+    padding: 0 0.3em;
+    margin: 0.3em;
+}
+
+footer {
+    font-size: 70%;
+}
