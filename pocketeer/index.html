@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pocketeer · Analogue Pocket manager</title>
+<meta name="description" content="Manage your Analogue Pocket from the terminal.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230b0b0d'/%3E%3Cpath d='M8 3l5 5-5 5-5-5z' fill='%23f2f2f2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css?v=17">
+<style id="tui-palette">
+.tui .t0{color:#eeeeee;}
+.tui .t1{color:#eeeeee;font-weight:bold;}
+.tui .t2{color:#87d787;}
+.tui .t3{color:#585858;}
+.tui .t4{color:#949494;}
+.tui .t5{color:#080808;background:#eeeeee;font-weight:bold;}
+.tui .t6{color:#3a3a3a;}
+.tui .t7{color:#d4d4d8;font-weight:bold;}
+.tui .t8{color:#d4d4d888;}
+.tui .t9{color:#d75f5f;}
+.tui .t10{color:#d7af5f;}
+.tui .t11{color:#eeeeee;background:#444444;font-weight:bold;}
+.tui .t12{color:#080808;background:#d7af5f;font-weight:bold;}
+.tui .t13{color:#949494;background:#444444;}
+</style>
+</head>
+<body>
+
+<header class="nav wrap">
+  <a class="brand" href="./">◆ POCKETEER</a>
+  <nav>
+    <a href="#tui">TUI</a>
+    <a href="#cli">CLI</a>
+    <a href="#install">INSTALL</a>
+    <a class="chip" href="https://github.com/yilin-zhang/pocketeer">GITHUB ↗</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero wrap">
+  <div class="hero-text">
+    <h1>Manage your Analogue Pocket from the terminal.</h1>
+    <p class="lede">Keep your ROMs on your computer and sync them to the SD card.</p>
+    <div class="cmd" role="group" aria-label="Install command">
+      <span class="prompt">$</span>
+      <code id="install-cmd">cargo install --git <span class="nb">https://github.com/yilin-zhang/pocketeer</span></code>
+      <button class="copy" type="button" data-copy="install-cmd">COPY</button>
+    </div>
+  </div>
+
+  <figure class="scene" aria-label="pocketeer runs on your computer and syncs with the Pocket both ways">
+    <svg viewBox="0 0 440 372" role="img">
+      <!-- the computer: pocketeer in a terminal, drawn as blocks -->
+      <g>
+        <rect x="0.5" y="16.5" width="259" height="180" rx="8" fill="#111113" stroke="#2c2c2f"/>
+        <path d="M1 42.5h258" stroke="#2c2c2f"/>
+        <g fill="none" stroke="#3a3a3e"><circle cx="15" cy="29.5" r="3.5"/><circle cx="27" cy="29.5" r="3.5"/><circle cx="39" cy="29.5" r="3.5"/></g>
+        <text x="14" y="66" fill="#f2f2f2" font-family="Menlo, SF Mono, ui-monospace, monospace" font-size="9.5" font-weight="700">◆ POCKETEER</text>
+        <circle cx="210" cy="62.5" r="2.6" fill="#87d787"/>
+        <rect x="217" y="60.5" width="28" height="4" rx="2" fill="#3a3a3e"/>
+        <g fill="#3a3a3e"><rect x="14" y="78" width="26" height="4" rx="2"/><rect x="46" y="78" width="20" height="4" rx="2"/><rect x="108" y="78" width="30" height="4" rx="2"/></g>
+        <rect x="72" y="75" width="30" height="10" fill="#f2f2f2"/>
+        <rect x="12.5" y="93.5" width="235" height="62" rx="2" fill="none" stroke="#2c2c2f"/>
+        <rect x="17" y="98" width="226" height="9" fill="#f2f2f2"/>
+        <g fill="#4a4a4e"><rect x="22" y="111" width="92" height="4" rx="2"/><rect x="22" y="122" width="70" height="4" rx="2"/><rect x="22" y="133" width="84" height="4" rx="2"/><rect x="22" y="144" width="60" height="4" rx="2"/></g>
+        <g fill="#87d787" opacity="0.75"><rect x="206" y="111" width="32" height="4" rx="2"/><rect x="206" y="122" width="32" height="4" rx="2"/><rect x="206" y="133" width="32" height="4" rx="2"/></g>
+        <rect x="206" y="144" width="20" height="4" rx="2" fill="#d7af5f" opacity="0.85"/>
+        <g fill="#3a3a3e"><rect x="14" y="167" width="9" height="9"/><rect x="28" y="169.5" width="22" height="4" rx="2"/><rect x="58" y="167" width="9" height="9"/><rect x="72" y="169.5" width="30" height="4" rx="2"/></g>
+      </g>
+      <!-- sync, two lines, each flowing its own way: out (games, cores) and back (saves) -->
+      <g fill="none" stroke="#5a5a5a" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+        <path class="dash" d="M120 204V296H286"/>
+        <path d="M280 291l6 5-6 5"/>
+        <path class="dash" d="M286 276H140V204"/>
+        <path d="M135 209l5-5 5 5"/>
+      </g>
+      <!-- the Pocket, showing its own library. Proportions measured from Analogue's
+           front technical drawing (88.5 × 149.5 mm), scaled to 172 units wide. -->
+      <g transform="translate(295 122) scale(0.84)">
+        <path class="pk-body" d="M3.5 .5H168.5A3 3 0 0 1 171.5 3.5V274.7A11.3 14.8 0 0 1 160.2 289.5H11.8A11.3 14.8 0 0 1 .5 274.7V3.5A3 3 0 0 1 3.5 .5Z" fill="#1c1c1f" stroke="#38383c"/>
+        <rect class="pk-glass" x="2.8" y="2.8" width="166.4" height="151.3" rx="1.8" fill="#050505" stroke="#38383c" stroke-width="0.6"/>
+        <rect class="pk-screen" x="21.75" y="20.6" width="128.5" height="115.6" fill="#0d0d0f"/>
+        <rect x="29" y="33" width="114" height="14" rx="7" fill="#f2f2f2"/>
+        <g fill="#4a4a4e"><rect x="35" y="58" width="76" height="6" rx="3"/><rect x="35" y="73" width="58" height="6" rx="3"/><rect x="35" y="88" width="66" height="6" rx="3"/><rect x="35" y="103" width="50" height="6" rx="3"/></g>
+        <g fill="#27272b" stroke="#3d3d42" stroke-width="0.8" stroke-linejoin="round">
+          <path class="dpad" d="M30.52 173H41.98A2.5 2.5 0 0 1 44.48 175.5V186.37H55.35A2.5 2.5 0 0 1 57.85 188.87V200.33A2.5 2.5 0 0 1 55.35 202.83H44.48V213.7A2.5 2.5 0 0 1 41.98 216.2H30.52A2.5 2.5 0 0 1 28.02 213.7V202.83H17.15A2.5 2.5 0 0 1 14.65 200.33V188.87A2.5 2.5 0 0 1 17.15 186.37H28.02V175.5A2.5 2.5 0 0 1 30.52 173Z"/>
+          <circle class="fb" cx="131.5" cy="177.2" r="8.3"/><circle class="fb" cx="113.9" cy="194.8" r="8.3"/><circle class="fb" cx="149.1" cy="194.8" r="8.3"/><circle class="fb" cx="131.5" cy="212.4" r="8.3"/>
+          <circle class="sb" cx="70.4" cy="260.1" r="5"/><circle class="sb" cx="86" cy="260.1" r="5"/><circle class="sb" cx="101.6" cy="260.1" r="5"/>
+        </g>
+      </g>
+    </svg>
+  </figure>
+
+  
+</section>
+
+<section id="tui" class="wrap section">
+  <div class="section-head">
+    <h2>TUI</h2>
+    <p>Run <span class="key">pocketeer</span> with no arguments to open it.</p>
+  </div>
+
+  <div class="tabs" role="tablist" aria-label="TUI views">
+    <button role="tab" data-view="cores" aria-selected="true"><span>1</span>CORES</button>
+    <button role="tab" data-view="bios"><span>2</span>BIOS</button>
+    <button role="tab" data-view="games"><span>3</span>GAMES</button>
+    <button role="tab" data-view="device"><span>4</span>DEVICE</button>
+    <button role="tab" data-view="sync"><span>S</span>SYNC</button>
+  </div>
+
+  <div class="term">
+    <div class="term-bar"><i></i><i></i><i></i><span>pocketeer</span></div>
+    <div class="term-body">
+<pre class="tui" data-view="cores"><span class="t0"> ◆ </span><span class="t1">POCKETEER</span>                                                         <span class="t2">● Pocket</span><span class="t3">  ·  </span><span class="t4">POCKET</span><span class="t3">  ·  </span><span class="t4">fw 2.4</span><span class="t3">  ·  </span><span class="t4">406.7 GiB free</span><span class="t3">  ·  </span><span class="t4">22 games</span>
+<span class="t5"> 1  CORES </span>  <span class="t3"> 2  BIOS </span>  <span class="t3"> 3  GAMES </span>  <span class="t3"> 4  DEVICE </span>
+<span class="t3"> / filter</span>         <span class="t5"> installed </span> <span class="t3"> all </span> <span class="t3"> updates </span> <span class="t3"> not installed </span> <span class="t3">  8</span>
+<span class="t6">╭</span><span class="t4"> CORES  ·  8 installed  ·  369 in inventory </span><span class="t6">────────────────────────────────────╮╭</span><span class="t4"> DETAILS </span><span class="t6">───────────────────────────────────────╮</span>
+<span class="t6">│</span><span class="t3">  CORE                     PLATFORMS   INSTALLED  LATEST     BIOS               </span><span class="t6">││</span><span class="t7">agg23.SNES</span>                                      <span class="t6">│</span>
+<span class="t6">│</span>  agg23.NES                <span class="t8">nes        </span> <span class="t2">1.0.1     </span> <span class="t2">up to date</span>                    <span class="t6">││</span><span class="t3">Platforms </span>snes                                  <span class="t6">│</span>
+<span class="t6">│</span><span class="t5">▸ agg23.SNES               snes        0.4.3      → 0.4.4                       </span><span class="t6">││</span><span class="t3">Installed </span>0.4.3                                 <span class="t6">│</span>
+<span class="t6">│</span>  budude2.Lynx             <span class="t8">lynx       </span> <span class="t2">1.0.1     </span> <span class="t2">up to date</span> <span class="t9">1 missing </span>         <span class="t6">││</span><span class="t3">Latest    </span>0.4.4  (2024-09-16)                   <span class="t6">│</span>
+<span class="t6">│</span>  Spiritualized.GB         <span class="t8">gb         </span> <span class="t2">1.3.0     </span> <span class="t2">up to date</span> <span class="t9">1 missing </span>         <span class="t6">││</span><span class="t3">Repo      </span>https://github.com/agg23/openfpga-SNES<span class="t6">│</span>
+<span class="t6">│</span>  Spiritualized.GBA        <span class="t8">gba        </span> <span class="t2">1.0.0     </span> <span class="t10">→ 1.2.0   </span>                    <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>  Spiritualized.GBC        <span class="t8">gbc        </span> <span class="t2">1.3.0     </span> <span class="t2">up to date</span>                    <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>  Spiritualized.Genesis    <span class="t8">genesis    </span> <span class="t2">1.0.8     </span> <span class="t2">up to date</span>                    <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>  Spiritualized.GG         <span class="t8">gg         </span> <span class="t2">1.2.0     </span> <span class="t2">up to date</span>                    <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">╰────────────────────────────────────────────────────────────────────────────────╯╰────────────────────────────────────────────────╯</span>
+
+ <span class="t11"> Enter </span><span class="t4"> install / update  </span><span class="t11"> U </span><span class="t4"> update all  </span><span class="t11"> x </span><span class="t4"> remove  </span><span class="t11"> / </span><span class="t4"> search  </span><span class="t11"> ? </span><span class="t4"> help  </span><span class="t11"> q </span><span class="t4"> quit  </span></pre>
+<pre class="tui" data-view="bios" hidden><span class="t0"> ◆ </span><span class="t1">POCKETEER</span>                                                         <span class="t2">● Pocket</span><span class="t3">  ·  </span><span class="t4">POCKET</span><span class="t3">  ·  </span><span class="t4">fw 2.4</span><span class="t3">  ·  </span><span class="t4">406.7 GiB free</span><span class="t3">  ·  </span><span class="t4">22 games</span>
+<span class="t3"> 1  CORES </span>  <span class="t5"> 2  BIOS </span>  <span class="t3"> 3  GAMES </span>  <span class="t3"> 4  DEVICE </span>
+<span class="t3"> / filter</span>         <span class="t5"> all </span> <span class="t3"> missing or wrong </span> <span class="t3">  4</span>
+<span class="t6">╭</span><span class="t4"> REQUIRED FILES  ·  2 present  ·  2 missing  ·  0 wrong  ·  1 placeable </span><span class="t6">────────╮╭</span><span class="t4"> DETAILS </span><span class="t6">───────────────────────────────────────╮</span>
+<span class="t6">│</span><span class="t3">  CORE                     FILE                     STATUS             NEED     </span><span class="t6">││</span><span class="t3">Core      </span>budude2.Lynx                          <span class="t6">│</span>
+<span class="t6">│</span><span class="t5">▸ budude2.Lynx             lynxboot.img             missing            required </span><span class="t6">││</span><span class="t3">Slot      </span>BIOS                                  <span class="t6">│</span>
+<span class="t6">│</span>  Spiritualized.GB         dmg_bios.bin             <span class="t0">at card root → p  </span> <span class="t8">optional </span><span class="t6">││</span><span class="t3">Path      </span>Assets/lynx/common/lynxboot.img       <span class="t6">│</span>
+<span class="t6">│</span>  Spiritualized.GBA        gba_bios.bin             <span class="t2">present           </span> <span class="t8">required </span><span class="t6">││</span><span class="t3">Need      </span>required: the core won&#x27;t run without  <span class="t6">│</span>
+<span class="t6">│</span>  Spiritualized.GBC        gbc_bios.bin             <span class="t2">present           </span> <span class="t8">optional </span><span class="t6">││</span>it                                              <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span><span class="t3">Status    </span><span class="t9">missing</span>                               <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span><span class="t8">pocketeer never downloads BIOS files. Copy yours</span><span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span><span class="t8">to the root of the card with that exact file</span>    <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span><span class="t8">name, then press p to move it into place.</span>       <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                                <span class="t6">││</span>                                                <span class="t6">│</span>
+<span class="t6">╰────────────────────────────────────────────────────────────────────────────────╯╰────────────────────────────────────────────────╯</span>
+
+ <span class="t11"> p </span><span class="t4"> place files from card root  </span><span class="t11"> / </span><span class="t4"> filter  </span><span class="t11"> ? </span><span class="t4"> help  </span><span class="t11"> q </span><span class="t4"> quit  </span></pre>
+<pre class="tui" data-view="games" hidden><span class="t0"> ◆ </span><span class="t1">POCKETEER</span>                                                         <span class="t2">● Pocket</span><span class="t3">  ·  </span><span class="t4">POCKET</span><span class="t3">  ·  </span><span class="t4">fw 2.4</span><span class="t3">  ·  </span><span class="t4">406.7 GiB free</span><span class="t3">  ·  </span><span class="t4">22 games</span>
+<span class="t3"> 1  CORES </span>  <span class="t3"> 2  BIOS </span>  <span class="t5"> 3  GAMES </span>  <span class="t3"> 4  DEVICE </span>
+<span class="t3"> / filter</span>         <span class="t5"> all </span> <span class="t3"> in library </span> <span class="t3"> on card </span> <span class="t3"> card only </span> <span class="t3"> not on card </span> <span class="t3">  24</span>
+<span class="t6">╭</span><span class="t4"> LIBRARY  ·  22 games  ·  5 saves  ·  2 only on the card  ·  ~/Pocketeer … </span><span class="t6">╮╭</span><span class="t4"> Metroid Fusion (USA) </span><span class="t6">───────────────────────────────╮</span>
+<span class="t6">│</span><span class="t3">  PLATFORM  GAME                              WHERE       DAT ART SIZE     </span><span class="t6">││· · · · · · · · · · · · · · · · · · · · · · · · · · ·│</span>
+<span class="t6">│</span>  <span class="t8">gb       </span> Kirby&#x27;s Dream Land (USA, Europe)  <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">256.0 KiB</span><span class="t6">││ · · · · · · · · · · · · · · · · · · · · · · · · · · │</span>
+<span class="t6">│</span>  <span class="t8">gb       </span> Super Mario Land 2 - 6 Golden Coi <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">512.0 KiB</span><span class="t6">││· · · · · · · · · · · · · · · · · · · · · · · · · · ·│</span>
+<span class="t6">│</span>  <span class="t8">gb       </span> Tetris (World) (Rev 1)            <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">32.0 KiB </span><span class="t6">││ · · · · · · · · · · · · · · · · · · · · · · · · · · │</span>
+<span class="t6">│</span>  <span class="t8">gb       </span> <span class="t10">Tetris DX (World)                </span> <span class="t10">card       </span>         <span class="t8">64.0 KiB </span><span class="t6">││· · · · · ·</span><span class="t4">no cover yet</span>                   <span class="t6">· · · · · ·│</span>
+<span class="t6">│</span>  <span class="t8">gba      </span> Advance Wars (USA) (Rev 1)        <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">8.0 MiB  </span><span class="t6">││ · · · · · </span>                               <span class="t6"> · · · · · │</span>
+<span class="t6">│</span>  <span class="t8">gba      </span> Castlevania - Aria of Sorrow (USA <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">8.0 MiB  </span><span class="t6">││· · · · · ·</span> <span class="t11"> f </span><span class="t4"> fetch it  </span>                <span class="t6">· · · · · ·│</span>
+<span class="t6">│</span>  <span class="t8">gba      </span> Fire Emblem (USA, Australia)      <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">16.0 MiB </span><span class="t6">││ · · · · · </span> <span class="t11"> F </span><span class="t4"> fetch the whole platform  </span><span class="t6"> · · · · · │</span>
+<span class="t6">│</span>  <span class="t8">gba      </span> Golden Sun (USA, Europe)          <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">8.0 MiB  </span><span class="t6">││· · · · · ·</span> <span class="t11"> C </span><span class="t4"> fetch everything missing  </span><span class="t6">· · · · · ·│</span>
+<span class="t6">│</span>  <span class="t8">gba      </span> <span class="t10">Kuru Kuru Kururin (Europe)       </span> <span class="t10">card       </span>         <span class="t8">128.0 KiB</span><span class="t6">││ · · · · · · · · · · · · · · · · · · · · · · · · · · │</span>
+<span class="t6">│</span>  <span class="t8">gba      </span> Legend of Zelda, The - The Minish <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">16.0 MiB </span><span class="t6">││· · · · · · · · · · · · · · · · · · · · · · · · · · ·│</span>
+<span class="t6">│</span>  <span class="t8">gba      </span> Mario Kart - Super Circuit (USA)  <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">4.0 MiB  </span><span class="t6">││ · · · · · · · · · · · · · · · · · · · · · · · · · · │</span>
+<span class="t6">│</span><span class="t5">▸ gba       Metroid Fusion (USA)              lib + card  ?       8.0 MiB  </span><span class="t6">││· · · · · · · · · · · · · · · · · · · · · · · · · · ·│</span>
+<span class="t6">│</span>  <span class="t8">gba      </span> Mother 3 (Japan)                  <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">32.0 MiB </span><span class="t6">│╰─────────────────────────────────────────────────────╯</span>
+<span class="t6">│</span>  <span class="t8">gba      </span> Pokemon - Emerald Version (USA, E <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">16.0 MiB </span><span class="t6">│╭</span><span class="t4"> DETAILS </span><span class="t6">────────────────────────────────────────────╮</span>
+<span class="t6">│</span>  <span class="t8">gba      </span> WarioWare, Inc. - Mega Microgame$ <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">8.0 MiB  </span><span class="t6">││</span><span class="t3">Game      </span>Metroid Fusion (USA)                       <span class="t6">│</span>
+<span class="t6">│</span>  <span class="t8">gbc      </span> Legend of Zelda, The - Link&#x27;s Awa <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">1.0 MiB  </span><span class="t6">││</span><span class="t3">Platform  </span>gba                                        <span class="t6">│</span>
+<span class="t6">│</span>  <span class="t8">gbc      </span> Pokemon - Crystal Version (USA, E <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">2.0 MiB  </span><span class="t6">││</span><span class="t3">File      </span>Metroid Fusion (USA).gba                   <span class="t6">│</span>
+<span class="t6">│</span>  <span class="t8">gbc      </span> Wario Land 3 (World) (En,Ja)      <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">2.0 MiB  </span><span class="t6">││</span><span class="t3">Size      </span>8.0 MiB                                    <span class="t6">│</span>
+<span class="t6">│</span>  <span class="t8">nes      </span> Mega Man 2 (USA)                  <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">256.0 KiB</span><span class="t6">││</span><span class="t3">DAT       </span><span class="t4">not checked against a DAT</span>                  <span class="t6">│</span>
+<span class="t6">│</span>  <span class="t8">nes      </span> Super Mario Bros. 3 (USA) (Rev 1) <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">384.0 KiB</span><span class="t6">││</span><span class="t3">crc32     </span><span class="t4">f5d84271</span>                                   <span class="t6">│</span>
+<span class="t6">│</span>  <span class="t8">snes     </span> Chrono Trigger (USA)              <span class="t2">lib + card </span> <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">4.0 MiB  </span><span class="t6">││</span><span class="t3">Kept as   </span>copy in the library                        <span class="t6">│</span>
+<span class="t6">│</span>  <span class="t8">snes     </span> EarthBound (USA)                  lib         <span class="t8">?  </span> <span class="t8">   </span> <span class="t8">3.0 MiB  </span><span class="t6">││</span><span class="t3">On card   </span><span class="t2">yes, Assets/gba/common/</span>                    <span class="t6">│</span>
+<span class="t6">╰───────────────────────────────────────────────────────────────────────────╯╰─────────────────────────────────────────────────────╯</span>
+
+ <span class="t11"> a </span><span class="t4"> import  </span><span class="t11"> i </span><span class="t4"> from card  </span><span class="t11"> e </span><span class="t4"> rename  </span><span class="t11"> t </span><span class="t4"> standard names  </span><span class="t11"> x </span><span class="t4"> remove  </span><span class="t11"> f </span><span class="t4"> cover  </span><span class="t11"> S </span><span class="t4"> sync  </span><span class="t11"> ? </span><span class="t4"> help  </span><span class="t11"> q </span><span class="t4"> quit  </span></pre>
+<pre class="tui" data-view="device" hidden><span class="t0"> ◆ </span><span class="t1">POCKETEER</span>                                                         <span class="t2">● Pocket</span><span class="t3">  ·  </span><span class="t4">POCKET</span><span class="t3">  ·  </span><span class="t4">fw 2.4</span><span class="t3">  ·  </span><span class="t4">406.7 GiB free</span><span class="t3">  ·  </span><span class="t4">22 games</span>
+<span class="t3"> 1  CORES </span>  <span class="t3"> 2  BIOS </span>  <span class="t3"> 3  GAMES </span>  <span class="t5"> 4  DEVICE </span>
+<span class="t6">╭</span><span class="t4"> CARD </span><span class="t6">──────────────────────────────────────────────────────────╮╭</span><span class="t4"> MACOS JUNK </span><span class="t6">────────────────────────────────────────────────────╮</span>
+<span class="t6">│</span><span class="t3">Root      </span>/Volumes/POCKET                                       <span class="t6">││</span>3 item(s), 18.0 KiB                                             <span class="t6">│</span>
+<span class="t6">│</span><span class="t3">Firmware  </span>2.4  (built 20250911_101500)                          <span class="t6">││</span><span class="t8">  .DS_Store</span>                                                     <span class="t6">│</span>
+<span class="t6">│</span><span class="t3">Disk      </span>406.7 GiB free of 926.3 GiB                           <span class="t6">││</span><span class="t8">  Assets/._Kuru.gba</span>                                             <span class="t6">│</span>
+<span class="t6">│</span><span class="t3">Cores     </span>8                                                     <span class="t6">││</span><span class="t8">  Assets/gba/.DS_Store</span>                                          <span class="t6">│</span>
+<span class="t6">│</span><span class="t3">Inventory </span>from cache, 21h old                                   <span class="t6">││</span> <span class="t11"> c </span><span class="t4"> delete them  </span>                                              <span class="t6">│</span>
+<span class="t6">╰────────────────────────────────────────────────────────────────╯│</span>                                                                <span class="t6">│</span>
+<span class="t6">╭</span><span class="t4"> LIBRARY DEVICE </span><span class="t6">────────────────────────────────────────────────╮│</span>                                                                <span class="t6">│</span>
+<span class="t6">│</span><span class="t3">Name      </span>Pocket  (9e418f45ee9ff914)                            <span class="t6">││</span>                                                                <span class="t6">│</span>
+<span class="t6">│</span><span class="t3">Platforms </span>gb, gba, gbc, genesis, nes, snes                      <span class="t6">│╰────────────────────────────────────────────────────────────────╯</span>
+<span class="t6">│</span><span class="t3">Cores     </span>(none)                                                <span class="t6">│╭</span><span class="t4"> RECENT </span><span class="t6">────────────────────────────────────────────────────────╮</span>
+<span class="t6">│</span><span class="t3">Last sync </span>2m ago                                                <span class="t6">││</span><span class="t3">nothing yet</span>                                                     <span class="t6">│</span>
+<span class="t6">│</span>                                                                <span class="t6">││</span>                                                                <span class="t6">│</span>
+<span class="t6">│</span> <span class="t11"> D </span><span class="t4"> change subscriptions  </span>                                     <span class="t6">││</span>                                                                <span class="t6">│</span>
+<span class="t6">│</span> <span class="t11"> S </span><span class="t4"> sync ROMs and cores from the library  </span>                     <span class="t6">││</span>                                                                <span class="t6">│</span>
+<span class="t6">│</span> <span class="t11"> V </span><span class="t4"> sync saves both ways, newest wins  </span>                        <span class="t6">││</span>                                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                <span class="t6">││</span>                                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                <span class="t6">││</span>                                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                <span class="t6">││</span>                                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                <span class="t6">││</span>                                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                <span class="t6">││</span>                                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                <span class="t6">││</span>                                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                <span class="t6">││</span>                                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                <span class="t6">││</span>                                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                <span class="t6">││</span>                                                                <span class="t6">│</span>
+<span class="t6">╰────────────────────────────────────────────────────────────────╯╰────────────────────────────────────────────────────────────────╯</span>
+
+ <span class="t11"> D </span><span class="t4"> subscriptions  </span><span class="t11"> S </span><span class="t4"> sync  </span><span class="t11"> V </span><span class="t4"> saves  </span><span class="t11"> c </span><span class="t4"> clean junk  </span><span class="t11"> ? </span><span class="t4"> help  </span><span class="t11"> q </span><span class="t4"> quit  </span></pre>
+<pre class="tui" data-view="sync" hidden><span class="t0"> ◆ </span><span class="t1">POCKETEER</span>                                                         <span class="t2">● Pocket</span><span class="t3">  ·  </span><span class="t4">POCKET</span><span class="t3">  ·  </span><span class="t4">fw 2.4</span><span class="t3">  ·  </span><span class="t4">406.7 GiB free</span><span class="t3">  ·  </span><span class="t4">22 games</span>
+<span class="t3"> 1  CORES </span>  <span class="t3"> 2  BIOS </span>  <span class="t3"> 3  GAMES </span>  <span class="t5"> 4  DEVICE </span>
+<span class="t6">╭</span><span class="t4"> CARD </span><span class="t6">──────────────────────────────────────────────────────────╮╭</span><span class="t4"> MACOS JUNK </span><span class="t6">────────────────────────────────────────────────────╮</span>
+<span class="t6">│</span><span class="t3">Root      </span>/Volumes/POCKET                                       <span class="t6">││</span>3 item(s), 18.0 KiB                                             <span class="t6">│</span>
+<span class="t6">│</span><span class="t3">Firmware  </span>2.4  (built 20250911_101500)                          <span class="t6">││</span><span class="t8">  .DS_Store</span>                                                     <span class="t6">│</span>
+<span class="t6">│</span><span class="t3">Disk      </span>406.7 GiB free of 92<span class="t4">╭</span><span class="t1"> Sync 1 change(s) to Pocket? </span><span class="t4">───────────────────────────────────────╮</span>                              <span class="t6">│</span>
+<span class="t6">│</span><span class="t3">Cores     </span>8                   <span class="t4">│</span> Sync Pocket (9e418f45ee9ff914)                                     <span class="t4">│</span>                              <span class="t6">│</span>
+<span class="t6">│</span><span class="t3">Inventory </span>from cache, 21h old <span class="t4">│</span>                                                                    <span class="t4">│</span>                              <span class="t6">│</span>
+<span class="t6">╰──────────────────────────────</span><span class="t4">│</span> [gb] 0 to copy, 0 to rename, 0 to delete, 3 up to date (0 B)       <span class="t4">│</span>                              <span class="t6">│</span>
+<span class="t6">╭</span><span class="t4"> LIBRARY DEVICE </span><span class="t6">──────────────</span><span class="t4">│</span>                                                                    <span class="t4">│</span>                              <span class="t6">│</span>
+<span class="t6">│</span><span class="t3">Name      </span>Pocket  (9e418f45ee9<span class="t4">│</span> [gba] 0 to copy, 0 to rename, 0 to delete, 10 up to date (0 B)     <span class="t4">│</span>                              <span class="t6">│</span>
+<span class="t6">│</span><span class="t3">Platforms </span>gb, gba, gbc, genesi<span class="t4">│</span>                                                                    <span class="t4">│</span><span class="t6">──────────────────────────────╯</span>
+<span class="t6">│</span><span class="t3">Cores     </span>(none)              <span class="t4">│</span> [gbc] 0 to copy, 0 to rename, 0 to delete, 3 up to date (0 B)      <span class="t4">│</span><span class="t6">──────────────────────────────╮</span>
+<span class="t6">│</span><span class="t3">Last sync </span>2m ago              <span class="t4">│</span>                                                                    <span class="t4">│</span>                              <span class="t6">│</span>
+<span class="t6">│</span>                              <span class="t4">│</span> [genesis] 0 to copy, 0 to rename, 0 to delete, 0 up to date (0 B)  <span class="t4">│</span>                              <span class="t6">│</span>
+<span class="t6">│</span> <span class="t11"> D </span><span class="t4"> change subscriptions  </span>   <span class="t4">│</span>                                                                    <span class="t4">│</span>                              <span class="t6">│</span>
+<span class="t6">│</span> <span class="t11"> S </span><span class="t4"> sync ROMs and cores from │</span> [nes] 0 to copy, 0 to rename, 0 to delete, 2 up to date (0 B)      <span class="t4">│</span>                              <span class="t6">│</span>
+<span class="t6">│</span> <span class="t11"> V </span><span class="t4"> sync saves both ways, new│</span>                                                                    <span class="t4">│</span>                              <span class="t6">│</span>
+<span class="t6">│</span>                              <span class="t4">│</span> [snes] 1 to copy, 0 to rename, 0 to delete, 3 up to date (3.0 MiB) <span class="t4">│</span>                              <span class="t6">│</span>
+<span class="t6">│</span>                              <span class="t4">│</span>   + Assets/snes/common/EarthBound (USA).snes                       <span class="t4">│</span>                              <span class="t6">│</span>
+<span class="t6">│</span>                              <span class="t4">│</span>                                                                    <span class="t4">│</span>                              <span class="t6">│</span>
+<span class="t6">│</span>                              <span class="t4">│</span> 1 ROM change(s), 0 core change(s)                                  <span class="t4">│</span>                              <span class="t6">│</span>
+<span class="t6">│</span>                              <span class="t4">│</span>                                                                    <span class="t4">│</span>                              <span class="t6">│</span>
+<span class="t6">│</span>                              <span class="t4">│</span>                 <span class="t12">  APPLY  </span><span class="t3"> y</span>    <span class="t13">  CANCEL  </span><span class="t3"> n / Esc</span>                  <span class="t4">│</span>                              <span class="t6">│</span>
+<span class="t6">│</span>                              <span class="t4">╰────────────────────────────────────────────────────────────────────╯</span>                              <span class="t6">│</span>
+<span class="t6">│</span>                                                                <span class="t6">││</span>                                                                <span class="t6">│</span>
+<span class="t6">│</span>                                                                <span class="t6">││</span>                                                                <span class="t6">│</span>
+<span class="t6">╰────────────────────────────────────────────────────────────────╯╰────────────────────────────────────────────────────────────────╯</span>
+
+ <span class="t11"> D </span><span class="t4"> subscriptions  </span><span class="t11"> S </span><span class="t4"> sync  </span><span class="t11"> V </span><span class="t4"> saves  </span><span class="t11"> c </span><span class="t4"> clean junk  </span><span class="t11"> ? </span><span class="t4"> help  </span><span class="t11"> q </span><span class="t4"> quit  </span></pre>
+    </div>
+  </div>
+  <p class="caption" data-caption="cores">Install and update cores from the openFPGA inventory.</p>
+  <p class="caption" data-caption="bios" hidden>See which BIOS files your cores are missing.</p>
+  <p class="caption" data-caption="games" hidden>Your library and the card, side by side.</p>
+  <p class="caption" data-caption="device" hidden>The card, its free space, and which platforms it syncs.</p>
+  <p class="caption" data-caption="sync" hidden>Every change is shown before it happens.</p>
+</section>
+
+
+<section id="cli" class="wrap section split">
+  <div class="section-head">
+    <h2>CLI</h2>
+    <p>Every TUI action is also a command.</p>
+    <p><a class="link" href="https://github.com/yilin-zhang/pocketeer/blob/master/docs/cli.md">Read the CLI tour →</a></p>
+  </div>
+  <div>
+    <div class="tabs small" role="tablist" aria-label="CLI output">
+      <button role="tab" data-out="human" aria-selected="true">TEXT</button>
+      <button role="tab" data-out="json">--JSON</button>
+    </div>
+    <pre class="code" data-out="human"><span class="p">$</span> pocketeer cores list --outdated
+<span class="f">ID                 INSTALLED  LATEST  STATUS</span>
+agg23.SNES         0.4.3      0.4.4   <span class="w">update available</span>
+Spiritualized.GBA  1.0.0      1.2.0   <span class="w">update available</span>
+
+<span class="p">$</span> pocketeer device sync --dry-run
+Sync Pocket (9e418f45ee9ff914)
+
+<span class="f">[gba]</span>  0 to copy, 0 to rename, 0 to delete, 10 up to date
+<span class="f">[snes]</span> 1 to copy, 0 to rename, 0 to delete, 3 up to date (3.0 MiB)
+  <span class="g">+ Assets/snes/common/EarthBound (USA).snes</span>
+
+1 ROM change(s), 0 core change(s)
+<span class="f">Dry run: nothing was changed.</span></pre>
+    <pre class="code" data-out="json" hidden><span class="p">$</span> pocketeer --json cores list --outdated
+{
+  <span class="k">"schema_version"</span>: 1,
+  <span class="k">"ok"</span>: true,
+  <span class="k">"data"</span>: {
+    <span class="k">"cores"</span>: [
+      {
+        <span class="k">"id"</span>: <span class="s">"agg23.SNES"</span>,
+        <span class="k">"version"</span>: <span class="s">"0.4.3"</span>,
+        <span class="k">"platform_ids"</span>: [<span class="s">"snes"</span>],
+        <span class="k">"latest"</span>: {
+          <span class="k">"version"</span>: <span class="s">"0.4.4"</span>,
+          <span class="k">"date_release"</span>: <span class="s">"2024-09-16"</span>
+        },
+        <span class="k">"update_available"</span>: true
+      },
+      <span class="f">…</span>
+    ]
+  }
+}</pre>
+  </div>
+</section>
+
+<section id="install" class="wrap section">
+  <div class="section-head">
+    <h2>Get started</h2>
+  </div>
+  <ol class="steps">
+    <li>
+      <span class="num">1</span>
+      <div><h3>Install</h3><p>With Rust installed:</p>
+      <pre class="code tight">cargo install --git https://github.com/yilin-zhang/pocketeer</pre></div>
+    </li>
+    <li>
+      <span class="num">2</span>
+      <div><h3>Import your ROMs</h3><p>By default the library is <code>~/Pocketeer Library</code>.</p>
+      <pre class="code tight">pocketeer library import ~/roms/gba --platform gba</pre></div>
+    </li>
+    <li>
+      <span class="num">3</span>
+      <div><h3>Plug in the card and sync</h3><p>Run these, or press <span class="key">D</span> and then <span class="key">S</span> in the TUI.</p>
+      <pre class="code tight">pocketeer device add --name "Pocket"
+pocketeer device subscribe --platform gba
+pocketeer device sync</pre></div>
+    </li>
+  </ol>
+</section>
+
+</main>
+
+<footer class="wrap foot">
+  <span>◆ pocketeer · AGPL-3.0-or-later · by <a href="../">Yilin Zhang</a></span>
+</footer>
+
+<script>
+  const tabs = (attr, root = document) => {
+    const buttons = [...root.querySelectorAll(`[role=tab][data-${attr}]`)];
+    const show = (name) => {
+      buttons.forEach(b => b.setAttribute("aria-selected", b.dataset[attr] === name));
+      document.querySelectorAll(`[data-${attr}]:not([role=tab])`).forEach(el => el.hidden = el.dataset[attr] !== name);
+      document.querySelectorAll(`[data-caption]`).forEach(el => { if (attr === "view") el.hidden = el.dataset.caption !== name; });
+    };
+    buttons.forEach(b => b.addEventListener("click", () => show(b.dataset[attr])));
+    return { show, names: buttons.map(b => b.dataset[attr]) };
+  };
+  const views = tabs("view");
+  tabs("out");
+  const keys = { "1": "cores", "2": "bios", "3": "games", "4": "device", "s": "sync", "S": "sync" };
+  document.addEventListener("keydown", e => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (keys[e.key]) views.show(keys[e.key]);
+  });
+  document.querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent);
+    b.textContent = "COPIED"; setTimeout(() => b.textContent = "COPY", 1400);
+  }));
+
+  // one-click copy for the Get started commands
+  document.querySelectorAll("pre.code.tight").forEach(pre => {
+    const wrap = document.createElement("div"); wrap.className = "copyable";
+    pre.replaceWith(wrap); wrap.append(pre);
+    const b = document.createElement("button"); b.type = "button"; b.className = "copy"; b.textContent = "COPY";
+    b.addEventListener("click", async () => {
+      await navigator.clipboard.writeText(pre.innerText.replace(/\n+$/, ""));
+      b.textContent = "COPIED"; setTimeout(() => b.textContent = "COPY", 1400);
+    });
+    wrap.append(b);
+  });
+</script>
+</body>
+</html>

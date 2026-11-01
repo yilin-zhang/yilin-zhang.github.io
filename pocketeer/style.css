@@ -1,0 +1,142 @@
+/* pocketeer: black and white, like the Pocket's own menus. Colour only for state. */
+:root {
+  --paper: #0b0b0d;
+  --ink: #f2f2f2;
+  --muted: #949494;
+  --faint: #5a5a5a;
+  --rule: #2a2a2c;
+  --keycap: #3a3a3a;
+  --good: #87d787;
+  --warn: #d7af5f;
+  --bad: #d75f5f;
+  --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+* { box-sizing: border-box; }
+html { background: var(--paper); color: var(--ink); scroll-behavior: smooth; }
+body { margin: 0; font: 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+code { font: 0.9em var(--mono); color: var(--ink); }
+.muted { color: var(--muted); }
+.wrap { width: min(1120px, 100% - 48px); margin-inline: auto; }
+
+/* nav */
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--rule); }
+.brand { font: 700 14px var(--mono); letter-spacing: 0.08em; text-decoration: none; }
+.nav nav { display: flex; gap: 28px; align-items: center; }
+.nav nav a { font: 12px var(--mono); letter-spacing: 0.12em; color: var(--muted); text-decoration: none; }
+.nav nav a:hover { color: var(--ink); }
+.chip { border: 1px solid var(--rule); padding: 6px 10px; border-radius: 3px; }
+.nav nav a.chip:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* type */
+h1 { font-size: clamp(40px, 6vw, 72px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 650; margin: 0 0 28px; }
+h2 { font-size: clamp(28px, 3.4vw, 40px); line-height: 1.1; letter-spacing: -0.025em; font-weight: 600; margin: 0; }
+h3 { font-size: 17px; font-weight: 600; margin: 0 0 8px; letter-spacing: -0.01em; }
+p { margin: 0 0 14px; text-wrap: pretty; }
+.lede { font-size: 19px; line-height: 1.55; color: #c8c8c8; max-width: 34em; }
+.hint { color: var(--muted); font-size: 14px; margin-top: 16px; }
+.key {
+  display: inline-block; font: 600 12px/1 var(--mono); background: var(--keycap); color: var(--ink);
+  padding: 4px 7px; border-radius: 2px; vertical-align: 1px;
+}
+.link { font: 13px var(--mono); letter-spacing: 0.06em; text-decoration: none; border-bottom: 1px solid var(--faint); padding-bottom: 2px; }
+.link:hover { border-color: var(--ink); }
+
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 440px; gap: 64px; align-items: center; padding: 96px 0 104px; }
+.cmd {
+  display: flex; align-items: center; gap: 12px; margin-top: 32px;
+  border: 1px solid var(--rule); border-radius: 4px; padding: 6px 6px 6px 16px; font: 13px var(--mono);
+}
+/* the whole command is always visible: it wraps at spaces (or anywhere, if a piece is still too long) */
+.cmd code { flex: 1; min-width: 0; white-space: normal; overflow-wrap: anywhere; line-height: 20px; padding: 4px 0; }
+.prompt { color: var(--faint); align-self: flex-start; line-height: 20px; padding-top: 4px; }
+.cmd .nb { white-space: nowrap; }
+.copy {
+  font: 600 11px var(--mono); letter-spacing: 0.12em; background: var(--ink); color: var(--paper);
+  border: 0; border-radius: 2px; padding: 9px 12px; cursor: pointer;
+}
+.copy:hover { background: #fff; }
+
+/* sections */
+.section { padding: 88px 0; border-top: 1px solid var(--rule); }
+.section-head { margin-bottom: 40px; max-width: 40em; }
+.section-head p { color: #c8c8c8; margin-top: 18px; }
+.split { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: start; }
+
+/* tab strips: the active one is a white bar, like the TUI */
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.tabs button {
+  font: 13px var(--mono); letter-spacing: 0.08em; color: var(--muted); background: none;
+  border: 0; padding: 6px 12px; cursor: pointer; border-radius: 1px;
+}
+.tabs button span { margin-right: 10px; color: var(--faint); }
+.tabs button:hover { color: var(--ink); }
+.tabs button[aria-selected="true"] { background: var(--ink); color: var(--paper); font-weight: 700; }
+.tabs button[aria-selected="true"] span { color: var(--paper); }
+.tabs.small button { font-size: 12px; padding: 5px 10px; }
+
+/* the terminal holding real TUI frames */
+.term { border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: #0b0b0d; }
+.term-bar { display: flex; align-items: center; gap: 7px; padding: 10px 14px; border-bottom: 1px solid var(--rule); }
+.term-bar i { width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--faint); }
+.term-bar span { margin-left: auto; margin-right: auto; font: 12px var(--mono); color: var(--faint); transform: translateX(-24px); }
+.term-body { padding: 14px 16px 6px; overflow-x: auto; }
+.tui {
+  margin: 0; font-family: Menlo, "SF Mono", ui-monospace, monospace;
+  /* 132 columns fill the box; 1.17 keeps Menlo's box-drawing lines joined */
+  font-size: max(6.5px, min(14px, calc((min(1120px, 100vw - 48px) - 36px) / 132 / 0.6021)));
+  line-height: 1.17; color: #d4d4d8; white-space: pre;
+}
+.caption { color: var(--muted); font-size: 15px; margin-top: 18px; min-height: 2em; }
+
+.num { display: block; font: 12px var(--mono); color: var(--faint); letter-spacing: 0.1em; margin-bottom: 26px; }
+
+/* code */
+.code {
+  margin: 0; font: 13px/1.6 var(--mono); color: #d4d4d8; background: #111113;
+  border: 1px solid var(--rule); border-radius: 4px; padding: 18px 20px; overflow-x: auto;
+}
+.code .p { color: var(--faint); }
+.code .f { color: var(--muted); }
+.code .w { color: var(--warn); }
+.code .g { color: var(--good); }
+.code .k { color: var(--ink); }
+.code .s { color: #a8a8a8; }
+.code.tight { padding: 12px 16px; margin-top: 12px; }
+
+/* steps */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.steps li { display: grid; grid-template-columns: 72px 1fr; background: var(--paper); padding: 28px 28px 28px 0; }
+.steps .num { margin: 2px 0 0; text-align: center; font-size: 14px; color: var(--ink); }
+.steps p { color: #b4b4b4; margin: 0; }
+
+.foot { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 32px 0 48px; border-top: 1px solid var(--rule); font: 12px var(--mono); letter-spacing: 0.04em; }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: minmax(0, 1fr); padding: 56px 0 64px; gap: 48px; }
+  .scene { max-width: 440px; }
+  .split { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .nav nav { gap: 16px; }
+  .nav nav a:not(.chip) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .blink { animation: none; } html { scroll-behavior: auto; } }
+
+/* grid items may shrink below their widest code line */
+.hero > *, .split > *, .steps li > * { min-width: 0; }
+
+/* hero picture: computer → SD card → Pocket */
+.scene { margin: 0; }
+.scene svg { width: 100%; height: auto; display: block; }
+.scene .dash { stroke-dasharray: 3 5; animation: flow 1.2s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -8; } }
+@media (prefers-reduced-motion: reduce) { .scene .dash { animation: none; } }
+
+/* copy button on the Get started blocks */
+.copyable { position: relative; margin-top: 12px; }
+.copyable .code.tight { margin-top: 0; padding-right: 88px; }
+.copyable .copy { position: absolute; top: 7px; right: 7px; padding: 7px 10px; }
+
+/* long lines scroll sideways */
+.copyable .code.tight { white-space: pre; overflow-x: auto; scrollbar-width: thin; scrollbar-color: var(--rule) transparent; }

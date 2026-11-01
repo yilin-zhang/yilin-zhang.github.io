@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decklet · spaced repetition for Emacs</title>
+<meta name="description" content="Decklet is a spaced repetition package for language learners, built on Emacs.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%237f5ab6'/%3E%3Crect x='4' y='3' width='8' height='10' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css?v=21">
+</head>
+<body>
+
+<header class="headerline">
+  <div class="col row">
+    <a class="name" href="./"><span class="mark" aria-hidden="true"></span>decklet</a>
+    <nav>
+      <a href="#install">install</a>
+      <a href="https://github.com/yilin-zhang/decklet#readme">manual</a>
+      <a href="https://github.com/yilin-zhang/decklet">github</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="intro col">
+  <h1>Decklet</h1>
+  <p class="lede">A spaced repetition package for language learners, built on Emacs.</p>
+</section>
+
+<figure class="frame" aria-label="Decklet review buffer, interactive">
+  <div class="tabbar" role="tablist">
+    <button role="tab" data-buf="review" aria-selected="true">*decklet-review*</button>
+    <button role="tab" data-buf="edit">*decklet-edit*</button>
+  </div>
+
+  <div class="buffer" data-buf="review">
+    <div class="rv">
+      <p class="rv-title st-review" id="title">REVIEWING</p>
+      <p class="sep">───────────────────────────────────────────────────────</p>
+      <p class="rv-count"><b class="c-done" id="rated">42</b> reviewed / <b class="c-review" id="due">3</b> review due / <b class="c-learning">9</b> learning due / <b class="c-new">120</b> new</p>
+      <p class="sep">───────────────────────────────────────────────────────</p>
+      <p id="pct">42.00%</p>
+      <p class="rv-bar" id="bar"></p>
+      <p class="sep">───────────────────────────────────────────────────────</p>
+      <p class="rv-keys">
+        <button data-rate="1"><kbd>1</kbd> Again<span> (10m)</span></button>
+        <button data-rate="2"><kbd>2</kbd> Hard<span> (1h)</span></button>
+        <button data-rate="3"><kbd>3</kbd> Good<span> (1d)</span></button>
+        <button data-rate="4"><kbd>4</kbd> Easy<span> (3d)</span></button>
+      </p>
+      <p class="sep">───────────────────────────────────────────────────────</p>
+      <p class="blank"></p>
+      <p class="rv-word" id="word">lucid</p>
+      <p class="blank"></p>
+      <p class="sep">───────────────────────────────────────────────────────</p>
+      <p class="blank"></p>
+      <p class="rv-hint" id="hint">Even at 3 a.m. her explanation was lucid enough to follow.</p>
+      <p class="blank"></p>
+      <p class="rv-back" id="back">♦</p>
+    </div>
+  </div>
+
+  <div class="buffer" data-buf="edit" hidden>
+    <table class="ed">
+      <thead><tr><th>Word</th><th>Hint</th><th>Back</th><th>State</th><th>Last Review</th><th>Due</th></tr></thead>
+      <tbody>
+        <tr class="cur"><td class="w">lucid</td><td>Even at 3 a.m. her explanation…</td><td class="bk">♦</td><td class="st-review">review</td><td class="md">2025-04-20</td><td class="md">2025-05-18</td></tr>
+        <tr><td class="w">zephyr</td><td>A warm zephyr drifted in…</td><td></td><td class="st-learning">learning</td><td class="md">2025-04-16</td><td class="md">2025-04-28</td></tr>
+        <tr><td class="w">candor</td><td>I appreciated the candor of…</td><td class="bk">♦</td><td class="st-review">review</td><td class="md">2025-04-19</td><td class="md">2025-05-10</td></tr>
+        <tr><td class="w">sonder</td><td>Watching the crowded train…</td><td></td><td class="st-new">new</td><td class="md"></td><td class="md"></td></tr>
+        <tr><td class="w">petrichor</td><td>The air was thick with…</td><td class="bk">♦</td><td class="st-review">review</td><td class="md">2025-04-12</td><td class="md">2025-06-02</td></tr>
+        <tr><td class="w">laconic</td><td>His laconic answer ended…</td><td></td><td class="st-learning">learning</td><td class="md">2025-04-21</td><td class="md">2025-04-27</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modeline">
+    <span class="ml-state">U:%%-</span>
+    <span class="ml-buf" id="ml-buf">*decklet-review*</span>
+    <span class="ml-mode" id="ml-mode">(Decklet Review)</span>
+  </div>
+  <figcaption class="echo">
+    <span data-cap="review">Try it: press <kbd>1</kbd>–<kbd>4</kbd> to rate, <kbd>l</kbd> to look up the word, <kbd>u</kbd> to undo.</span>
+    <span data-cap="edit" hidden>All your cards in one table, where you can filter, sort and rate them.</span>
+  </figcaption>
+</figure>
+
+<article class="doc col">
+
+  <h2 id="differs"><span class="star">*</span> How it differs</h2>
+
+  <h3><span class="star">**</span> No card backs to write</h3>
+  <p>You only add the word. When it comes up for review, press <kbd>l</kbd> to look it up in any online dictionary.</p>
+
+  <h3><span class="star">**</span> Extensible like the rest of Emacs</h3>
+  <p>Decklet has hooks, a public API, and a review buffer made of functions you can replace. For example, <a href="https://github.com/yilin-zhang/decklet-extensions">decklet-extensions</a> uses them to add a calendar view and Kindle/Kobo import.</p>
+
+  <h2 id="keys"><span class="star">*</span> Review keys</h2>
+  <dl class="keymap">
+    <dt><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd></dt><dd>rate Again, Hard, Good or Easy</dd>
+    <dt><kbd>l</kbd> <kbd>L</kbd></dt><dd>look up the word, or choose a dictionary first</dd>
+    <dt><kbd>n</kbd></dt><dd>skip to the next card</dd>
+    <dt><kbd>u</kbd></dt><dd>undo the last rating</dd>
+    <dt><kbd>H</kbd> <kbd>t</kbd> <kbd>b</kbd></dt><dd>edit the hint, tags or card back</dd>
+    <dt><kbd>e</kbd> <kbd>D</kbd></dt><dd>edit or delete the word</dd>
+    <dt><kbd>q</kbd></dt><dd>quit</dd>
+  </dl>
+
+  <h2 id="install"><span class="star">*</span> Install</h2>
+  <p>Decklet needs Emacs 30.1 or later and the <code>fsrs</code> package from MELPA. Clone the repository:</p>
+  <pre class="src">git clone https://github.com/yilin-zhang/decklet ~/.emacs.d/site-lisp/decklet</pre>
+  <p>Then load it with <code>use-package</code> and set up a dictionary or two:</p>
+  <pre class="src">(<span class="k">use-package</span> fsrs
+  <span class="p">:ensure</span> t)
+
+(<span class="k">use-package</span> decklet
+  <span class="p">:load-path</span> <span class="s">"~/.emacs.d/site-lisp/decklet"</span>
+  <span class="p">:commands</span> (decklet-add-card decklet-add-card-batch
+             decklet-review decklet-edit)
+  <span class="p">:custom</span>
+  (decklet-lookup-providers
+   '((<span class="s">"Merriam-Webster"</span> . <span class="s">"https://www.merriam-webster.com/dictionary/%s"</span>)
+     (<span class="s">"Wiktionary"</span> . <span class="s">"https://en.wiktionary.org/wiki/%s"</span>)))
+  (decklet-lookup-default-provider <span class="s">"Merriam-Webster"</span>))</pre>
+  <p>Add a word with <code>M-x decklet-add-card</code> and start reviewing with <code>M-x decklet-review</code>. Everything else is in the <a href="https://github.com/yilin-zhang/decklet#readme">manual</a>.</p>
+
+</article>
+
+</main>
+
+<footer class="foot">
+  <div class="col row">
+    <span>Decklet · GPL-3.0 · <a href="../">Yilin Zhang</a></span>
+    <a href="https://github.com/yilin-zhang/decklet">GitHub</a>
+  </div>
+</footer>
+
+<script>
+  // Buffer switcher
+  const bufTabs = [...document.querySelectorAll("[data-buf][role=tab]")];
+  const showBuf = name => {
+    bufTabs.forEach(b => b.setAttribute("aria-selected", b.dataset.buf === name));
+    document.querySelectorAll(".buffer").forEach(el => el.hidden = el.dataset.buf !== name);
+    document.querySelectorAll("[data-cap]").forEach(el => el.hidden = el.dataset.cap !== name);
+    document.getElementById("ml-buf").textContent = `*decklet-${name}*`;
+    document.getElementById("ml-mode").textContent = name === "review" ? "(Decklet Review)" : "(Decklet Edit)";
+  };
+  let auto = setInterval(() => {
+    showBuf(document.querySelector('.buffer[data-buf="review"]').hidden ? "review" : "edit");
+  }, 6000);
+  const stopAuto = () => { clearInterval(auto); auto = null; };
+  bufTabs.forEach(b => b.addEventListener("click", () => { stopAuto(); showBuf(b.dataset.buf); }));
+
+  // A tiny review session: same layout as the real buffer, made-up deck.
+  const deck = [
+    { word: "lucid", hint: "Even at 3 a.m. her explanation was lucid enough to follow.", back: true, state: "review" },
+    { word: "zephyr", hint: "A warm zephyr drifted in through the open window.", back: false, state: "learning" },
+    { word: "candor", hint: "I appreciated the candor of his reply.", back: true, state: "review" },
+    { word: "sonder", hint: "Watching the crowded train go by, she felt a wave of sonder.", back: false, state: "new" },
+    { word: "laconic", hint: "His laconic answer ended the conversation.", back: false, state: "learning" },
+  ];
+  const goal = 100;
+  let i = 0, rated = 42, history = [];
+  const $ = id => document.getElementById(id);
+  const render = () => {
+    const c = deck[i % deck.length];
+    $("word").textContent = c.word;
+    $("back").style.visibility = c.back ? "visible" : "hidden";
+    $("rated").textContent = rated;
+    $("due").textContent = Math.max(0, 3 - (rated - 42));
+    const pct = Math.min(100, rated / goal * 100);
+    $("pct").textContent = pct.toFixed(2) + "%";
+    const steps = 50, done = Math.round(Math.min(1, rated / goal) * steps);
+    $("bar").textContent = "█".repeat(done) + "░".repeat(steps - done);
+    const titles = { review: "REVIEWING", learning: "LEARNING", new: "NEW WORD" };
+    $("title").textContent = titles[c.state];
+    $("title").className = "rv-title st-" + c.state;
+    $("hint").textContent = c.hint;
+  };
+  const rate = n => {
+    history.push(i); rated++; i++;
+    document.querySelectorAll("[data-rate]").forEach(b => b.classList.toggle("hit", b.dataset.rate == n));
+    setTimeout(() => document.querySelectorAll("[data-rate]").forEach(b => b.classList.remove("hit")), 220);
+    render();
+  };
+  const undo = () => {
+    if (!history.length) return;
+    i = history.pop(); rated--; render();
+  };
+  // Like decklet-lookup: the word goes into the provider's URL and opens in the browser.
+  const lookup = () => window.open("https://www.merriam-webster.com/dictionary/" + encodeURIComponent(deck[i % deck.length].word), "_blank", "noopener");
+  document.querySelectorAll("[data-rate]").forEach(b => b.addEventListener("click", () => { stopAuto(); rate(+b.dataset.rate); }));
+  document.addEventListener("keydown", e => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if ("1234lLun".includes(e.key) && e.key.length === 1) { stopAuto(); showBuf("review"); }
+    if (document.querySelector('.buffer[data-buf="review"]').hidden) return;
+    if ("1234".includes(e.key) && e.key.length === 1) rate(+e.key);
+    else if (e.key === "l" || e.key === "L") lookup();
+    else if (e.key === "u") undo();
+    else if (e.key === "n") { i++; render(); }
+  });
+  render();
+
+  // one-click copy for every block the reader is meant to run or paste
+  document.querySelectorAll("pre.src").forEach(pre => {
+    const wrap = document.createElement("div"); wrap.className = "copyable";
+    pre.replaceWith(wrap); wrap.append(pre);
+    const b = document.createElement("button"); b.type = "button"; b.className = "copy"; b.textContent = "copy";
+    wrap.append(b);
+    b.addEventListener("click", async () => {
+      await navigator.clipboard.writeText(pre.innerText.replace(/\n+$/, ""));
+      b.textContent = "copied"; setTimeout(() => b.textContent = "copy", 1400);
+    });
+  });
+</script>
+</body>
+</html>

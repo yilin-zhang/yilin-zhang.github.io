@@ -1,90 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<!-- 2023-02-20 Mon 23:47 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Yilin's Blog</title>
-<meta name="author" content="Yilin Zhang" />
-<meta name="generator" content="Org Mode" />
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC" />
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
-<link rel="stylesheet" type="text/css" href="/css/modus-vivendi.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yilin Zhang</title>
+<meta name="description" content="Yilin Zhang, ML engineer working on audio. Projects: pocketeer, Decklet.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230c0c0e'/%3E%3Crect x='4' y='4' width='8' height='8' fill='%23e8e8ea'/%3E%3C/svg%3E">
+<style>
+  /* dark, monospace, square; a narrow column held together by hairlines */
+  :root {
+    --bg: #0c0c0e; --ink: #e8e8ea; --body: #a9a9b0; --muted: #6c6c74; --rule: #2a2a30;
+    --purple: #7f5ab6;
+    --mono: "SF Mono", ui-monospace, Menlo, "JetBrains Mono", Consolas, "Liberation Mono", monospace;
+  }
+  * { box-sizing: border-box; border-radius: 0; }
+  html { background: var(--bg); color: var(--ink); color-scheme: dark; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding-bottom: 14vh; box-sizing: border-box; font: 15px/1.7 var(--mono); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .sheet { width: min(640px, 100% - 48px); padding: 64px 0; }
+
+  h1 { font-size: 30px; line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 12px; }
+  .bio { color: var(--body); margin: 0 0 20px; text-wrap: balance; }
+  .links { display: flex; gap: 20px; margin-bottom: 56px; }
+  .links a { color: var(--body); padding: 1px 4px; margin: 0 -4px; }
+  .links a:hover { background: var(--ink); color: var(--bg); }
+
+  /* one ruled row per project. On hover the project's colour sweeps in from the left. */
+  .project:first-child { border-top: 1px solid var(--rule); }
+  .project {
+    position: relative; isolation: isolate; display: grid; grid-template-columns: 140px 1fr 20px; align-items: center; gap: 20px;
+    padding: 18px 12px; margin: 0 -12px; border-bottom: 1px solid var(--rule);
+  }
+  .project::before {
+    content: ""; position: absolute; inset: -1px 0; z-index: -1; background: var(--fill);
+    transform: scaleX(0); transform-origin: left center; transition: transform .38s cubic-bezier(.2, .7, .1, 1);
+  }
+  .project:hover::before, .project:focus-visible::before { transform: scaleX(1); }
+  .project .name { display: flex; align-items: center; gap: 12px; font-weight: 700; }
+  .project .desc { color: var(--body); }
+  .project .go { color: var(--muted); text-align: right; }
+  .project .name, .project .desc, .project .go { transition: color .2s .08s, transform .38s cubic-bezier(.2, .7, .1, 1); }
+  .project:hover .go { transform: translateX(4px); }
+  .mark { width: 10px; height: 10px; flex: none; background: var(--fill); transition: background .2s .08s; }
+  .pocketeer { --fill: var(--ink); --on: var(--bg); }
+  .pocketeer .mark { transform: rotate(45deg) scale(.85); }
+  .decklet { --fill: var(--purple); --on: #fff; }
+  .project:hover .name, .project:hover .desc, .project:hover .go { color: var(--on); }
+  .project:hover .mark { background: var(--on); }
+  .project:focus-visible { outline: none; }
+
+  @media (max-width: 560px) {
+    .sheet { padding: 48px 0; }
+    h1 { font-size: 26px; }
+    .project { grid-template-columns: 1fr 20px; gap: 4px 16px; }
+    .project .desc { grid-column: 1; grid-row: 2; }
+    .project .go { grid-column: 2; grid-row: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .project::before, .project .name, .project .desc, .project .go, .mark { transition: none; }
+  }
+</style>
 </head>
 <body>
-<div id="preamble" class="status">
-<nav>
-  <a href="/">Home</a>
-  <a href="/blog">Blog</a>
-  <a href="/resources.html">Resources</a>
-</nav>
-<!-- <div id="updated">Updated: 2023-02-20 Mon 00:06</div> -->
-</div>
-<div id="content" class="content">
-<h1 class="title">Yilin's Blog</h1>
-<p>
-I am Yilin Zhang, a software engineer building creative tools and applications
-related to speech and music.
-</p>
+<div class="sheet">
+  <header>
+    <h1>Yilin Zhang</h1>
+    <p class="bio">ML engineer working on audio, building small tools on the side.</p>
+    <nav class="links">
+      <a href="https://github.com/yilin-zhang">github</a>
+      <a href="https://www.linkedin.com/in/yilin-zhang-12a682190/">linkedin</a>
+    </nav>
+  </header>
 
-<p>
-I use Emacs as my daily text editor. You can find my <a href="https://github.com/yilin-zhang/.emacs.d">Emacs config</a> on my
-github. The entire blog website is generated by <a href="https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html">org-publish</a>.
-</p>
+  <main class="projects">
+    <a class="project decklet" href="decklet/">
+      <span class="name"><span class="mark" aria-hidden="true"></span>Decklet</span>
+      <span class="desc">Spaced repetition for Emacs.</span>
+      <span class="go" aria-hidden="true">→</span>
+    </a>
+    <a class="project pocketeer" href="pocketeer/">
+      <span class="name"><span class="mark" aria-hidden="true"></span>pocketeer</span>
+      <span class="desc">An Analogue Pocket manager.</span>
+      <span class="go" aria-hidden="true">→</span>
+    </a>
+  </main>
 
-<p>
-I wrote a newbie-friendly, entry-level <a href="blog/linux-guide.html">Linux tutorial</a> in Chinese. It has been
-discontinued for a long time, but I would like to continue writing in the
-future.
-</p>
-
-<p>
-Here are some <a href="resources.html">resources</a> that I found interesting about music and programming. It
-was put together during the summer 2020 and could possibly be outdated.
-</p>
-
-<p>
-You can follow me on <a href="https://github.com/yilin-zhang">Github</a> and <a href="https://www.linkedin.com/in/yilin-zhang-12a682190/">LinkedIn</a>.
-</p>
-
-<div id="outline-container-org6211be0" class="outline-2">
-<h2 id="org6211be0">Blog Posts</h2>
-<div class="outline-text-2" id="text-org6211be0">
-<ul class="org-ul">
-<li><span class="timestamp">[2020-05-17]</span> <a href="blog/off-topic-try-to-understand-electronic-music.html">Off-topic | 试图理解电子音乐</a></li>
-<li><span class="timestamp">[2020-04-20]</span> <a href="blog/off-topic-information-overload.html">Off-topic | 信息过载</a></li>
-<li><span class="timestamp">[2020-02-19]</span> <a href="blog/off-topic-quality-quantity-habit.html">Off-topic | 质量、数量与习惯</a></li>
-</ul>
-<p>
-<a href="blog/index.html">See more&#x2026;</a>
-</p>
-</div>
-</div>
-</div>
-<div id="postamble" class="status">
-<hr/>
-<footer>
-  <div class="copyright-container">
-    <div class="copyright">
-      Copyright &copy; 2019-2023 Yilin Zhang some rights reserved<br/>
-      Content is available under
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-        CC-BY-SA 4.0
-      </a> unless otherwise noted
-    </div>
-    <div class="cc-badge">
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-        <img alt="Creative Commons License"
-             src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-      </a>
-    </div>
-  </div>
-  <div class="generated">
-    Created with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)
-  </div>
-</footer>
 </div>
 </body>
 </html>

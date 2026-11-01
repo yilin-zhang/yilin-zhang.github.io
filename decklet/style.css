@@ -1,0 +1,152 @@
+/* Decklet: reads like an Emacs frame and an org file. Dark, flat, square.
+   Links invert on hover into a block of the link colour, like Douban. */
+:root {
+  --bg: #121016;
+  --bg-2: #19161f;
+  --bg-3: #221d2b;
+  --rule: #2e2839;
+  --ink: #e8e3ef;
+  --body: #bdb5c9;
+  --muted: #857b94;
+  --purple: #7f5ab6;        /* the Emacs logo */
+  --purple-hi: #b192e6;     /* the same purple, lifted for text on dark */
+  --string: #e3c48e;
+  --red: #ee8a99;          /* Decklet's word colour (ansi red), in this palette */
+  --blue: #9ab8ea;         /* card back (ansi bright blue) */
+  --good: #8fcf9f;
+  --warn: #e0b46c;
+  --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: "SF Mono", ui-monospace, Menlo, Consolas, "Liberation Mono", monospace;
+}
+* { box-sizing: border-box; border-radius: 0; }
+html { background: var(--bg); color: var(--ink); color-scheme: dark; scroll-behavior: smooth; }
+body { margin: 0; font: 17px/1.65 var(--sans); -webkit-font-smoothing: antialiased; }
+p { margin: 0 0 16px; text-wrap: pretty; }
+
+a { color: var(--purple-hi); text-decoration: none; padding: 0 2px; margin: 0 -2px; }
+a:hover { background: var(--purple-hi); color: var(--bg); }
+code { font: 0.86em var(--mono); color: var(--purple-hi); }
+kbd {
+  display: inline-block; min-width: 1.6em; text-align: center; font: 600 12.5px/1 var(--mono);
+  color: var(--ink); background: var(--bg-3); border: 1px solid var(--rule); padding: 4px 5px; vertical-align: 1px;
+}
+
+.wrap { width: min(980px, 100% - 48px); margin-inline: auto; }
+.col { width: min(700px, 100% - 48px); margin-inline: auto; }
+.row { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+
+/* header line, like Emacs's */
+.headerline { border-bottom: 1px solid var(--rule); font: 14px var(--mono); }
+.headerline .row { height: 52px; }
+.name { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 700; }
+.name:hover { background: none; color: var(--ink); }
+.mark { width: 12px; height: 15px; background: var(--purple); display: inline-block; }
+.headerline nav { display: flex; gap: 20px; }
+.headerline nav a { color: var(--body); padding: 2px 6px; margin: 0 -6px; }
+.headerline nav a:hover { background: var(--ink); color: var(--bg); }
+
+/* intro */
+.intro { padding: 88px 0 48px; }
+h1 { font: 700 56px/1 var(--mono); letter-spacing: -0.03em; margin: 0 0 24px; }
+.lede { font-size: 20px; line-height: 1.6; color: var(--body); margin: 0; }
+
+/* the frame: tab bar, buffer, mode line, echo area.
+   Decklet's faces inherit ansi-color-*, shadow, help-key-binding and hl-line,
+   so they follow the theme. Here the "theme" is this page's palette:
+   word red, review green, learning amber, new purple, card back blue. */
+.frame {
+  --e-bg: var(--bg); --e-fg: var(--ink); --e-shadow: var(--muted); --e-comment: var(--muted);
+  --e-red: var(--red); --e-green: var(--good); --e-yellow: var(--warn); --e-magenta: var(--purple-hi); --e-blue: var(--blue);
+  --e-ml-bg: var(--purple); --e-ml-fg: #fff; --e-hl: var(--bg-3); --e-mark: #43361d;
+  --e-tab-bg: var(--bg-2); --e-tab-fg: var(--muted); --e-border: var(--rule);
+  width: min(700px, 100% - 48px); margin: 0 auto; background: var(--e-bg); color: var(--e-fg);
+  border: 1px solid var(--e-border); font-family: var(--mono);
+}
+.tabbar { display: flex; background: var(--e-tab-bg); }
+.tabbar button {
+  font: 13px var(--mono); color: var(--e-tab-fg); background: var(--e-tab-bg); border: 0; padding: 6px 14px; cursor: pointer;
+}
+.tabbar button[aria-selected="true"] { background: var(--e-bg); color: var(--e-fg); }
+.buffer { height: 440px; overflow: hidden; padding: 22px 16px; }
+.buffer[data-buf="edit"] { overflow-x: auto; padding: 0; }
+
+.rv { text-align: center; font-size: 13.5px; line-height: 1.45; }
+.rv p { margin: 0; white-space: pre; }
+.rv .blank { height: 1.45em; }
+.sep { color: var(--e-shadow); font-weight: 700; }
+.rv-title { font-size: 1.2em; font-weight: 700; }
+.st-review { color: var(--e-green); } .st-learning { color: var(--e-yellow); } .st-new { color: var(--e-magenta); }
+.rv-count b { font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+.c-review { color: var(--e-green); } .c-learning { color: var(--e-yellow); } .c-new { color: var(--e-magenta); }
+.rv-keys { display: flex; justify-content: center; gap: 0 3ch; }
+.rv-keys button { font: inherit; color: var(--e-fg); background: none; border: 0; padding: 0; cursor: pointer; }
+.rv-keys button span { color: var(--e-shadow); }
+.rv-keys button.hit { font-weight: 700; outline: 1px solid var(--e-fg); }
+/* help-key-binding: a keycap whose box is drawn inside the glyphs (:line-width -1), so it adds no width */
+.frame kbd { font: inherit; min-width: 0; padding: 0; color: var(--blue); background: var(--bg-3); border: 0; outline: 1px solid var(--rule); outline-offset: -1px; vertical-align: 0; }
+.rv-word { font-size: 1.5em; font-weight: 700; color: var(--e-red); }
+.rv-hint { white-space: normal !important; min-height: 2.9em; max-width: 46ch; margin: 0 auto !important; }
+.rv-hint .ph { color: var(--e-shadow); font-weight: 700; }
+.rv-back { color: var(--e-blue); font-weight: 700; }
+
+.ed { border-collapse: collapse; font-size: 13px; width: 100%; }
+.ed th { text-align: left; font-weight: 400; color: var(--body); background: var(--bg-2); padding: 4px 12px 4px 0; }
+.ed th:first-child, .ed td:first-child { padding-left: 10px; }
+.ed td { padding: 3px 12px 3px 0; white-space: nowrap; }
+.ed .w { color: var(--e-red); font-weight: 700; }
+.ed .bk { color: var(--e-blue); font-weight: 700; }
+.ed .md { color: var(--e-comment); }
+.ed [class^="st-"] { font-weight: 700; }
+.ed tr.cur td { background: var(--e-hl); }
+
+.modeline { display: flex; gap: 2ch; align-items: center; height: 24px; padding: 0 8px; background: var(--e-ml-bg); color: var(--e-ml-fg); font-size: 12.5px; white-space: pre; overflow: hidden; }
+.ml-buf { font-weight: 700; }
+.echo { height: 28px; display: flex; align-items: center; padding: 0 8px; font-size: 12.5px; color: var(--e-fg); white-space: nowrap; overflow: hidden; }
+.echo kbd { font-size: 12px; }
+
+/* the document: org-style headings */
+.doc { padding: 72px 0 40px; }
+h2, h3 { font-family: var(--mono); letter-spacing: -0.01em; }
+h2 { font-size: 26px; font-weight: 700; margin: 64px 0 20px; }
+h2:first-child { margin-top: 0; }
+h3 { font-size: 18px; font-weight: 600; margin: 28px 0 8px; }
+.star { color: var(--purple-hi); }
+h3 .star { color: var(--purple); }
+.doc p { color: var(--body); }
+
+.keymap { display: grid; grid-template-columns: max-content 1fr; gap: 10px 28px; margin: 0; }
+.keymap dt { display: flex; gap: 4px; }
+.keymap dd { margin: 0; color: var(--body); align-self: center; }
+
+.src {
+  margin: 0 0 20px; padding: 14px 18px; font: 13px/1.65 var(--mono); color: var(--ink);
+  background: var(--bg-2); border-left: 2px solid var(--purple); overflow-x: auto;
+}
+.src .k { color: var(--purple-hi); font-weight: 700; }
+.src .p { color: #c9a9f5; }
+.src .s { color: var(--string); }
+
+/* footer */
+.foot { margin-top: 48px; }
+.foot .row { border-top: 1px solid var(--rule); padding: 24px 0 40px; font-size: 14px; color: var(--muted); }
+
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .intro { padding: 56px 0 36px; }
+  h1 { font-size: 44px; }
+  .buffer { height: 470px; }
+  .keymap { grid-template-columns: 1fr; gap: 4px; }
+  .keymap dd { margin-bottom: 10px; }
+  .echo span { overflow: hidden; text-overflow: ellipsis; }
+}
+@media (prefers-reduced-motion: reduce) { .rv-bar i { transition: none; } html { scroll-behavior: auto; } }
+@media (max-width: 720px) { .rv-keys { flex-wrap: wrap; } }
+
+/* install blocks: copy button floats top-right; long lines scroll sideways */
+.copyable { position: relative; margin: 0 0 18px; }
+.copyable .copy {
+  position: absolute; top: 13px; right: 8px; font: 12px var(--mono); color: var(--body); background: var(--bg-3);
+  border: 1px solid var(--rule); padding: 2px 9px; cursor: pointer;
+}
+.copyable .copy:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.copyable .src { margin: 0; padding-right: 76px; white-space: pre; overflow-x: auto; scrollbar-width: thin; scrollbar-color: var(--rule) transparent; }
