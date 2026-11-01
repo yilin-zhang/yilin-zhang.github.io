@@ -6,7 +6,7 @@
 <title>pocketeer · Analogue Pocket manager</title>
 <meta name="description" content="Manage your Analogue Pocket from the terminal.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230b0b0d'/%3E%3Cpath d='M8 3l5 5-5 5-5-5z' fill='%23f2f2f2'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css?v=17">
+<link rel="stylesheet" href="style.css?v=18">
 <style id="tui-palette">
 .tui .t0{color:#eeeeee;}
 .tui .t1{color:#eeeeee;font-weight:bold;}
@@ -283,6 +283,7 @@
       <button role="tab" data-out="human" aria-selected="true">TEXT</button>
       <button role="tab" data-out="json">--JSON</button>
     </div>
+    <div class="outs">
     <pre class="code" data-out="human"><span class="p">$</span> pocketeer cores list --outdated
 <span class="f">ID                 INSTALLED  LATEST  STATUS</span>
 agg23.SNES         0.4.3      0.4.4   <span class="w">update available</span>
@@ -317,6 +318,7 @@ Sync Pocket (9e418f45ee9ff914)
     ]
   }
 }</pre>
+    </div>
   </div>
 </section>
 
@@ -362,12 +364,27 @@ pocketeer device sync</pre></div>
     buttons.forEach(b => b.addEventListener("click", () => show(b.dataset[attr])));
     return { show, names: buttons.map(b => b.dataset[attr]) };
   };
+  // Step through a tab group every 6s, starting once its panel is on screen.
+  // Clicking one of its tabs stops it.
+  const autoCycle = (group, attr, panel) => {
+    let timer = null, i = 0;
+    const stop = () => { clearInterval(timer); timer = null; };
+    new IntersectionObserver((entries, obs) => {
+      if (!entries[0].isIntersecting) return;
+      obs.disconnect();
+      timer = setInterval(() => { i = (i + 1) % group.names.length; group.show(group.names[i]); }, 6000);
+    }, { threshold: 0.5 }).observe(panel);
+    document.querySelectorAll(`[role=tab][data-${attr}]`).forEach(b => b.addEventListener("click", stop));
+    return stop;
+  };
   const views = tabs("view");
-  tabs("out");
+  const stopViews = autoCycle(views, "view", document.querySelector(".term"));
+  autoCycle(tabs("out"), "out", document.querySelector('[aria-label="CLI output"]').parentElement);
+
   const keys = { "1": "cores", "2": "bios", "3": "games", "4": "device", "s": "sync", "S": "sync" };
   document.addEventListener("keydown", e => {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
-    if (keys[e.key]) views.show(keys[e.key]);
+    if (keys[e.key]) { stopViews(); views.show(keys[e.key]); }
   });
   document.querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", async () => {
     await navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent);

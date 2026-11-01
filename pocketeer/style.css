@@ -140,3 +140,8 @@ p { margin: 0 0 14px; text-wrap: pretty; }
 
 /* long lines scroll sideways */
 .copyable .code.tight { white-space: pre; overflow-x: auto; scrollbar-width: thin; scrollbar-color: var(--rule) transparent; }
+
+/* CLI outputs share one grid cell, so the box keeps the taller one's height when they switch */
+.outs { display: grid; }
+.outs > pre { grid-area: 1 / 1; }
+.outs > pre[hidden] { display: block; visibility: hidden; }
