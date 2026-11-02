@@ -6,7 +6,7 @@
 <title>pocketeer · Analogue Pocket manager</title>
 <meta name="description" content="Manage your Analogue Pocket from the terminal.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%230b0b0d'/%3E%3Cpath d='M8 3l5 5-5 5-5-5z' fill='%23f2f2f2'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css?v=18">
+<link rel="stylesheet" href="style.css?v=19">
 <style id="tui-palette">
 .tui .t0{color:#eeeeee;}
 .tui .t1{color:#eeeeee;font-weight:bold;}
@@ -280,7 +280,6 @@
   <nav>
     <a href="#tui">TUI</a>
     <a href="#cli">CLI</a>
-    <a href="#install">INSTALL</a>
     <a class="chip" href="https://github.com/yilin-zhang/pocketeer">GITHUB ↗</a>
   </nav>
 </header>
@@ -621,33 +620,6 @@ Inventory: from cache, 1d old
   </div>
 </section>
 
-<section id="install" class="wrap section">
-  <div class="section-head">
-    <h2>Get started</h2>
-  </div>
-  <ol class="steps">
-    <li>
-      <span class="num">1</span>
-      <div><h3>Install</h3><p>With Rust installed:</p>
-      <pre class="code tight">cargo install --git https://github.com/yilin-zhang/pocketeer</pre></div>
-    </li>
-    <li>
-      <span class="num">2</span>
-      <div><h3>Import your ROMs</h3><p>Platforms are read from the file extensions. By default the library is <code>~/Pocketeer Library</code>.</p>
-      <pre class="code tight">pocketeer library import ~/roms</pre></div>
-    </li>
-    <li>
-      <span class="num">3</span>
-      <div><h3>Copy games to the card</h3><p>Plug in the card. Run this, or press <span class="key">s</span> on a game in the Games tab.</p>
-      <pre class="code tight">pocketeer card copy "Metroid Fusion (USA)"</pre></div>
-    </li>
-    <li>
-      <span class="num">4</span>
-      <div><h3>Back up your saves</h3><p>Saves are copied to the library, and older versions are kept. Or press <span class="key">B</span> in the Games tab.</p>
-      <pre class="code tight">pocketeer saves backup</pre></div>
-    </li>
-  </ol>
-</section>
 
 </main>
 
@@ -692,18 +664,6 @@ Inventory: from cache, 1d old
     await navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent);
     b.textContent = "COPIED"; setTimeout(() => b.textContent = "COPY", 1400);
   }));
-
-  // one-click copy for the Get started commands
-  document.querySelectorAll("pre.code.tight").forEach(pre => {
-    const wrap = document.createElement("div"); wrap.className = "copyable";
-    pre.replaceWith(wrap); wrap.append(pre);
-    const b = document.createElement("button"); b.type = "button"; b.className = "copy"; b.textContent = "COPY";
-    b.addEventListener("click", async () => {
-      await navigator.clipboard.writeText(pre.innerText.replace(/\n+$/, ""));
-      b.textContent = "COPIED"; setTimeout(() => b.textContent = "COPY", 1400);
-    });
-    wrap.append(b);
-  });
 </script>
 </body>
 </html>
