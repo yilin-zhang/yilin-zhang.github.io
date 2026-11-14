@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Writing · Sketch of Blue</title>
+<meta name="description" content="Posts by Sketch of Blue.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230c0c0e'/%3E%3Crect x='4' y='4' width='8' height='8' fill='%23e8e8ea'/%3E%3C/svg%3E">
+<script>
+  // Apply a saved light/dark choice before the first paint.
+  try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
+</script>
+<link rel="stylesheet" href="https://yilin-zhang.github.io/style.css?h=6b90203d28d7edb6f1e5">
+<link rel="alternate" type="application/atom+xml" title="Sketch of Blue" href="https://yilin-zhang.github.io/atom.xml">
+</head>
+<body class="">
+<div class="masthead" aria-hidden="true"><div class="wave"></div>
+</div>
+<button class="theme-toggle" type="button" hidden>
+  <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" aria-hidden="true">
+    <rect x="5" y="5" width="6" height="6"/>
+    <path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3 3l1 1M12 12l1 1M3 13l1-1M12 4l1-1"/>
+  </svg>
+  <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter" aria-hidden="true">
+    <path d="M13.5 10A6 6 0 0 1 6 2.5a6 6 0 1 0 7.5 7.5z"/>
+  </svg>
+</button>
+
+<div class="sheet">
+
+  <nav class="crumbs"><a href="https://yilin-zhang.github.io">sketch of blue</a></nav>
+  <h1>Writing</h1>
+  <nav class="links">
+    <a href="https://yilin-zhang.github.io/atom.xml">feed</a>
+  </nav>
+  <main>
+    
+    <p class="empty">No posts yet.</p>
+    
+  </main>
+
+</div>
+<script>
+  // The page follows the system setting until the toggle is used. The icon
+  // shows the mode a click switches to. Choosing the mode the system already
+  // uses drops the saved choice, so the page follows the system again.
+  {
+    const root = document.documentElement;
+    const toggle = document.querySelector(".theme-toggle");
+    const prefersLight = matchMedia("(prefers-color-scheme: light)");
+    const system = () => (prefersLight.matches ? "light" : "dark");
+    const current = () => root.dataset.theme || system();
+    const update = () => {
+      const next = current() === "dark" ? "light" : "dark";
+      toggle.dataset.next = next;
+      toggle.setAttribute("aria-label", `Switch to ${next} mode`);
+      toggle.title = `Switch to ${next} mode`;
+    };
+    toggle.addEventListener("click", () => {
+      const next = current() === "dark" ? "light" : "dark";
+      try {
+        if (next === system()) { delete root.dataset.theme; localStorage.removeItem("theme"); }
+        else { root.dataset.theme = next; localStorage.setItem("theme", next); }
+      } catch { root.dataset.theme = next; }
+      update();
+    });
+    prefersLight.addEventListener("change", update);
+    toggle.hidden = false;
+    update();
+  }
+</script>
+
+</body>
+</html>
