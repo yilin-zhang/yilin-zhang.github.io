@@ -108,14 +108,12 @@
   </dl>
 
   <h2 id="install"><span class="star">*</span> Install</h2>
-  <p>Decklet needs Emacs 30.1 or later and the <code>fsrs</code> package from MELPA. Clone the repository:</p>
-  <pre class="src">git clone https://github.com/yilin-zhang/decklet ~/.emacs.d/site-lisp/decklet</pre>
-  <p>Then load it with <code>use-package</code> and set up a dictionary or two:</p>
+  <p>Decklet needs Emacs 31.1 or later and the <code>fsrs</code> package from MELPA. Install it from GitHub with <code>use-package</code> and set up a dictionary or two:</p>
   <pre class="src">(<span class="k">use-package</span> fsrs
   <span class="p">:ensure</span> t)
 
 (<span class="k">use-package</span> decklet
-  <span class="p">:load-path</span> <span class="s">"~/.emacs.d/site-lisp/decklet"</span>
+  <span class="p">:vc</span> (<span class="p">:url</span> <span class="s">"https://github.com/yilin-zhang/decklet"</span> <span class="p">:rev</span> <span class="p">:newest</span>)
   <span class="p">:commands</span> (decklet-add-card decklet-add-card-batch
              decklet-review decklet-edit)
   <span class="p">:custom</span>
